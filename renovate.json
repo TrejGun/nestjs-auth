@@ -1,0 +1,4 @@
+{
+  "extends": ["github>trejgun/renovate-config", "group:allNonMajor"],
+  "baseBranches": ["master"]
+}

@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+
+  server:
+    image: jwks-rest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    command: npm start
+    environment:
+      NODE_ENV: development
+      HOST: "0.0.0.0"
+      PORT: "${PORT}"
+      POSTGRES_URL: "${POSTGRES_URL}"
+      AUTH0_ISSUER_URL: "${AUTH0_ISSUER_URL}"
+      AUTH0_AUDIENCE: "${AUTH0_AUDIENCE}"
+    depends_on:
+      - postgres
+    links:
+      - postgres
+

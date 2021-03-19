@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "@trejgun/eslint-config/presets/ts",
+    "@trejgun/eslint-config/rules/jest"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "root": true
+}
