@@ -10,10 +10,9 @@ export class GoogleGuard extends AuthGuard("google") implements CanActivate {
   }
 
   public canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
-    const isPublicHandler = this.reflector.get<boolean>("isPublic", context.getHandler());
-    const isPublicClass = this.reflector.get<boolean>("isPublic", context.getClass());
+    const isPublic = this.reflector.getAllAndOverride<boolean>("isPublic", [context.getHandler(), context.getClass()]);
 
-    if (isPublicHandler || isPublicClass) {
+    if (isPublic) {
       return true;
     }
 

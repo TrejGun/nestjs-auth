@@ -45,8 +45,6 @@ export class UserService {
       })
       .save();
 
-    delete userEntity.password;
-
     return userEntity;
   }
 

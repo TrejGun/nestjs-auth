@@ -7,10 +7,7 @@ export class RolesGuard implements CanActivate {
   constructor(private readonly reflector: Reflector) {}
 
   canActivate(context: ExecutionContext): boolean {
-    const rolesForHandler = this.reflector.get<Array<UserRole>>("roles", context.getHandler());
-    const rolesForClass = this.reflector.get<Array<UserRole>>("roles", context.getClass());
-
-    const roles = ([] as Array<UserRole>).concat(rolesForHandler, rolesForClass).filter(e => e);
+    const roles = this.reflector.getAllAndMerge<Array<UserRole>>("roles", [context.getHandler(), context.getClass()]);
 
     if (!roles.length) {
       return true;
