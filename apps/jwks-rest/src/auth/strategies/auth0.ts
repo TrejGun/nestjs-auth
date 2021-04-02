@@ -1,6 +1,7 @@
 import {ExtractJwt, Strategy} from "passport-jwt";
 import {PassportStrategy} from "@nestjs/passport";
 import {Injectable, UnauthorizedException} from "@nestjs/common";
+import {ConfigService} from "@nestjs/config";
 import {passportJwtSecret} from "jwks-rsa";
 
 import {UserService} from "../../user/user.service";
@@ -8,17 +9,17 @@ import {UserEntity} from "../../user/user.entity";
 
 @Injectable()
 export class JwtAuth0Strategy extends PassportStrategy(Strategy, "auth0") {
-  constructor(private readonly userService: UserService) {
+  constructor(private readonly userService: UserService, private readonly configService: ConfigService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKeyProvider: passportJwtSecret({
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 5,
-        jwksUri: `${process.env.AUTH0_ISSUER_URL}.well-known/jwks.json`,
+        jwksUri: `${configService.get<string>("AUTH0_ISSUER_URL", "https://example.com/")}.well-known/jwks.json`,
       }),
-      audience: process.env.AUTH0_AUDIENCE,
-      issuer: `${process.env.AUTH0_ISSUER_URL}`,
+      audience: configService.get<string>("AUTH0_AUDIENCE", ""),
+      issuer: configService.get<string>("AUTH0_ISSUER_URL", ""),
       algorithms: ["RS256"],
     });
   }

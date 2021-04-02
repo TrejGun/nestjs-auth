@@ -1,21 +1,32 @@
 import express from "express";
 import session from "express-session";
 import connectRedis from "connect-redis";
-import * as redis from "redis";
+import {createClient} from "redis";
 
-export const sessionMiddleware = (): express.RequestHandler =>
-  session({
+interface ISessionMiddlewareProps {
+  url: string;
+  secret: string;
+  secure?: boolean;
+  maxAge?: number;
+  name?: string;
+}
+
+export const sessionMiddleware = (props: ISessionMiddlewareProps): express.RequestHandler => {
+  const {url, secret, secure = false, name = "sid", maxAge = 30 * 24 * 60 * 60} = props;
+  return session({
     cookie: {
       path: "/",
       httpOnly: true,
-      secure: false,
-      maxAge: 24 * 60 * 60 * 1000,
+      secure,
+      maxAge: maxAge * 1000,
       signed: false,
+      sameSite: "none",
     },
-    name: "sid",
+    name,
     resave: false,
-    secret: process.env.SESSION_SECRET_KEY,
-    store: new (connectRedis(session))({client: redis.createClient(process.env.REDIS_URL)}),
+    secret,
+    store: new (connectRedis(session))({client: createClient(url)}),
     saveUninitialized: true,
     proxy: true,
   });
+};

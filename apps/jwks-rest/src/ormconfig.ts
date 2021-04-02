@@ -1,4 +1,3 @@
-import "./env";
 import {SnakeNamingStrategy} from "typeorm-naming-strategies";
 import {ConnectionOptions} from "typeorm";
 import path from "path";

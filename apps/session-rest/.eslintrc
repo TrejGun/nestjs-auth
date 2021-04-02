@@ -4,7 +4,7 @@
     "@trejgun/eslint-config/rules/jest"
   ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.test.json"
   },
   "root": true
 }

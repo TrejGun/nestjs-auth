@@ -2,11 +2,32 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type UserListType {
+  list: [UserType!]!
+  count: Float!
+}
+
+type UserType {
+  id: Int!
+  email: String!
+  roles: [UserRole!]!
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
 type AuthType {
   accessToken: String!
   refreshToken: String!
   accessTokenExpiresAt: Float!
   refreshTokenExpiresAt: Float!
+}
+
+type Query {
+  profile: UserType!
+  listUsers: UserListType!
 }
 
 type Mutation {
@@ -16,29 +37,8 @@ type Mutation {
   signup(input: UserCreateInputType!): AuthType!
 }
 
-type Query {
-  profile: UserType!
-  listUsers: UserListType!
-}
-
 input UserCreateInputType {
   email: String!
   password: String!
-  roles: [UserRole!]!
-}
-
-type UserListType {
-  list: [UserType!]!
-  count: Float!
-}
-
-enum UserRole {
-  User
-  Admin
-}
-
-type UserType {
-  id: Int!
-  email: String!
   roles: [UserRole!]!
 }

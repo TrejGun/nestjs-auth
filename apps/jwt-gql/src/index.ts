@@ -1,20 +1,25 @@
-import "./env";
 import passport from "passport";
 import {NestFactory} from "@nestjs/core";
 import {NestExpressApplication} from "@nestjs/platform-express";
 
-import {ApplicationModule} from "./app.module";
+import {AppModule} from "./app.module";
+import {ConfigService} from "@nestjs/config";
 
 async function bootstrap(): Promise<void> {
-  const app = await NestFactory.create<NestExpressApplication>(ApplicationModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+
+  const configService = app.get(ConfigService);
 
   app.use(passport.initialize());
 
-  await app.listen(process.env.PORT, process.env.HOST, () => {
-    console.info(`Express server is running on http://${process.env.HOST}:${process.env.PORT}/`);
+  const host = configService.get<string>("HOST", "localhost");
+  const port = configService.get<number>("PORT", 3000);
+
+  await app.listen(port, host, () => {
+    console.info(`Express server is running on http://${host}:${port}/`);
 
     if (process.env.NODE_ENV !== "production") {
-      console.info(`GraphQL playground is at http://${process.env.HOST}:${process.env.PORT}/graphql`);
+      console.info(`GraphQL playground is at http://${host}:${port}/graphql`);
     }
   });
 }
