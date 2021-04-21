@@ -10,7 +10,7 @@ export class JwtGuard extends AuthGuard("jwt") implements CanActivate {
     super();
   }
 
-  public async canActivate(context: GqlExecutionContext): Promise<boolean> {
+  public async canActivate(context: ExecutionContext): Promise<boolean> {
     // `super` has to be called to set `user` on `request` for @Public routes
     // see https://github.com/nestjs/passport/blob/master/lib/auth.guard.ts
     return (super.canActivate(context) as Promise<boolean>).catch(e => {
