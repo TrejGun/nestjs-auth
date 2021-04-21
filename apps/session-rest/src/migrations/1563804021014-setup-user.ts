@@ -25,7 +25,7 @@ export class SetupUser1563804021014 implements MigrationInterface {
         'trejgun@gmail.com',
         '${passwordHash}',
         '${biometricPublicKey}',
-        '{admin}'
+        '{ADMIN}'
       );
     `);
   }

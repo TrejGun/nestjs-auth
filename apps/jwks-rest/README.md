@@ -51,7 +51,7 @@ http://localhost:3000/users/profile \
 
 This will return your profile
 ```json
-{"id":1,"email":"trejgun@gmail.com","roles":["admin"]}
+{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}
 ```
 
 ```bash
@@ -62,5 +62,5 @@ http://localhost:3000/users/list \
 
 This will return a list of users
 ```json
-{"list":[{"id":1,"email":"trejgun@gmail.com","roles":["admin"]}],"count":1}
+{"list":[{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}],"count":1}
 ```

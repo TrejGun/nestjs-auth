@@ -73,12 +73,12 @@ http://localhost:3000/auth/login
 
 This will return your profile
 ```json
-{"id":1,"email":"trejgun@gmail.com","roles":["admin"]}
+{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}
 ```
 
 This will return a list of users
 ```json
-{"list":[{"id":1,"email":"trejgun@gmail.com","roles":["admin"]}],"count":1}
+{"list":[{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}],"count":1}
 ```
 
 ## Contribution
