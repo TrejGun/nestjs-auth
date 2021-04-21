@@ -14,7 +14,7 @@ export class SetupUser1563804021014 implements MigrationInterface {
       ) VALUES (
         'trejgun@gmail.com',
         '${passwordHash}',
-        '{admin}'
+        '{ADMIN}'
       );
     `);
   }

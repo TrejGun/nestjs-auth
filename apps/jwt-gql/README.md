@@ -43,7 +43,7 @@ You can log in to the application using **trejgun@gmail.com/My5up3r5tr0ngP@55w0r
 ```bash
 curl \
 -X POST http://127.0.0.1:3000/graphql \
--d '{"query":"mutation {\n  login(email: \"trejgun@gmail.com\", password: \"My5up3r5tr0ngP@55w0rd\") {\n    accessToken\n    refreshToken\n    accessTokenExpiresAt\n    refreshTokenExpiresAt\n  }\n}\n"}' \
+-d '{"query":"mutation{\n  login(email: \"trejgun@gmail.com\", password: \"My5up3r5tr0ngP@55w0rd\") {\n    accessToken\n    refreshToken\n    accessTokenExpiresAt\n    refreshTokenExpiresAt\n  }\n}\n"}' \
 -H "Content-Type: application/json"
 ```
 
@@ -83,7 +83,7 @@ Put this accessToken in header of each of your subsequent requests
 curl \
 -X POST http://127.0.0.1:3000/graphql \
 -d '{"query":"query {\n  profile {\n    id\n    email\n    roles\n  }\n}"}' \
--H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNTcyOTU1MjkzLCJleHAiOjE1NzMyNTUyOTN9.UZMIGYoKhcLOaoUxUxyyc82jtirZoo30MkE_izL99vU" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNjE4OTc0MTIzLCJleHAiOjE2MTg5NzQ0MjN9.MPTGJ3mjJ5HjFsC1XLBCT1oGdLSG3VSPAaArO_E3Ong" \
 -H "Content-Type: application/json"
 ```
 
