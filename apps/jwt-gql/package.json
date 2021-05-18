@@ -4,13 +4,13 @@
     "name": "TrejGun"
   },
   "dependencies": {
-    "@nestjs/common": "7.6.15",
+    "@nestjs/common": "7.6.16",
     "@nestjs/config": "0.6.3",
-    "@nestjs/core": "7.6.15",
+    "@nestjs/core": "7.6.16",
     "@nestjs/graphql": "7.10.6",
     "@nestjs/jwt": "7.2.0",
     "@nestjs/passport": "7.1.5",
-    "@nestjs/platform-express": "7.6.15",
+    "@nestjs/platform-express": "7.6.16",
     "@nestjs/typeorm": "7.1.5",
     "apollo-server-express": "2.24.0",
     "class-transformer": "0.4.0",
@@ -27,7 +27,7 @@
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@nestjs/testing": "7.6.15",
+    "@nestjs/testing": "7.6.16",
     "@trejgun/eslint-config": "0.1.7",
     "@types/express": "4.17.11",
     "@types/jest": "26.0.23",
@@ -35,8 +35,8 @@
     "@types/passport": "1.0.6",
     "@types/passport-jwt": "3.0.5",
     "@types/uuid": "8.3.0",
-    "@typescript-eslint/eslint-plugin": "4.23.0",
-    "@typescript-eslint/parser": "4.23.0",
+    "@typescript-eslint/eslint-plugin": "4.24.0",
+    "@typescript-eslint/parser": "4.24.0",
     "eslint": "7.26.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-standard": "16.0.2",
