@@ -18,7 +18,7 @@
     "connect-redis": "5.2.0",
     "dotenv": "9.0.2",
     "express": "4.17.1",
-    "express-session": "1.17.1",
+    "express-session": "1.17.2",
     "passport": "0.4.1",
     "passport-local": "1.0.0",
     "pg": "8.6.0",
