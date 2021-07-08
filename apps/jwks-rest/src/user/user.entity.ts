@@ -1,7 +1,9 @@
 import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+
+import {ns} from "../common/constants";
 import {IUser, UserRole} from "./interfaces";
 
-@Entity({schema: "test", name: "user"})
+@Entity({schema: ns, name: "user"})
 export class UserEntity extends BaseEntity implements IUser {
   @PrimaryGeneratedColumn()
   public id: number;

@@ -1,5 +1,7 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
+import {ns} from "../common/constants";
+
 export class SetupUser1563804021014 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<any> {
     const passwordHash = "6c9311b5a0c96b76e6535d5c57a96d67a405779d2284aaf154148cdcbefc5af6"; // My5up3r5tr0ngP@55w0rd
@@ -13,10 +15,8 @@ export class SetupUser1563804021014 implements MigrationInterface {
       "xxoArF9XJHl5gi/2aUk342iFTbZtRKIRbgFkeeUqTw7e5QsSFl" +
       "AFGIWkIq1QSveH0PnFe2nidZHpGKWeiSsqGQIDAQAB";
 
-    await queryRunner.query("TRUNCATE TABLE test.user RESTART IDENTITY CASCADE;");
-
     await queryRunner.query(`
-      INSERT INTO test.user (
+      INSERT INTO ${ns}.user (
         email,
         password,
         biometric_public_key,
@@ -31,6 +31,6 @@ export class SetupUser1563804021014 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<any> {
-    await queryRunner.query("TRUNCATE TABLE test.user RESTART IDENTITY CASCADE;");
+    await queryRunner.query(`TRUNCATE TABLE ${ns}.user RESTART IDENTITY CASCADE;`);
   }
 }

@@ -1,12 +1,12 @@
 import {Injectable, UnauthorizedException} from "@nestjs/common";
 import {JwtService} from "@nestjs/jwt";
 import {InjectRepository} from "@nestjs/typeorm";
-import {Repository, FindConditions, DeleteResult} from "typeorm";
+import {DeleteResult, FindConditions, Repository} from "typeorm";
 import {v4} from "uuid";
 
 import {UserService} from "../user/user.service";
 import {UserEntity} from "../user/user.entity";
-import {IAuth, ILoginFields} from "./interfaces";
+import {IJwt, ILoginFields} from "./interfaces";
 import {AuthEntity} from "./auth.entity";
 import {accessTokenExpiresIn, refreshTokenExpiresIn} from "./auth.constants";
 
@@ -19,7 +19,7 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  public async login(data: ILoginFields): Promise<IAuth> {
+  public async login(data: ILoginFields): Promise<IJwt> {
     const user = await this.userService.getByCredentials(data.email, data.password);
 
     if (!user) {
@@ -33,7 +33,7 @@ export class AuthService {
     return this.authEntityRepository.delete(where);
   }
 
-  public async refresh(where: FindConditions<AuthEntity>): Promise<IAuth> {
+  public async refresh(where: FindConditions<AuthEntity>): Promise<IJwt> {
     const authEntity = await this.authEntityRepository.findOne({where, relations: ["user"]});
 
     if (!authEntity || authEntity.refreshTokenExpiresAt < new Date().getTime()) {
@@ -43,7 +43,7 @@ export class AuthService {
     return this.loginUser(authEntity.user);
   }
 
-  public async loginUser(user: UserEntity): Promise<IAuth> {
+  public async loginUser(user: UserEntity): Promise<IJwt> {
     const refreshToken = v4();
     const date = new Date();
 

@@ -2,6 +2,8 @@ import {SnakeNamingStrategy} from "typeorm-naming-strategies";
 import {ConnectionOptions} from "typeorm";
 import path from "path";
 
+import {ns} from "./common/constants";
+
 // Check typeORM documentation for more information.
 const config: ConnectionOptions = {
   name: "default",
@@ -13,6 +15,7 @@ const config: ConnectionOptions = {
   // Run migrations automatically,
   // you can disable this if you prefer running migration manually.
   migrationsRun: process.env.NODE_ENV !== "production",
+  migrationsTableName: ns,
   namingStrategy: new SnakeNamingStrategy(),
   logging: process.env.NODE_ENV === "development",
   // logger: 'file',

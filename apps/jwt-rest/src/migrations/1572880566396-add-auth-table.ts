@@ -1,15 +1,11 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
+import {ns} from "../common/constants";
+
 export class AddAuthTable1572880566396 implements MigrationInterface {
-  public tableName = "test.auth";
-
-  public async down(queryRunner: QueryRunner): Promise<any> {
-    await queryRunner.dropTable(this.tableName);
-  }
-
   public async up(queryRunner: QueryRunner): Promise<any> {
     const table = new Table({
-      name: this.tableName,
+      name: `${ns}.auth`,
       columns: [
         {
           name: "id",
@@ -41,7 +37,7 @@ export class AddAuthTable1572880566396 implements MigrationInterface {
         {
           columnNames: ["user_id"],
           referencedColumnNames: ["id"],
-          referencedTableName: "test.user",
+          referencedTableName: `${ns}.user`,
           onDelete: "CASCADE",
         },
       ],
@@ -54,17 +50,21 @@ export class AddAuthTable1572880566396 implements MigrationInterface {
       LANGUAGE plpgsql
       AS $$
         BEGIN
-          DELETE FROM test.auth WHERE time_created_at < NOW() - INTERVAL '30 days';
+          DELETE FROM ${ns}.auth WHERE time_created_at < NOW() - INTERVAL '30 days';
           RETURN NEW;
         END;
       $$;
     `);
 
     await queryRunner.query(`
-      DROP TRIGGER IF EXISTS delete_expired_tokens_trigger ON test.auth;
+      DROP TRIGGER IF EXISTS delete_expired_tokens_trigger ON ${ns}.auth;
       CREATE TRIGGER delete_expired_tokens_trigger
-      AFTER INSERT ON test.auth
+      AFTER INSERT ON ${ns}.auth
       EXECUTE PROCEDURE delete_expired_tokens()
     `);
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<any> {
+    await queryRunner.dropTable(`${ns}.auth`);
   }
 }

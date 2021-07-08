@@ -8,10 +8,12 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
+
+import {ns} from "../common/constants";
 import {UserEntity} from "../user/user.entity";
 import {IAuth} from "./interfaces";
 
-@Entity({schema: "test", name: "auth"})
+@Entity({schema: ns, name: "auth"})
 export class AuthEntity extends BaseEntity implements IAuth {
   @PrimaryGeneratedColumn()
   public id: number;
@@ -22,13 +24,12 @@ export class AuthEntity extends BaseEntity implements IAuth {
   @Column({type: "bigint"})
   public refreshTokenExpiresAt: number;
 
-  public accessToken: string;
-
-  public accessTokenExpiresAt: number;
-
   @JoinColumn()
   @OneToOne(_type => UserEntity)
   public user: UserEntity;
+
+  @Column({type: "int"})
+  public userId: number;
 
   @Column({type: "timestamptz"})
   public timeCreatedAt: string;

@@ -1,11 +1,11 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
+import {ns} from "../common/constants";
+
 export class SetupUser1563804021014 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<any> {
-    await queryRunner.query("TRUNCATE TABLE test.user RESTART IDENTITY CASCADE;");
-
     await queryRunner.query(`
-      INSERT INTO test.user (
+      INSERT INTO ${ns}.user (
         email,
         roles
       ) VALUES (
@@ -16,6 +16,6 @@ export class SetupUser1563804021014 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<any> {
-    await queryRunner.query("TRUNCATE TABLE test.user RESTART IDENTITY CASCADE;");
+    await queryRunner.query(`TRUNCATE TABLE ${ns}.user RESTART IDENTITY CASCADE;`);
   }
 }

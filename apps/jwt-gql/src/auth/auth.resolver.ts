@@ -2,7 +2,7 @@ import {Args, Mutation, Resolver} from "@nestjs/graphql";
 
 import {AuthType} from "./types";
 import {AuthService} from "./auth.service";
-import {IAuth} from "./interfaces";
+import {IJwt} from "./interfaces";
 import {UserService} from "../user/user.service";
 import {UserCreateInputType} from "../user/types";
 import {Public} from "../common/decorators";
@@ -13,13 +13,13 @@ export class AuthResolver {
 
   @Public()
   @Mutation(_returns => AuthType)
-  async login(@Args("email") email: string, @Args("password") password: string): Promise<IAuth> {
+  async login(@Args("email") email: string, @Args("password") password: string): Promise<IJwt> {
     return this.authService.login({email, password});
   }
 
   @Public()
   @Mutation(_returns => AuthType)
-  async refreshToken(@Args("refreshToken") refreshToken: string): Promise<IAuth> {
+  async refreshToken(@Args("refreshToken") refreshToken: string): Promise<IJwt> {
     return this.authService.refresh({refreshToken});
   }
 
@@ -31,7 +31,7 @@ export class AuthResolver {
 
   @Public()
   @Mutation(_returns => AuthType)
-  async signup(@Args("input") data: UserCreateInputType): Promise<IAuth> {
+  async signup(@Args("input") data: UserCreateInputType): Promise<IJwt> {
     const userEntity = await this.userService.create(data);
     return this.authService.loginUser(userEntity);
   }

@@ -1,12 +1,14 @@
 import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 import {registerEnumType} from "@nestjs/graphql";
+
+import {ns} from "../common/constants";
 import {IUser, UserRole} from "./interfaces";
 
 registerEnumType(UserRole, {
   name: "UserRole",
 });
 
-@Entity({schema: "test", name: "user"})
+@Entity({schema: ns, name: "user"})
 export class UserEntity extends BaseEntity implements IUser {
   @PrimaryGeneratedColumn()
   public id: number;

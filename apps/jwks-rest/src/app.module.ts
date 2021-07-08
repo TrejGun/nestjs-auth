@@ -3,7 +3,7 @@ import {TypeOrmModule} from "@nestjs/typeorm";
 import {ConfigModule, ConfigService} from "@nestjs/config";
 import {APP_GUARD, APP_PIPE} from "@nestjs/core";
 
-import {Auth0Guard, RolesGuard} from "./common/guards";
+import {GoogleGuard, RolesGuard} from "./common/guards";
 
 import ormconfig from "./ormconfig";
 import {AuthModule} from "./auth/auth.module";
@@ -17,7 +17,7 @@ import {UserModule} from "./user/user.module";
     },
     {
       provide: APP_GUARD,
-      useClass: Auth0Guard,
+      useClass: GoogleGuard,
     },
     {
       provide: APP_GUARD,
