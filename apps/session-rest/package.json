@@ -10,7 +10,7 @@
     "@nestjs/passport": "7.1.6",
     "@nestjs/platform-express": "8.0.0",
     "@nestjs/swagger": "4.8.2",
-    "@nestjs/typeorm": "8.0.0",
+    "@nestjs/typeorm": "8.0.1",
     "class-transformer": "0.4.0",
     "class-validator": "0.13.1",
     "connect-redis": "6.0.0",
