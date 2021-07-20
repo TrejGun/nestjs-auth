@@ -17,6 +17,7 @@ export class WsLocalGuard extends AuthGuard("local") implements CanActivate {
     }
 
     const socket = context.switchToWs().getClient<Socket>();
+    // @ts-ignore
     const isAuthenticated: boolean = socket.client.request.isAuthenticated();
 
     if (!isAuthenticated) {

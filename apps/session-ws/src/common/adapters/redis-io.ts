@@ -3,7 +3,7 @@ import {INestApplicationContext} from "@nestjs/common";
 import {ConfigService} from "@nestjs/config";
 import {IoAdapter} from "@nestjs/platform-socket.io";
 import {ServerOptions} from "socket.io";
-import redisIoAdapter from "socket.io-redis";
+import {createAdapter} from "socket.io-redis";
 import passport from "passport";
 
 import {sessionMiddleware} from "../middlewares/session";
@@ -18,11 +18,15 @@ export class RedisIoAdapter extends IoAdapter {
   }
 
   createIOServer(port: number, options?: ServerOptions): any {
-    const server = super.createIOServer(port, options);
-
     const configService = this.app.get(ConfigService);
 
-    const redisAdapter = redisIoAdapter(configService.get<string>("REDIS_WS_URL", "redis://localhost:6379/2"));
+    const server = super.createIOServer(port, {
+      ...options,
+      // cors options should be passed here if any
+    });
+
+    const redisUrl = configService.get<string>("REDIS_WS_URL", "redis://127.0.0.1:6379/");
+    const redisAdapter = createAdapter(redisUrl);
     server.adapter(redisAdapter);
 
     server.use(
@@ -38,7 +42,6 @@ export class RedisIoAdapter extends IoAdapter {
     server.use(adapter(passport.initialize()));
     server.use(adapter(passport.session()));
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return server;
   }
 }
