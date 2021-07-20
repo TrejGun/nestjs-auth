@@ -1,12 +1,12 @@
-import {Module} from "@nestjs/common";
-import {PassportModule} from "@nestjs/passport";
-import {ConfigModule} from "@nestjs/config";
+import { Module } from "@nestjs/common";
+import { PassportModule } from "@nestjs/passport";
+import { ConfigModule } from "@nestjs/config";
 
-import {UserModule} from "../user/user.module";
-import {SessionSerializer} from "./session.serializer";
-import {AuthController} from "./auth.controller";
-import {OneloginStrategyFactory} from "./onelogin.factory";
-import {BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy} from "./strategies";
+import { UserModule } from "../user/user.module";
+import { SessionSerializer } from "./session.serializer";
+import { AuthController } from "./auth.controller";
+import { OneloginStrategyFactory } from "./onelogin.factory";
+import { BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy } from "./strategies";
 
 @Module({
   imports: [UserModule, PassportModule, ConfigModule],

@@ -1,7 +1,7 @@
-import {Request} from "express";
-import {ExecutionContext, Injectable, CanActivate} from "@nestjs/common";
-import {Reflector} from "@nestjs/core";
-import {AuthGuard} from "@nestjs/passport";
+import { Request } from "express";
+import { ExecutionContext, Injectable, CanActivate } from "@nestjs/common";
+import { Reflector } from "@nestjs/core";
+import { AuthGuard } from "@nestjs/passport";
 
 @Injectable()
 export class LocalGuard extends AuthGuard("local") implements CanActivate {

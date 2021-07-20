@@ -1,6 +1,6 @@
-import {MigrationInterface, QueryRunner} from "typeorm";
+import { MigrationInterface, QueryRunner } from "typeorm";
 
-import {ns} from "../common/constants";
+import { ns } from "../common/constants";
 
 export class AddTsdSchema1561991006215 implements MigrationInterface {
   public async down(queryRunner: QueryRunner): Promise<any> {

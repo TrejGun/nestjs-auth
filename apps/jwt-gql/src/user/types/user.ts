@@ -1,5 +1,5 @@
-import {Field, Int, ObjectType, registerEnumType} from "@nestjs/graphql";
-import {IUser, UserRole} from "../interfaces";
+import { Field, Int, ObjectType, registerEnumType } from "@nestjs/graphql";
+import { IUser, UserRole } from "../interfaces";
 
 registerEnumType(UserRole, {
   name: "UserRole",

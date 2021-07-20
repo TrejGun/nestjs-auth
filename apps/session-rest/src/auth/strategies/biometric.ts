@@ -1,10 +1,10 @@
-import {Strategy} from "passport-local";
-import {PassportStrategy} from "@nestjs/passport";
-import {Injectable, UnauthorizedException} from "@nestjs/common";
+import { Strategy } from "passport-local";
+import { PassportStrategy } from "@nestjs/passport";
+import { Injectable, UnauthorizedException } from "@nestjs/common";
 import NodeRSA from "node-rsa";
 
-import {UserEntity} from "../../user/user.entity";
-import {UserService} from "../../user/user.service";
+import { UserEntity } from "../../user/user.entity";
+import { UserService } from "../../user/user.service";
 
 @Injectable()
 export class BiometricStrategy extends PassportStrategy(Strategy, "biometric") {
@@ -16,7 +16,7 @@ export class BiometricStrategy extends PassportStrategy(Strategy, "biometric") {
   }
 
   public async validate(email: string, signature: string): Promise<UserEntity> {
-    const userEntity = await this.userService.findOne({email});
+    const userEntity = await this.userService.findOne({ email });
 
     if (!userEntity) {
       throw new UnauthorizedException();

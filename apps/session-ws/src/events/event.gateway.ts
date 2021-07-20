@@ -1,4 +1,4 @@
-import {Inject, Logger, LoggerService, UseGuards, UseInterceptors} from "@nestjs/common";
+import { Inject, Logger, LoggerService, UseGuards, UseInterceptors } from "@nestjs/common";
 import {
   MessageBody,
   OnGatewayConnection,
@@ -9,16 +9,16 @@ import {
   WebSocketServer,
   WsResponse,
 } from "@nestjs/websockets";
-import {from, Observable} from "rxjs";
-import {map} from "rxjs/operators";
-import {Server, Socket} from "socket.io";
+import { from, Observable } from "rxjs";
+import { map } from "rxjs/operators";
+import { Server, Socket } from "socket.io";
 
-import {Public} from "../common/decorators";
-import {UserEntity} from "../user/user.entity";
-import {SessionInterceptor} from "./interceptors/session";
-import {WsLocalGuard} from "./guards/ws";
-import {User} from "./decorators/user";
-import {Session} from "./decorators/session";
+import { Public } from "../common/decorators";
+import { UserEntity } from "../user/user.entity";
+import { SessionInterceptor } from "./interceptors/session";
+import { WsLocalGuard } from "./guards/ws";
+import { User } from "./decorators/user";
+import { Session } from "./decorators/session";
 
 @UseInterceptors(SessionInterceptor)
 @UseGuards(WsLocalGuard)
@@ -32,7 +32,7 @@ export class EventGateway implements OnGatewayInit, OnGatewayConnection, OnGatew
   @Public()
   @SubscribeMessage("events")
   observable(): Observable<WsResponse<number>> {
-    return from([1, 2, 3]).pipe(map(item => ({event: "events", data: item})));
+    return from([1, 2, 3]).pipe(map(item => ({ event: "events", data: item })));
   }
 
   @Public()

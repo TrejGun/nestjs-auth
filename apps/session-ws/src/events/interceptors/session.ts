@@ -1,7 +1,7 @@
-import {Observable} from "rxjs";
-import {finalize} from "rxjs/operators";
-import {CallHandler, ExecutionContext, Injectable, NestInterceptor} from "@nestjs/common";
-import {Socket} from "socket.io";
+import { Observable } from "rxjs";
+import { finalize } from "rxjs/operators";
+import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from "@nestjs/common";
+import { Socket } from "socket.io";
 
 @Injectable()
 export class SessionInterceptor implements NestInterceptor {

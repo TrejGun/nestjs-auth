@@ -1,12 +1,12 @@
-import {Request, Response} from "express";
-import {Body, Controller, Get, Post, Req, Res, HttpCode, UseGuards} from "@nestjs/common";
-import {promisify} from "util";
+import { Request, Response } from "express";
+import { Body, Controller, Get, Post, Req, Res, HttpCode, UseGuards } from "@nestjs/common";
+import { promisify } from "util";
 
-import {Public, User} from "../common/decorators";
-import {LoginGuard} from "../common/guards";
-import {UserEntity} from "../user/user.entity";
-import {UserService} from "../user/user.service";
-import {UserCreateSchema} from "../user/schemas";
+import { Public, User } from "../common/decorators";
+import { LoginGuard } from "../common/guards";
+import { UserEntity } from "../user/user.entity";
+import { UserService } from "../user/user.service";
+import { UserCreateSchema } from "../user/schemas";
 
 @Public()
 @Controller("/auth")

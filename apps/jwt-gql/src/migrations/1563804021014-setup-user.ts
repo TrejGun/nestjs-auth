@@ -1,5 +1,5 @@
-import {MigrationInterface, QueryRunner} from "typeorm";
-import {ns} from "../common/constants";
+import { MigrationInterface, QueryRunner } from "typeorm";
+import { ns } from "../common/constants";
 
 export class SetupUser1563804021014 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<any> {

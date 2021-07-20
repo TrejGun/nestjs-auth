@@ -1,12 +1,12 @@
-import {NextFunction, Handler} from "express";
-import {INestApplicationContext} from "@nestjs/common";
-import {ConfigService} from "@nestjs/config";
-import {IoAdapter} from "@nestjs/platform-socket.io";
-import {ServerOptions} from "socket.io";
-import {createAdapter} from "socket.io-redis";
+import { NextFunction, Handler } from "express";
+import { INestApplicationContext } from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
+import { IoAdapter } from "@nestjs/platform-socket.io";
+import { ServerOptions } from "socket.io";
+import { createAdapter } from "socket.io-redis";
 import passport from "passport";
 
-import {sessionMiddleware} from "../middlewares/session";
+import { sessionMiddleware } from "../middlewares/session";
 
 const adapter = (middleware: Handler) => (socket: any, next: NextFunction) => {
   middleware(socket.request, socket.request.res || {}, next);

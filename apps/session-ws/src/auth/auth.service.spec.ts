@@ -1,13 +1,13 @@
-import {Test, TestingModule} from "@nestjs/testing";
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {PassportModule} from "@nestjs/passport";
-import {ConfigModule, ConfigService} from "@nestjs/config";
+import { Test, TestingModule } from "@nestjs/testing";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { PassportModule } from "@nestjs/passport";
+import { ConfigModule, ConfigService } from "@nestjs/config";
 
 import ormconfig from "../ormconfig";
-import {AuthController} from "./auth.controller";
-import {UserModule} from "../user/user.module";
-import {LocalStrategy} from "./strategies";
-import {SessionSerializer} from "./session.serializer";
+import { AuthController } from "./auth.controller";
+import { UserModule } from "../user/user.module";
+import { LocalStrategy } from "./strategies";
+import { SessionSerializer } from "./session.serializer";
 
 describe("AuthService", () => {
   let servcontrollerce: AuthController;

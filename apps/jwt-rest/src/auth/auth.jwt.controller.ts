@@ -1,11 +1,11 @@
-import {Body, Controller, Get, Post} from "@nestjs/common";
+import { Body, Controller, Get, Post } from "@nestjs/common";
 
-import {AuthService} from "./auth.service";
-import {UserService} from "../user/user.service";
-import {IJwt} from "./interfaces";
-import {Public} from "../common/decorators";
-import {JwtLogoutSchema, JwtRefreshTokenSchema, LoginSchema} from "./schemas";
-import {UserCreateSchema} from "../user/schemas";
+import { AuthService } from "./auth.service";
+import { UserService } from "../user/user.service";
+import { IJwt } from "./interfaces";
+import { Public } from "../common/decorators";
+import { JwtLogoutSchema, JwtRefreshTokenSchema, LoginSchema } from "./schemas";
+import { UserCreateSchema } from "../user/schemas";
 
 @Controller("/auth")
 export class AuthJwtController {

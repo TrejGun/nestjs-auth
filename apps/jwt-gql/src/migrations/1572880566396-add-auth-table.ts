@@ -1,5 +1,5 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
-import {ns} from "../common/constants";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { ns } from "../common/constants";
 
 export class AddAuthTable1572880566396 implements MigrationInterface {
   public async down(queryRunner: QueryRunner): Promise<any> {

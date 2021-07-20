@@ -1,8 +1,8 @@
-import {ApiProperty} from "@nestjs/swagger";
+import { ApiProperty } from "@nestjs/swagger";
 
-import {IsString} from "class-validator";
+import { IsString } from "class-validator";
 
-import {IRefreshFields} from "../interfaces";
+import { IRefreshFields } from "../interfaces";
 
 export class JwtRefreshTokenSchema implements IRefreshFields {
   @ApiProperty()

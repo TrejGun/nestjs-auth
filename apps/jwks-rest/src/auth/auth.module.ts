@@ -1,9 +1,9 @@
-import {Module} from "@nestjs/common";
-import {PassportModule} from "@nestjs/passport";
-import {ConfigModule} from "@nestjs/config";
+import { Module } from "@nestjs/common";
+import { PassportModule } from "@nestjs/passport";
+import { ConfigModule } from "@nestjs/config";
 
-import {UserModule} from "../user/user.module";
-import {JwtAppleStrategy, JwtAuth0Strategy, JwtGoogleStrategy} from "./strategies";
+import { UserModule } from "../user/user.module";
+import { JwtAppleStrategy, JwtAuth0Strategy, JwtGoogleStrategy } from "./strategies";
 
 @Module({
   imports: [UserModule, PassportModule, ConfigModule],

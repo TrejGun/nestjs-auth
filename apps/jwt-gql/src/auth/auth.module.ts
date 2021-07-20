@@ -1,15 +1,15 @@
-import {Module} from "@nestjs/common";
-import {PassportModule} from "@nestjs/passport";
-import {JwtModule} from "@nestjs/jwt";
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {ConfigModule, ConfigService} from "@nestjs/config";
+import { Module } from "@nestjs/common";
+import { PassportModule } from "@nestjs/passport";
+import { JwtModule } from "@nestjs/jwt";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { ConfigModule, ConfigService } from "@nestjs/config";
 
-import {AuthService} from "./auth.service";
-import {UserModule} from "../user/user.module";
-import {AuthResolver} from "./auth.resolver";
-import {AuthEntity} from "./auth.entity";
-import {JwtStrategy} from "./strategies";
-import {accessTokenExpiresIn} from "./auth.constants";
+import { AuthService } from "./auth.service";
+import { UserModule } from "../user/user.module";
+import { AuthResolver } from "./auth.resolver";
+import { AuthEntity } from "./auth.entity";
+import { JwtStrategy } from "./strategies";
+import { accessTokenExpiresIn } from "./auth.constants";
 
 @Module({
   imports: [

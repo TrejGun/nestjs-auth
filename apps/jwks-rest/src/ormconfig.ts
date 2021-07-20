@@ -1,8 +1,8 @@
-import {SnakeNamingStrategy} from "typeorm-naming-strategies";
-import {ConnectionOptions} from "typeorm";
+import { SnakeNamingStrategy } from "typeorm-naming-strategies";
+import { ConnectionOptions } from "typeorm";
 import path from "path";
 
-import {ns} from "./common/constants";
+import { ns } from "./common/constants";
 
 // Check typeORM documentation for more information.
 const config: ConnectionOptions = {

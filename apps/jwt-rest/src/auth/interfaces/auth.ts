@@ -1,4 +1,4 @@
-import {IUser} from "../../user/interfaces";
+import { IUser } from "../../user/interfaces";
 
 export interface IAuth {
   refreshToken: string;

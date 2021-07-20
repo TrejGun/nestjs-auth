@@ -1,5 +1,5 @@
-import {Field, ObjectType} from "@nestjs/graphql";
-import {UserType} from ".";
+import { Field, ObjectType } from "@nestjs/graphql";
+import { UserType } from ".";
 
 @ObjectType()
 export class UserListType {

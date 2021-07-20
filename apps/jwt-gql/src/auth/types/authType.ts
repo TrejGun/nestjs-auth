@@ -1,5 +1,5 @@
-import {Field, ObjectType} from "@nestjs/graphql";
-import {IAuth} from "../interfaces";
+import { Field, ObjectType } from "@nestjs/graphql";
+import { IAuth } from "../interfaces";
 
 @ObjectType()
 export class AuthType implements IAuth {

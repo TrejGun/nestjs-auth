@@ -1,7 +1,7 @@
 import express from "express";
 import session from "express-session";
 import connectRedis from "connect-redis";
-import {createClient} from "redis";
+import { createClient } from "redis";
 
 interface ISessionMiddlewareProps {
   url: string;
@@ -12,7 +12,7 @@ interface ISessionMiddlewareProps {
 }
 
 export const sessionMiddleware = (props: ISessionMiddlewareProps): express.RequestHandler => {
-  const {url, secret, secure = false, name = "sid", maxAge = 30 * 24 * 60 * 60} = props;
+  const { url, secret, secure = false, name = "sid", maxAge = 30 * 24 * 60 * 60 } = props;
   return session({
     cookie: {
       path: "/",
@@ -25,7 +25,7 @@ export const sessionMiddleware = (props: ISessionMiddlewareProps): express.Reque
     name,
     resave: false,
     secret,
-    store: new (connectRedis(session))({client: createClient(url)}),
+    store: new (connectRedis(session))({ client: createClient(url) }),
     saveUninitialized: true,
     proxy: true,
   });

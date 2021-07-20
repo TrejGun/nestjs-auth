@@ -1,9 +1,9 @@
-import {Injectable, UnauthorizedException} from "@nestjs/common";
-import {PassportStrategy} from "@nestjs/passport";
-import {Strategy, Client, UserinfoResponse, TokenSet} from "openid-client";
+import { Injectable, UnauthorizedException } from "@nestjs/common";
+import { PassportStrategy } from "@nestjs/passport";
+import { Strategy, Client, UserinfoResponse, TokenSet } from "openid-client";
 
-import {UserService} from "../../user/user.service";
-import {UserEntity} from "../../user/user.entity";
+import { UserService } from "../../user/user.service";
+import { UserEntity } from "../../user/user.entity";
 
 @Injectable()
 export class OneloginStrategy extends PassportStrategy(Strategy, "onelogin") {
@@ -30,7 +30,7 @@ export class OneloginStrategy extends PassportStrategy(Strategy, "onelogin") {
       throw new UnauthorizedException();
     }
 
-    const userEntity = await this.userService.findOne({email: userinfo.email});
+    const userEntity = await this.userService.findOne({ email: userinfo.email });
 
     if (userEntity) {
       return userEntity;

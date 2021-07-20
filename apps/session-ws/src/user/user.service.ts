@@ -1,11 +1,11 @@
-import {createHash} from "crypto";
-import {Repository, FindConditions} from "typeorm";
+import { createHash } from "crypto";
+import { Repository, FindConditions } from "typeorm";
 
-import {Injectable, ConflictException} from "@nestjs/common";
-import {InjectRepository} from "@nestjs/typeorm";
+import { Injectable, ConflictException } from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
 
-import {UserEntity} from "./user.entity";
-import {IUserCreateFields} from "./interfaces";
+import { UserEntity } from "./user.entity";
+import { IUserCreateFields } from "./interfaces";
 
 @Injectable()
 export class UserService {
@@ -15,7 +15,7 @@ export class UserService {
   ) {}
 
   public findOne(where: FindConditions<UserEntity>): Promise<UserEntity | undefined> {
-    return this.userEntityRepository.findOne({where});
+    return this.userEntityRepository.findOne({ where });
   }
 
   public findAndCount(): Promise<[UserEntity[], number]> {
@@ -32,7 +32,7 @@ export class UserService {
   }
 
   public async create(data: IUserCreateFields): Promise<UserEntity> {
-    let userEntity = await this.findOne({email: data.email});
+    let userEntity = await this.findOne({ email: data.email });
 
     if (userEntity) {
       throw new ConflictException();

@@ -1,16 +1,16 @@
-import {Test, TestingModule} from "@nestjs/testing";
-import {JwtModule} from "@nestjs/jwt";
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {PassportModule} from "@nestjs/passport";
-import {ConfigModule, ConfigService} from "@nestjs/config";
+import { Test, TestingModule } from "@nestjs/testing";
+import { JwtModule } from "@nestjs/jwt";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { PassportModule } from "@nestjs/passport";
+import { ConfigModule, ConfigService } from "@nestjs/config";
 
 import ormconfig from "../ormconfig";
-import {AuthResolver} from "./auth.resolver";
-import {AuthEntity} from "./auth.entity";
-import {UserModule} from "../user/user.module";
-import {AuthService} from "./auth.service";
-import {accessTokenExpiresIn} from "./auth.constants";
-import {JwtStrategy} from "./strategies";
+import { AuthResolver } from "./auth.resolver";
+import { AuthEntity } from "./auth.entity";
+import { UserModule } from "../user/user.module";
+import { AuthService } from "./auth.service";
+import { accessTokenExpiresIn } from "./auth.constants";
+import { JwtStrategy } from "./strategies";
 
 describe("AuthResolver", () => {
   let resolver: AuthResolver;

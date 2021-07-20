@@ -9,32 +9,32 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 
-import {ns} from "../common/constants";
-import {UserEntity} from "../user/user.entity";
-import {IAuth} from "./interfaces";
+import { ns } from "../common/constants";
+import { UserEntity } from "../user/user.entity";
+import { IAuth } from "./interfaces";
 
-@Entity({schema: ns, name: "auth"})
+@Entity({ schema: ns, name: "auth" })
 export class AuthEntity extends BaseEntity implements IAuth {
   @PrimaryGeneratedColumn()
   public id: number;
 
-  @Column({type: "varchar"})
+  @Column({ type: "varchar" })
   public refreshToken: string;
 
-  @Column({type: "bigint"})
+  @Column({ type: "bigint" })
   public refreshTokenExpiresAt: number;
 
   @JoinColumn()
   @OneToOne(_type => UserEntity)
   public user: UserEntity;
 
-  @Column({type: "int"})
+  @Column({ type: "int" })
   public userId: number;
 
-  @Column({type: "timestamptz"})
+  @Column({ type: "timestamptz" })
   public timeCreatedAt: string;
 
-  @Column({type: "timestamptz"})
+  @Column({ type: "timestamptz" })
   public timeUpdatedAt: string;
 
   @BeforeInsert()

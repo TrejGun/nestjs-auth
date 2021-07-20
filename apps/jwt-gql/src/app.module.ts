@@ -1,14 +1,14 @@
-import {Module, ValidationPipe} from "@nestjs/common";
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {APP_GUARD, APP_PIPE} from "@nestjs/core";
-import {GraphQLModule} from "@nestjs/graphql";
+import { Module, ValidationPipe } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { APP_GUARD, APP_PIPE } from "@nestjs/core";
+import { GraphQLModule } from "@nestjs/graphql";
 
 import ormconfig from "./ormconfig";
-import {AuthModule} from "./auth/auth.module";
-import {UserModule} from "./user/user.module";
-import {JwtGuard, RolesGuard} from "./common/guards";
-import {ConfigModule, ConfigService} from "@nestjs/config";
-import {Request, Response} from "express";
+import { AuthModule } from "./auth/auth.module";
+import { UserModule } from "./user/user.module";
+import { JwtGuard, RolesGuard } from "./common/guards";
+import { ConfigModule, ConfigService } from "@nestjs/config";
+import { Request, Response } from "express";
 
 @Module({
   providers: [
@@ -47,7 +47,7 @@ import {Request, Response} from "express";
         return {
           debug: configService.get<string>("POSTGRES_URL", "development") !== "production",
           playground: configService.get<string>("POSTGRES_URL", "development") !== "production",
-          context: ({req, res}: {req: Request; res: Response}): any => ({req, res}),
+          context: ({ req, res }: { req: Request; res: Response }): any => ({ req, res }),
           autoSchemaFile: "./schema.gql",
         };
       },

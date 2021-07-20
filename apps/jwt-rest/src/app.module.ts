@@ -1,12 +1,12 @@
-import {Module, ValidationPipe} from "@nestjs/common";
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {APP_GUARD, APP_PIPE} from "@nestjs/core";
-import {ConfigModule, ConfigService} from "@nestjs/config";
+import { Module, ValidationPipe } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { APP_GUARD, APP_PIPE } from "@nestjs/core";
+import { ConfigModule, ConfigService } from "@nestjs/config";
 
 import ormconfig from "./ormconfig";
-import {JwtGuard, RolesGuard} from "./common/guards";
-import {AuthModule} from "./auth/auth.module";
-import {UserModule} from "./user/user.module";
+import { JwtGuard, RolesGuard } from "./common/guards";
+import { AuthModule } from "./auth/auth.module";
+import { UserModule } from "./user/user.module";
 
 @Module({
   providers: [

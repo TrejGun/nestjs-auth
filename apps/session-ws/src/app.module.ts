@@ -1,15 +1,15 @@
-import {Module, ValidationPipe} from "@nestjs/common";
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {APP_GUARD, APP_PIPE} from "@nestjs/core";
-import {ConfigModule, ConfigService} from "@nestjs/config";
-import {ServeStaticModule} from "@nestjs/serve-static";
-import {join} from "path";
+import { Module, ValidationPipe } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { APP_GUARD, APP_PIPE } from "@nestjs/core";
+import { ConfigModule, ConfigService } from "@nestjs/config";
+import { ServeStaticModule } from "@nestjs/serve-static";
+import { join } from "path";
 
 import ormconfig from "./ormconfig";
-import {LocalGuard, RolesGuard} from "./common/guards";
-import {AuthModule} from "./auth/auth.module";
-import {EventModule} from "./events/event.module";
-import {UserModule} from "./user/user.module";
+import { LocalGuard, RolesGuard } from "./common/guards";
+import { AuthModule } from "./auth/auth.module";
+import { EventModule } from "./events/event.module";
+import { UserModule } from "./user/user.module";
 
 @Module({
   providers: [

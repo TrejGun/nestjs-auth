@@ -1,11 +1,11 @@
-import {NestFactory} from "@nestjs/core";
-import {DocumentBuilder, SwaggerModule} from "@nestjs/swagger";
-import {NestExpressApplication} from "@nestjs/platform-express";
-import {ConfigService} from "@nestjs/config";
+import { NestFactory } from "@nestjs/core";
+import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
+import { NestExpressApplication } from "@nestjs/platform-express";
+import { ConfigService } from "@nestjs/config";
 import passport from "passport";
 
-import {AppModule} from "./app.module";
-import {sessionMiddleware} from "./common/middlewares/session";
+import { AppModule } from "./app.module";
+import { sessionMiddleware } from "./common/middlewares/session";
 
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);

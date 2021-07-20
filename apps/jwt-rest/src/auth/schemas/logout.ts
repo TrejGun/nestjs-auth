@@ -1,8 +1,8 @@
-import {ApiProperty} from "@nestjs/swagger";
+import { ApiProperty } from "@nestjs/swagger";
 
-import {IsString} from "class-validator";
+import { IsString } from "class-validator";
 
-import {ILogoutFields} from "../interfaces";
+import { ILogoutFields } from "../interfaces";
 
 export class JwtLogoutSchema implements ILogoutFields {
   @ApiProperty()

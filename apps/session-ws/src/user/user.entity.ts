@@ -1,17 +1,17 @@
-import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-import {ns} from "../common/constants";
-import {IUser, UserRole} from "./interfaces";
+import { ns } from "../common/constants";
+import { IUser, UserRole } from "./interfaces";
 
-@Entity({schema: ns, name: "user"})
+@Entity({ schema: ns, name: "user" })
 export class UserEntity extends BaseEntity implements IUser {
   @PrimaryGeneratedColumn()
   public id: number;
 
-  @Column({type: "varchar"})
+  @Column({ type: "varchar" })
   public email: string;
 
-  @Column({type: "varchar", select: false})
+  @Column({ type: "varchar", select: false })
   public password: string;
 
   @Column({

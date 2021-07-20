@@ -1,10 +1,10 @@
-import {Strategy} from "passport-facebook";
-import {Profile} from "passport";
-import {PassportStrategy} from "@nestjs/passport";
-import {Injectable, UnauthorizedException} from "@nestjs/common";
+import { Strategy } from "passport-facebook";
+import { Profile } from "passport";
+import { PassportStrategy } from "@nestjs/passport";
+import { Injectable, UnauthorizedException } from "@nestjs/common";
 
-import {UserEntity} from "../../user/user.entity";
-import {UserService} from "../../user/user.service";
+import { UserEntity } from "../../user/user.entity";
+import { UserService } from "../../user/user.service";
 
 @Injectable()
 export class FacebookStrategy extends PassportStrategy(Strategy, "facebook") {
@@ -22,7 +22,7 @@ export class FacebookStrategy extends PassportStrategy(Strategy, "facebook") {
       throw new UnauthorizedException();
     }
 
-    const userEntity = await this.userService.findOne({email: profile.emails[0].value});
+    const userEntity = await this.userService.findOne({ email: profile.emails[0].value });
 
     if (userEntity) {
       return userEntity;

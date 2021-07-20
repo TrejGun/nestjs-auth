@@ -1,8 +1,8 @@
-import {Issuer} from "openid-client";
-import {ConfigService} from "@nestjs/config";
+import { Issuer } from "openid-client";
+import { ConfigService } from "@nestjs/config";
 
-import {UserService} from "../user/user.service";
-import {OneloginStrategy} from "./strategies";
+import { UserService } from "../user/user.service";
+import { OneloginStrategy } from "./strategies";
 
 export const OneloginStrategyFactory = {
   provide: "OneloginStrategy",

@@ -1,11 +1,11 @@
-import {Args, Mutation, Resolver} from "@nestjs/graphql";
+import { Args, Mutation, Resolver } from "@nestjs/graphql";
 
-import {AuthType} from "./types";
-import {AuthService} from "./auth.service";
-import {IJwt} from "./interfaces";
-import {UserService} from "../user/user.service";
-import {UserCreateInputType} from "../user/types";
-import {Public} from "../common/decorators";
+import { AuthType } from "./types";
+import { AuthService } from "./auth.service";
+import { IJwt } from "./interfaces";
+import { UserService } from "../user/user.service";
+import { UserCreateInputType } from "../user/types";
+import { Public } from "../common/decorators";
 
 @Resolver(() => AuthType)
 export class AuthResolver {
@@ -14,18 +14,18 @@ export class AuthResolver {
   @Public()
   @Mutation(_returns => AuthType)
   async login(@Args("email") email: string, @Args("password") password: string): Promise<IJwt> {
-    return this.authService.login({email, password});
+    return this.authService.login({ email, password });
   }
 
   @Public()
   @Mutation(_returns => AuthType)
   async refreshToken(@Args("refreshToken") refreshToken: string): Promise<IJwt> {
-    return this.authService.refresh({refreshToken});
+    return this.authService.refresh({ refreshToken });
   }
 
   @Mutation(_returns => Boolean)
   async logout(@Args("refreshToken") refreshToken: string): Promise<boolean> {
-    await this.authService.delete({refreshToken});
+    await this.authService.delete({ refreshToken });
     return true;
   }
 

@@ -1,7 +1,7 @@
-import {Observable} from "rxjs";
-import {ExecutionContext, Injectable, CanActivate} from "@nestjs/common";
-import {Reflector} from "@nestjs/core";
-import {AuthGuard} from "@nestjs/passport";
+import { Observable } from "rxjs";
+import { ExecutionContext, Injectable, CanActivate } from "@nestjs/common";
+import { Reflector } from "@nestjs/core";
+import { AuthGuard } from "@nestjs/passport";
 
 @Injectable()
 export class JwtGuard extends AuthGuard("jwt") implements CanActivate {
