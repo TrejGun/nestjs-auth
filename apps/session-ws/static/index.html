@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Test</title>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("login_form").addEventListener("submit", e => {
+        e.preventDefault();
+        void window.fetch("/auth/login", {
+          headers: new Headers({
+            "Content-Type": "application/json",
+          }),
+          credentials: "include",
+          mode: "cors",
+          method: "post",
+          body: JSON.stringify(Object.fromEntries(new FormData(e.target).entries())),
+        })
+          .then(response => response.json())
+          .then(user => {
+            console.log(user);
+            window.location.href = "/socket.html"
+          })
+          .catch(console.log);
+      });
+    });
+  </script>
+</head>
+<body>
+<form id="login_form">
+  <input type="email" name="email" />
+  <input type="password" name="password" />
+  <input type="submit" />
+</form>
+</body>
+</html>
+
+

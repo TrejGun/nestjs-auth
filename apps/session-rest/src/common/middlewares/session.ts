@@ -20,7 +20,7 @@ export const sessionMiddleware = (props: ISessionMiddlewareProps): express.Reque
       secure,
       maxAge: maxAge * 1000,
       signed: false,
-      sameSite: "none",
+      sameSite: secure ? "none" : "lax",
     },
     name,
     resave: false,

@@ -9,6 +9,7 @@ export class SessionInterceptor implements NestInterceptor {
     const socket = context.switchToWs().getClient<Socket>();
     return next.handle().pipe(
       finalize(() => {
+        // @ts-ignore
         socket.client.request.session.save();
       }),
     );

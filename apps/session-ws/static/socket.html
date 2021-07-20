@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Test</title>
+  <script src="https://unpkg.com/socket.io-client@4.1.3/dist/socket.io.min.js"></script>
+  <script>
+    const socket = io(document.location.origin);
+
+    socket.on("exception", e => {
+      console.error(e);
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("button").addEventListener("click", e => {
+        e.preventDefault();
+        // this event is defined in events/event.gateway.ts
+        socket.emit("profile", {}, console.log);
+      })
+    });
+
+    window.addEventListener('beforeunload', () => {
+      socket.disconnect();
+    });
+  </script>
+</head>
+<body>
+<p>Open console and press the button</p>
+<button id="button">get profile</button>
+</body>
+</html>

@@ -32,20 +32,20 @@ export class UserService {
   }
 
   public async create(data: IUserCreateFields): Promise<UserEntity> {
-    let user = await this.findOne({email: data.email});
+    let userEntity = await this.findOne({email: data.email});
 
-    if (user) {
+    if (userEntity) {
       throw new ConflictException();
     }
 
-    user = await this.userEntityRepository
+    userEntity = await this.userEntityRepository
       .create({
         ...data,
         password: this.createPasswordHash(data.password, data.email),
       })
       .save();
 
-    return user;
+    return userEntity;
   }
 
   public createPasswordHash(password: string, salt: string): string {
