@@ -16,7 +16,7 @@ import { Server, Socket } from "socket.io";
 import { Public } from "../common/decorators";
 import { UserEntity } from "../user/user.entity";
 import { SessionInterceptor } from "./interceptors/session";
-import { WsLocalGuard } from "./guards/ws";
+import { WsLocalGuard } from "./guards/local.ws";
 import { User } from "./decorators/user";
 import { Session } from "./decorators/session";
 

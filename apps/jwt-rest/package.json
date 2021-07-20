@@ -57,10 +57,10 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "jwt-based-authorization-for-nestjs",
+  "name": "@trejgun/jwt-rest",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TrejGun/jwt-based-authorization-for-nestjs"
+    "url": "https://github.com/TrejGun/nestjs-auth"
   },
   "scripts": {
     "build": "tsc",
@@ -77,6 +77,6 @@
     "test": "NODE_ENV=test jest --config jest.config.json --detectOpenHandles",
     "typeorm": "NODE_ENV=development ts-node ./node_modules/.bin/typeorm --config src/ormconfig.ts"
   },
-  "title": "JWT based authorization for Nest.js",
+  "title": "JWT + REST based authorization for Nest.js",
   "version": "0.0.1"
 }

@@ -67,10 +67,10 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "session-based-authorization-for-nestjs",
+  "name": "@trejgun/session-ws",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TrejGun/session-based-websocket-authorization-for-nestjs"
+    "url": "https://github.com/TrejGun/nestjs-auth"
   },
   "scripts": {
     "build": "tsc",
@@ -87,6 +87,6 @@
     "test": "NODE_ENV=test jest --config jest.config.json --detectOpenHandles",
     "typeorm": "NODE_ENV=development ts-node ./node_modules/.bin/typeorm --config src/ormconfig.ts"
   },
-  "title": "Session based authorization for Nest.js",
+  "title": "Session + Socket.io based authorization for Nest.js",
   "version": "0.0.1"
 }

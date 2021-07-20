@@ -67,10 +67,10 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "@trejgun/session-based-rest-authorization-for-nestjs",
+  "name": "@trejgun/session-rest",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TrejGun/session-based-rest-authorization-for-nestjs"
+    "url": "https://github.com/TrejGun/nestjs-auth"
   },
   "scripts": {
     "build": "tsc",
@@ -87,6 +87,6 @@
     "test": "NODE_ENV=test jest --config jest.config.json --detectOpenHandles",
     "typeorm": "NODE_ENV=development ts-node ./node_modules/.bin/typeorm --config src/ormconfig.ts"
   },
-  "title": "Session based authorization for Nest.js",
+  "title": "Session + REST based authorization for Nest.js",
   "version": "0.0.1"
 }

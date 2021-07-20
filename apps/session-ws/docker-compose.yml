@@ -32,6 +32,7 @@ services:
       PORT: "${PORT}"
       POSTGRES_URL: "${POSTGRES_URL}"
       REDIS_SESSION_URL: "${REDIS_SESSION_URL}"
+      REDIS_WS_URL: "${REDIS_WS_URL}"
       SESSION_SECRET_KEY: "${SESSION_SECRET_KEY}"
     depends_on:
       - postgres

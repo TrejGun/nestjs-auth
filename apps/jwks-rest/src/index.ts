@@ -11,7 +11,7 @@ async function bootstrap(): Promise<void> {
   const configService = app.get(ConfigService);
 
   const options = new DocumentBuilder()
-    .setTitle("jwks-based-authorization-for-nestjs")
+    .setTitle("jwks-rest")
     .setDescription("API description")
     .setVersion("1.0")
     .build();

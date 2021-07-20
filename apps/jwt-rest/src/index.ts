@@ -2,6 +2,7 @@ import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { NestExpressApplication } from "@nestjs/platform-express";
 import { ConfigService } from "@nestjs/config";
+import passport from "passport";
 
 import { AppModule } from "./app.module";
 
@@ -10,8 +11,10 @@ async function bootstrap(): Promise<void> {
 
   const configService = app.get(ConfigService);
 
+  app.use(passport.initialize());
+
   const options = new DocumentBuilder()
-    .setTitle("jwt-based-authorization-for-nestjs")
+    .setTitle("jwt-rest")
     .setDescription("API description")
     .setVersion("1.0")
     .build();
