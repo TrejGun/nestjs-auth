@@ -1,3 +1,3 @@
-export interface ILogoutFields {
+export interface ILogoutDto {
   refreshToken: string;
 }

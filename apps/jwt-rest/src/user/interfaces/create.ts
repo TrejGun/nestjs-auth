@@ -1,4 +1,4 @@
-export interface IUserCreateFields {
+export interface IUserCreateDto {
   email: string;
   password: string;
 }

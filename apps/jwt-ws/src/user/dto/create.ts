@@ -3,7 +3,7 @@ import { IsEmail, IsString, MinLength } from "class-validator";
 
 import { IUserCreateFields } from "../interfaces";
 
-export class UserCreateSchema implements IUserCreateFields {
+export class UserCreateDto implements IUserCreateFields {
   @ApiProperty()
   @IsEmail()
   public email: string;

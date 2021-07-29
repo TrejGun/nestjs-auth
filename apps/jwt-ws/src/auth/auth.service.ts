@@ -6,7 +6,7 @@ import { v4 } from "uuid";
 
 import { UserService } from "../user/user.service";
 import { UserEntity } from "../user/user.entity";
-import { IJwt, ILoginFields } from "./interfaces";
+import { IJwt, ILoginDto } from "./interfaces";
 import { AuthEntity } from "./auth.entity";
 import { accessTokenExpiresIn, refreshTokenExpiresIn } from "./auth.constants";
 
@@ -19,7 +19,7 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  public async login(data: ILoginFields): Promise<IJwt> {
+  public async login(data: ILoginDto): Promise<IJwt> {
     const user = await this.userService.getByCredentials(data.email, data.password);
 
     if (!user) {

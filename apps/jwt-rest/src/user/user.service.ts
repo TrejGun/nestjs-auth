@@ -5,7 +5,7 @@ import { Injectable, ConflictException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 
 import { UserEntity } from "./user.entity";
-import { IUserCreateFields } from "./interfaces";
+import { IUserCreateDto } from "./interfaces";
 
 @Injectable()
 export class UserService {
@@ -31,7 +31,7 @@ export class UserService {
     });
   }
 
-  public async create(data: IUserCreateFields): Promise<UserEntity> {
+  public async create(data: IUserCreateDto): Promise<UserEntity> {
     let userEntity = await this.findOne({ email: data.email });
 
     if (userEntity) {

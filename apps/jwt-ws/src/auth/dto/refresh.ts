@@ -2,9 +2,9 @@ import { ApiProperty } from "@nestjs/swagger";
 
 import { IsString } from "class-validator";
 
-import { IRefreshFields } from "../interfaces";
+import { IRefreshDto } from "../interfaces";
 
-export class JwtRefreshTokenSchema implements IRefreshFields {
+export class JwtRefreshTokenDto implements IRefreshDto {
   @ApiProperty()
   @IsString()
   public refreshToken: string;

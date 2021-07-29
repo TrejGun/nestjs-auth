@@ -6,7 +6,7 @@ import { Public, User } from "../common/decorators";
 import { LoginGuard } from "../common/guards";
 import { UserEntity } from "../user/user.entity";
 import { UserService } from "../user/user.service";
-import { UserCreateSchema } from "../user/schemas";
+import { UserCreateDto } from "../user/dto";
 
 @Public()
 @Controller("/auth")
@@ -52,7 +52,7 @@ export class AuthController {
   }
 
   @Get("/signup")
-  public async signup(@Body() data: UserCreateSchema, @Req() req: Request): Promise<UserEntity> {
+  public async signup(@Body() data: UserCreateDto, @Req() req: Request): Promise<UserEntity> {
     const userEntity = await this.userService.create(data);
     await promisify(req.logIn.bind(req))(userEntity);
     return userEntity;

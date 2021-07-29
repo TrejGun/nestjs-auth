@@ -1,3 +1,3 @@
-export interface IRefreshFields {
+export interface IRefreshDto {
   refreshToken: string;
 }

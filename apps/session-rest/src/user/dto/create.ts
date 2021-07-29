@@ -1,10 +1,9 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { IsEmail, IsString, MinLength } from "class-validator";
 
-import { IsString, IsEmail, MinLength } from "class-validator";
+import { IUserCreateFields } from "../interfaces";
 
-import { ILoginFields } from "../interfaces";
-
-export class LoginSchema implements ILoginFields {
+export class UserCreateDto implements IUserCreateFields {
   @ApiProperty()
   @IsEmail()
   public email: string;
