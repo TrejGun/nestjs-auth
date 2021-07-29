@@ -3,7 +3,7 @@
 # ------------------------------------------------------
 
 type UserListType {
-  list: [UserType!]!
+  rows: [UserType!]!
   count: Float!
 }
 

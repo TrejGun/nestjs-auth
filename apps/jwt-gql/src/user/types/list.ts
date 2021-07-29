@@ -4,7 +4,7 @@ import { UserType } from ".";
 @ObjectType()
 export class UserListType {
   @Field(_type => [UserType])
-  public list: UserType[];
+  public rows: Array<UserType>;
 
   @Field()
   public count: number;

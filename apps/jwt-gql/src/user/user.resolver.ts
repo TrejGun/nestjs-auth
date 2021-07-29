@@ -18,6 +18,6 @@ export class UserResolver {
   @Roles(UserRole.ADMIN)
   @Query(_returns => UserListType)
   public listUsers(): Promise<UserListType> {
-    return this.userService.findAndCount().then(([list, count]) => ({ list, count }));
+    return this.userService.findAndCount().then(([rows, count]) => ({ rows, count }));
   }
 }

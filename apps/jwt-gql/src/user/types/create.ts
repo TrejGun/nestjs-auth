@@ -15,5 +15,5 @@ export class UserCreateInputType implements IUserCreateFields {
 
   @Field(_type => [UserRole])
   @IsEnum(UserRole, { each: true })
-  public roles: UserRole[];
+  public roles: Array<UserRole>;
 }

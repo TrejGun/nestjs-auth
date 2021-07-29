@@ -16,5 +16,5 @@ export class UserType implements IUser {
   public password: string;
 
   @Field(_type => [UserRole])
-  public roles: UserRole[];
+  public roles: Array<UserRole>;
 }

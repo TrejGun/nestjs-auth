@@ -24,5 +24,5 @@ export class UserEntity extends BaseEntity implements IUser {
     enum: UserRole,
     array: true,
   })
-  public roles: UserRole[];
+  public roles: Array<UserRole>;
 }

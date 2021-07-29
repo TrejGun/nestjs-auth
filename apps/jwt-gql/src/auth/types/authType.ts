@@ -1,6 +1,6 @@
 import { Field, ObjectType } from "@nestjs/graphql";
 
-import { IJwt } from "../interfaces";
+import { IJwt } from "../../common/jwt";
 
 @ObjectType()
 export class AuthType implements IJwt {
