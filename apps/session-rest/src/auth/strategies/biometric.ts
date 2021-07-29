@@ -30,10 +30,10 @@ export class BiometricStrategy extends PassportStrategy(Strategy, "biometric") {
     const signer = key.importKey(Buffer.from(userEntity.biometricPublicKey, "base64"), "pkcs8-public-der");
     const verified = signer.verify(Buffer.from(email), signature, "utf8", "base64");
 
-    if (verified) {
-      return userEntity;
+    if (!verified) {
+      throw new UnauthorizedException();
     }
 
-    throw new UnauthorizedException();
+    return userEntity;
   }
 }

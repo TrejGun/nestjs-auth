@@ -24,10 +24,10 @@ export class GoogleStrategy extends PassportStrategy(OAuth2Strategy, "google") {
 
     const userEntity = await this.userService.findOne({ email: profile.emails[0].value });
 
-    if (userEntity) {
-      return userEntity;
+    if (!userEntity) {
+      throw new UnauthorizedException();
     }
 
-    throw new UnauthorizedException();
+    return userEntity;
   }
 }

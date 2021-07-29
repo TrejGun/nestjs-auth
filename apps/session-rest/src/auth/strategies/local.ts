@@ -17,10 +17,10 @@ export class LocalStrategy extends PassportStrategy(Strategy, "local") {
   public async validate(email: string, password: string): Promise<UserEntity> {
     const userEntity = await this.userService.getByCredentials(email, password);
 
-    if (userEntity) {
-      return userEntity;
+    if (!userEntity) {
+      throw new UnauthorizedException();
     }
 
-    throw new UnauthorizedException();
+    return userEntity;
   }
 }
