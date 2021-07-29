@@ -1,1 +1,1 @@
-export * from "./authType";
+export * from "./jwt";

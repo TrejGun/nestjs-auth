@@ -32,21 +32,21 @@ export class AuthEntity extends BaseEntity implements IAuth {
   public userId: number;
 
   @Column({ type: "timestamptz" })
-  public timeCreatedAt: string;
+  public createdAt: string;
 
   @Column({ type: "timestamptz" })
-  public timeUpdatedAt: string;
+  public updatedAt: string;
 
   @BeforeInsert()
   public beforeInsert(): void {
     const date = new Date();
-    this.timeCreatedAt = date.toISOString();
-    this.timeUpdatedAt = date.toISOString();
+    this.createdAt = date.toISOString();
+    this.updatedAt = date.toISOString();
   }
 
   @BeforeUpdate()
   public beforeUpdate(): void {
     const date = new Date();
-    this.timeUpdatedAt = date.toISOString();
+    this.updatedAt = date.toISOString();
   }
 }

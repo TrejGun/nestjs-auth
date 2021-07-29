@@ -25,11 +25,11 @@ export class AddAuthTable1572880566396 implements MigrationInterface {
           type: "bigint",
         },
         {
-          name: "time_created_at",
+          name: "created_at",
           type: "timestamptz",
         },
         {
-          name: "time_updated_at",
+          name: "updated_at",
           type: "timestamptz",
         },
       ],
@@ -50,7 +50,7 @@ export class AddAuthTable1572880566396 implements MigrationInterface {
       LANGUAGE plpgsql
       AS $$
         BEGIN
-          DELETE FROM ${ns}.auth WHERE time_created_at < NOW() - INTERVAL '30 days';
+          DELETE FROM ${ns}.auth WHERE created_at < NOW() - INTERVAL '30 days';
           RETURN NEW;
         END;
       $$;
