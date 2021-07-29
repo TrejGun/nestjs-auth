@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post } from "@nestjs/common";
 
 import { AuthService } from "./auth.service";
 import { UserService } from "../user/user.service";
-import { IJwt } from "./interfaces";
+import { IJwt } from "../common/jwt";
 import { Public } from "../common/decorators";
 import { JwtLogoutDto, JwtRefreshTokenDto, LoginDto } from "./dto";
 import { UserCreateDto } from "../user/dto";

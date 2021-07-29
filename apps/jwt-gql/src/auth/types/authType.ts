@@ -1,17 +1,18 @@
 import { Field, ObjectType } from "@nestjs/graphql";
-import { IAuth } from "../interfaces";
+
+import { IJwt } from "../interfaces";
 
 @ObjectType()
-export class AuthType implements IAuth {
+export class AuthType implements IJwt {
   @Field()
   public accessToken: string;
 
   @Field()
-  public refreshToken?: string;
+  public refreshToken: string;
 
   @Field()
   public accessTokenExpiresAt: number;
 
   @Field()
-  public refreshTokenExpiresAt?: number;
+  public refreshTokenExpiresAt: number;
 }

@@ -4,9 +4,10 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { DeleteResult, FindConditions, Repository } from "typeorm";
 import { v4 } from "uuid";
 
+import { IJwt } from "../common/jwt";
 import { UserService } from "../user/user.service";
 import { UserEntity } from "../user/user.entity";
-import { IJwt, ILoginDto } from "./interfaces";
+import { ILoginDto } from "./interfaces";
 import { AuthEntity } from "./auth.entity";
 import { accessTokenExpiresIn, refreshTokenExpiresIn } from "./auth.constants";
 
@@ -20,13 +21,13 @@ export class AuthService {
   ) {}
 
   public async login(data: ILoginDto): Promise<IJwt> {
-    const user = await this.userService.getByCredentials(data.email, data.password);
+    const userEntity = await this.userService.getByCredentials(data.email, data.password);
 
-    if (!user) {
+    if (!userEntity) {
       throw new UnauthorizedException();
     }
 
-    return this.loginUser(user);
+    return this.loginUser(userEntity);
   }
 
   public async delete(where: FindConditions<AuthEntity>): Promise<DeleteResult> {

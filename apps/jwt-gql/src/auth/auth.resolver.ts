@@ -2,7 +2,7 @@ import { Args, Mutation, Resolver } from "@nestjs/graphql";
 
 import { AuthType } from "./types";
 import { AuthService } from "./auth.service";
-import { IJwt } from "./interfaces";
+import { IJwt } from "../common/jwt";
 import { UserService } from "../user/user.service";
 import { UserCreateInputType } from "../user/types";
 import { Public } from "../common/decorators";

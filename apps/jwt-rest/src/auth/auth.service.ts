@@ -4,9 +4,10 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { DeleteResult, FindConditions, Repository } from "typeorm";
 import { v4 } from "uuid";
 
+import { IJwt } from "../common/jwt";
 import { UserService } from "../user/user.service";
 import { UserEntity } from "../user/user.entity";
-import { IJwt, ILoginDto } from "./interfaces";
+import { ILoginDto } from "./interfaces";
 import { AuthEntity } from "./auth.entity";
 import { accessTokenExpiresIn, refreshTokenExpiresIn } from "./auth.constants";
 
