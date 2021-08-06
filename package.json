@@ -12,7 +12,7 @@
     "prettier": "2.3.2"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12.13"
   },
   "license": "UNLICENSED",
   "name": "@trejgun/nestjs-auth",
@@ -27,8 +27,5 @@
     "clean": "sh scripts/clean.sh",
     "lint": "lerna run lint --stream --parallel"
   },
-  "version": "0.0.1",
-  "workspaces": [
-    "apps/*"
-  ]
+  "version": "0.0.1"
 }

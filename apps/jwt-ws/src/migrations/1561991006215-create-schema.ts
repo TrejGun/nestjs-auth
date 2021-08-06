@@ -1,7 +1,8 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
+
 import { ns } from "../common/constants";
 
-export class AddTestSchema1561991006215 implements MigrationInterface {
+export class CreateSchema1561991006215 implements MigrationInterface {
   public async down(queryRunner: QueryRunner): Promise<any> {
     await queryRunner.dropSchema(ns);
   }

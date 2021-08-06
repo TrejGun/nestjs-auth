@@ -1,11 +1,14 @@
 # Session based REST authorization for Nest.js
 
-This is a code sample for my [article](https://trejgun.github.io/articles/session-based-authorization-for-nestjs)
+This is the basic, old-fashioned, authorization which uses cookies and is most suitable for browsers.
+
+To store session's data on the server side it additionally uses Redis.
 
 ## Optional
 
 This example shows how to setup Nest.js authorization various 3rd party providers
 
+ - local
  - google
  - facebood
  - onelogin
@@ -16,9 +19,9 @@ only local provider works out of the box
 
 ## Manual installation
 
-I assume you have node, yarn/npm, postgres, redis
+I assume you have nodejs, yarn/npm, postgres and redis
 
-First of all you have to download dependencies
+First you have to download dependencies
 
 ```bash
 npm i
@@ -42,7 +45,7 @@ npm run prod
 
 ## Docker
 
-Otherwise you can use docker
+Otherwise, you can use docker
 
 ```shell script
 docker-compose up --build
@@ -68,7 +71,7 @@ curl -v \
 -H "Content-Type: application/json"
 ```
 
-Also you can login with provider of your choice on
+Also, you can log in with provider of your choice on
 http://localhost:3000/auth/login
 
 This will return your profile
@@ -80,7 +83,3 @@ This will return a list of users
 ```json
 {"list":[{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}],"count":1}
 ```
-
-## Contribution
-
-RPs, especially with new providers, are welcome

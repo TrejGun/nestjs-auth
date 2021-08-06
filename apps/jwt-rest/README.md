@@ -1,12 +1,14 @@
 # JWT based authorization for Nest.js
 
-This is a code sample for my [article](https://trejgun.github.io/articles/jwt-based-authorization-for-nestjs)
+JWT stands for JSON Web Token. This type of authorization does not store user's data on server but passes it with each request
+
+It is same good for casual websites, server to server communications and mobile apps
 
 ## Installation
 
-I assume you have node, yarn/npm and postgres
+I assume you have nodejs, yarn/npm and postgres
 
-First of all you have to download dependencies
+First you have to download dependencies
 ```bash
 npm i
 ```
@@ -89,7 +91,7 @@ This will return your profile
 
 ```bash
 curl \
-http://localhost:3000/users/list \
+http://localhost:3000/users \
 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTU3Mjc4MjA1MiwiZXhwIjoxNTcyNzgyMTEyfQ.JwBpPo8eK4WAY2hs4orkbQ7j-QShGToMixUiadGJZf4"
 
 ```

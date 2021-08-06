@@ -1,12 +1,7 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
-
 import { ns } from "../common/constants";
 
-export class AddAuthTable1572880566396 implements MigrationInterface {
-  public async down(queryRunner: QueryRunner): Promise<any> {
-    await queryRunner.dropTable(`${ns}.auth`);
-  }
-
+export class CreateAuthTable1572880566396 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<any> {
     const table = new Table({
       name: `${ns}.auth`,
@@ -66,5 +61,9 @@ export class AddAuthTable1572880566396 implements MigrationInterface {
       AFTER INSERT ON ${ns}.auth
       EXECUTE PROCEDURE delete_expired_tokens()
     `);
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<any> {
+    await queryRunner.dropTable(`${ns}.auth`);
   }
 }

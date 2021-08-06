@@ -1,8 +1,7 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
-
 import { ns } from "../common/constants";
 
-export class AddUserTable1562222612033 implements MigrationInterface {
+export class CreateUserTable1562222612033 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<any> {
     await queryRunner.query(`
       CREATE TYPE ${ns}.user_role_enum AS ENUM (
@@ -26,11 +25,6 @@ export class AddUserTable1562222612033 implements MigrationInterface {
         {
           name: "password",
           type: "varchar",
-        },
-        {
-          name: "biometric_public_key",
-          type: "varchar",
-          isNullable: true,
         },
         {
           name: "roles",
