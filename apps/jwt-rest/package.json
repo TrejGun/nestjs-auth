@@ -1,6 +1,6 @@
 {
   "author": {
-    "email": "TrejGun+OpenSource@gmail.com",
+    "email": "TrejGun+GemunIonStudio@gmail.com",
     "name": "TrejGun"
   },
   "dependencies": {
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@nestjs/testing": "8.0.6",
-    "@trejgun/eslint-config": "0.1.7",
+    "@gemunionstudio/eslint-config": "0.1.8",
     "@types/express": "4.17.13",
     "@types/jest": "26.0.24",
     "@types/node": "14.17.9",
@@ -55,10 +55,10 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "@trejgun/jwt-rest",
+  "name": "@gemunionstudio/jwt-rest",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TrejGun/nestjs-auth"
+    "url": "https://github.com/GemunIonStudio/nestjs-auth"
   },
   "scripts": {
     "build": "tsc",

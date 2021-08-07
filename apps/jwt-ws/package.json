@@ -1,6 +1,6 @@
 {
   "author": {
-    "email": "TrejGun+OpenSource@gmail.com",
+    "email": "TrejGun+GemunIonStudio@gmail.com",
     "name": "TrejGun"
   },
   "dependencies": {
@@ -35,7 +35,7 @@
   "description": "socket.io based authorization for nest.js",
   "devDependencies": {
     "@nestjs/testing": "8.0.6",
-    "@trejgun/eslint-config": "0.1.7",
+    "@gemunionstudio/eslint-config": "0.1.8",
     "@types/connect-redis": "0.0.17",
     "@types/passport-jwt": "3.0.6",
     "@types/express": "4.17.13",
@@ -67,10 +67,10 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "@trejgun/jwt-ws",
+  "name": "@gemunionstudio/jwt-ws",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TrejGun/nestjs-auth"
+    "url": "https://github.com/GemunIonStudio/nestjs-auth"
   },
   "scripts": {
     "build": "tsc",
