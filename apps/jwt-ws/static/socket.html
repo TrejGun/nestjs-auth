@@ -6,12 +6,6 @@
     const jwt = localStorage.getItem("jwt");
     const accessToken = jwt ? JSON.parse(jwt).accessToken : "";
 
-    console.log("mod", {
-      extraHeaders: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    })
-
     const socket = io(document.location.origin, {
       extraHeaders: {
         Authorization: `Bearer ${accessToken}`,
