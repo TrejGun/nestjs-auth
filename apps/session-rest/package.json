@@ -1,6 +1,6 @@
 {
   "author": {
-    "email": "TrejGun+GemunIonStudio@gmail.com",
+    "email": "TrejGun+gemunion@gmail.com",
     "name": "TrejGun"
   },
   "dependencies": {
@@ -32,7 +32,7 @@
   },
   "description": "session based authorization for nest.js",
   "devDependencies": {
-    "@gemunionstudio/eslint-config": "0.1.8",
+    "@gemunion/eslint-config": "0.1.8",
     "@nestjs/testing": "8.0.6",
     "@types/connect-redis": "0.0.17",
     "@types/express": "4.17.13",
@@ -65,10 +65,10 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "@gemunionstudio/session-rest",
+  "name": "@gemunion/session-rest",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GemunIonStudio/nestjs-auth"
+    "url": "https://github.com/gemunion/nestjs-auth"
   },
   "scripts": {
     "build": "tsc",

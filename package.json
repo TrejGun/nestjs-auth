@@ -1,6 +1,6 @@
 {
   "author": {
-    "email": "TrejGun+GemunIonStudio@gmail.com",
+    "email": "TrejGun+gemunion@gmail.com",
     "name": "TrejGun"
   },
   "dependencies": {
@@ -15,11 +15,11 @@
     "node": ">=12.13"
   },
   "license": "UNLICENSED",
-  "name": "@gemunionstudio/nestjs-auth",
+  "name": "@gemunion/nestjs-auth",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/GemunIonStudio/nestjs-auth"
+    "url": "https://github.com/gemunion/nestjs-auth"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --hoist",
