@@ -22,7 +22,7 @@
     "passport-jwt": "4.0.0",
     "pg": "8.7.1",
     "rxjs": "7.3.0",
-    "typeorm": "0.2.36",
+    "typeorm": "0.2.37",
     "typeorm-naming-strategies": "2.0.0",
     "uuid": "8.3.2"
   },
