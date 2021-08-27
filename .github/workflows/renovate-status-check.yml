@@ -17,7 +17,7 @@ jobs:
 
       - name: Install Packages
         run: npm i
-      - name: Run test
-        run: npm run test
+      - name: Run bootstrap
+        run: npm run bootstrap
 
 
