@@ -18,7 +18,7 @@ enum UserRole {
   ADMIN
 }
 
-type AuthType {
+type Jwt {
   accessToken: String!
   refreshToken: String!
   accessTokenExpiresAt: Float!
@@ -31,10 +31,10 @@ type Query {
 }
 
 type Mutation {
-  login(password: String!, email: String!): AuthType!
-  refreshToken(refreshToken: String!): AuthType!
+  login(password: String!, email: String!): Jwt!
+  refreshToken(refreshToken: String!): Jwt!
   logout(refreshToken: String!): Boolean!
-  signup(input: UserCreateInputType!): AuthType!
+  signup(input: UserCreateInputType!): Jwt!
 }
 
 input UserCreateInputType {
