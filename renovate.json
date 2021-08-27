@@ -5,6 +5,11 @@
   "baseBranches": [
     "master"
   ],
+  "timezone": "Asia/Singapore",
+  "schedule": [
+    "after 4am",
+    "before 5am"
+  ],
   "packageRules": [
     {
       "updateTypes": [
