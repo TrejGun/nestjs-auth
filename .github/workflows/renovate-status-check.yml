@@ -17,8 +17,6 @@ jobs:
 
       - name: Install Packages
         run: npm i
-      - name: Build Packages
-        run: npm run build
       - name: Run test
         run: npm run test
 

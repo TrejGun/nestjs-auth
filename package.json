@@ -26,7 +26,7 @@
     "build": "lerna run build --stream",
     "clean": "sh scripts/clean.sh",
     "lint": "lerna run lint --stream --parallel",
-    "test": "lerna run test --stream --parallel"
+    "test": "sh scripts/test.sh"
   },
   "version": "0.0.1"
 }
