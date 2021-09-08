@@ -8,8 +8,9 @@ import ormconfig from "../ormconfig";
 import { AuthService } from "./auth.service";
 import { UserModule } from "../user/user.module";
 import { AuthEntity } from "./auth.entity";
-import { JwtStrategy } from "./strategies";
+import { BiometricStrategy, FacebookStrategy, GoogleStrategy, JwtStrategy } from "./strategies";
 import { accessTokenExpiresIn } from "./auth.constants";
+import { OneloginStrategyFactory } from "./onelogin.factory";
 
 describe("AuthService", () => {
   let service: AuthService;
@@ -45,7 +46,14 @@ describe("AuthService", () => {
           }),
         }),
       ],
-      providers: [AuthService, JwtStrategy],
+      providers: [
+        AuthService,
+        JwtStrategy,
+        BiometricStrategy,
+        FacebookStrategy,
+        GoogleStrategy,
+        OneloginStrategyFactory,
+      ],
     }).compile();
 
     service = module.get<AuthService>(AuthService);

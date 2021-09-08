@@ -1,52 +1,22 @@
 <html lang="en">
-<head>
-  <title>Firebase login</title>
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
-</head>
-<body>
-<h1>Firebase login</h1>
-<div id="firebaseui-auth-container"></div>
-<div id="loader">Loading...</div>
-<div id="uid"></div>
-
-<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
 <script>
-  firebase.initializeApp({
-    apiKey: "API_KEY",
-    authDomain: "PROJECT_ID.firebaseapp.com",
-    databaseURL: "https://PROJECT_ID.firebaseio.com",
-    projectId: "PROJECT_ID",
-    storageBucket: "PROJECT_ID.appspot.com",
-    messagingSenderId: "SENDER_ID",
-    appId: "APP_ID",
-    measurementId: "G-MEASUREMENT_ID",
-  });
+  function handleclick(el) {
+    window.open(el.href, "_blank", "height=600,width=800,top=0,left=0");
+    return false;
+  }
 
-  // https://firebase.google.com/docs/auth/web/firebaseui
-
-  const ui = new firebaseui.auth.AuthUI(firebase.auth());
-  ui.start("#firebaseui-auth-container", {
-    callbacks: {
-      signInSuccessWithAuthResult: (authResult, redirectUrl) => {
-        firebase.auth().currentUser.getIdToken(true).then(idToken => {
-          document.getElementById("uid").innerHTML = idToken;
-          console.log(idToken);
-        }).catch(console.error);
-        return true;
-      },
-      uiShown: () => {
-        document.getElementById("loader").style.display = "none";
-      },
-    },
-    signInFlow: "popup",
-    signInOptions: [
-      firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    ],
-  });
+  const onMessage = event => {
+    if (event.origin === "http://localhost:3000") {
+      console.log(event.data);
+    }
+  };
+  window.addEventListener("message", onMessage, false);
 </script>
+<body>
+<ul>
+  <li><a href="/auth/google" onClick="return handleclick(this)">google</a></li>
+  <li><a href="/auth/facebook" onClick="return handleclick(this)">facebook</a></li>
+  <li><a href="/auth/onelogin" onClick="return handleclick(this)">onelogin</a></li>
+</ul>
 </body>
 </html>

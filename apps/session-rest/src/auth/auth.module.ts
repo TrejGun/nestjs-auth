@@ -5,19 +5,11 @@ import { ConfigModule } from "@nestjs/config";
 import { UserModule } from "../user/user.module";
 import { SessionSerializer } from "./session.serializer";
 import { AuthController } from "./auth.controller";
-import { OneloginStrategyFactory } from "./onelogin.factory";
 import { BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy } from "./strategies";
 
 @Module({
   imports: [UserModule, PassportModule, ConfigModule],
-  providers: [
-    BiometricStrategy,
-    FacebookStrategy,
-    GoogleStrategy,
-    LocalStrategy,
-    OneloginStrategyFactory,
-    SessionSerializer,
-  ],
+  providers: [BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy, SessionSerializer],
   controllers: [AuthController],
 })
 export class AuthModule {}

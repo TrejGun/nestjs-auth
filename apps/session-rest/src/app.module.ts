@@ -1,12 +1,14 @@
 import { Module, ValidationPipe } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { APP_GUARD, APP_PIPE } from "@nestjs/core";
+import { ServeStaticModule } from "@nestjs/serve-static";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 
 import ormconfig from "./ormconfig";
 import { LocalGuard, RolesGuard } from "./common/guards";
 import { AuthModule } from "./auth/auth.module";
 import { UserModule } from "./user/user.module";
+import { join } from "path";
 
 @Module({
   providers: [
@@ -26,6 +28,9 @@ import { UserModule } from "./user/user.module";
   imports: [
     ConfigModule.forRoot({
       envFilePath: ".env",
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, "..", "static"),
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],

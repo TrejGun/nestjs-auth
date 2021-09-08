@@ -7,7 +7,6 @@ import ormconfig from "../ormconfig";
 import { AuthController } from "./auth.controller";
 import { UserModule } from "../user/user.module";
 import { BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy } from "./strategies";
-import { OneloginStrategyFactory } from "./onelogin.factory";
 import { SessionSerializer } from "./session.serializer";
 
 describe("AuthService", () => {
@@ -33,14 +32,7 @@ describe("AuthService", () => {
         UserModule,
         PassportModule,
       ],
-      providers: [
-        BiometricStrategy,
-        FacebookStrategy,
-        GoogleStrategy,
-        LocalStrategy,
-        OneloginStrategyFactory,
-        SessionSerializer,
-      ],
+      providers: [BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy, SessionSerializer],
       controllers: [AuthController],
     }).compile();
 
