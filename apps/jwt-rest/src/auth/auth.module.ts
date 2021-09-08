@@ -8,8 +8,9 @@ import { AuthService } from "./auth.service";
 import { AuthEntity } from "./auth.entity";
 import { UserModule } from "../user/user.module";
 import { AuthJwtController } from "./auth.jwt.controller";
-import { JwtStrategy } from "./strategies";
+import { JwtStrategy, FirebaseStrategy } from "./strategies";
 import { accessTokenExpiresIn } from "./auth.constants";
+import { AuthSocialController } from "./auth.social.controller";
 
 @Module({
   imports: [
@@ -27,8 +28,8 @@ import { accessTokenExpiresIn } from "./auth.constants";
       }),
     }),
   ],
-  controllers: [AuthJwtController],
-  providers: [AuthService, JwtStrategy],
+  controllers: [AuthJwtController, AuthSocialController],
+  providers: [AuthService, JwtStrategy, FirebaseStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}

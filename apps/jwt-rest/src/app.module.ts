@@ -2,6 +2,8 @@ import { Module, ValidationPipe } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { APP_GUARD, APP_PIPE } from "@nestjs/core";
 import { ConfigModule, ConfigService } from "@nestjs/config";
+import { ServeStaticModule } from "@nestjs/serve-static";
+import { join } from "path";
 
 import ormconfig from "./ormconfig";
 import { JwtGuard, RolesGuard } from "./common/guards";
@@ -26,6 +28,9 @@ import { UserModule } from "./user/user.module";
   imports: [
     ConfigModule.forRoot({
       envFilePath: ".env",
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, "..", "static"),
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],

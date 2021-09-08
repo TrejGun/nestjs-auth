@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+  <title>Firebase login</title>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
+</head>
+<body>
+<h1>Firebase login</h1>
+<div id="firebaseui-auth-container"></div>
+<div id="loader">Loading...</div>
+<div id="uid"></div>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+<script>
+  firebase.initializeApp({
+    apiKey: "API_KEY",
+    authDomain: "PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://PROJECT_ID.firebaseio.com",
+    projectId: "PROJECT_ID",
+    storageBucket: "PROJECT_ID.appspot.com",
+    messagingSenderId: "SENDER_ID",
+    appId: "APP_ID",
+    measurementId: "G-MEASUREMENT_ID",
+  });
+
+  // https://firebase.google.com/docs/auth/web/firebaseui
+
+  const ui = new firebaseui.auth.AuthUI(firebase.auth());
+  ui.start("#firebaseui-auth-container", {
+    callbacks: {
+      signInSuccessWithAuthResult: (authResult, redirectUrl) => {
+        firebase.auth().currentUser.getIdToken(true).then(idToken => {
+          document.getElementById("uid").innerHTML = idToken;
+          console.log(idToken);
+        }).catch(console.error);
+        return true;
+      },
+      uiShown: () => {
+        document.getElementById("loader").style.display = "none";
+      },
+    },
+    signInFlow: "popup",
+    signInOptions: [
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    ],
+  });
+</script>
+</body>
+</html>

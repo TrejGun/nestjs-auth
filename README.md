@@ -58,6 +58,18 @@ this will start application on default settings.
 
 Otherwise, go to each individual app and check readme.md
 
+## Strategies
+- Apple JWKS
+- Auth0 JWKS
+- Google JWKS
+- Google JWT
+- Facebook
+- Firebase
+- Biometric
+- OneLogin
+- Local JWT
+- Local cookies
+
 ## Contribution
 
 RPs, especially with new providers, are welcome
