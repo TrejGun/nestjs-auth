@@ -5,13 +5,12 @@ import admin from "firebase-admin";
 
 import { UserService } from "../../user/user.service";
 import { UserEntity } from "../../user/user.entity";
-import { AuthService } from "../auth.service";
 
 @Injectable()
 export class FirebaseStrategy extends PassportStrategy(Strategy, "firebase") {
   protected readonly logger = new Logger(FirebaseStrategy.name);
 
-  constructor(private readonly userService: UserService, private readonly authService: AuthService) {
+  constructor(private readonly userService: UserService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     });
