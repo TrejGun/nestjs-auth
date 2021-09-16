@@ -3,10 +3,10 @@ import { PassportModule } from "@nestjs/passport";
 import { ConfigModule } from "@nestjs/config";
 
 import { UserModule } from "../user/user.module";
-import { JwtAppleStrategy, JwtAuth0Strategy, JwtGoogleStrategy } from "./strategies";
+import { AppleStrategy, Auth0Strategy, CognitoStrategy, GoogleStrategy } from "./strategies";
 
 @Module({
   imports: [UserModule, PassportModule, ConfigModule],
-  providers: [JwtAppleStrategy, JwtAuth0Strategy, JwtGoogleStrategy],
+  providers: [AppleStrategy, Auth0Strategy, GoogleStrategy, CognitoStrategy],
 })
 export class AuthModule {}

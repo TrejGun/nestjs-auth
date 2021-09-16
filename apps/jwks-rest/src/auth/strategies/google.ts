@@ -7,7 +7,7 @@ import { UserService } from "../../user/user.service";
 import { UserEntity } from "../../user/user.entity";
 
 @Injectable()
-export class JwtGoogleStrategy extends PassportStrategy(Strategy, "google") {
+export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
   constructor(private readonly userService: UserService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),

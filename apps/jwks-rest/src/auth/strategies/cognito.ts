@@ -8,7 +8,7 @@ import { UserService } from "../../user/user.service";
 import { UserEntity } from "../../user/user.entity";
 
 @Injectable()
-export class Auth0Strategy extends PassportStrategy(Strategy, "auth0") {
+export class CognitoStrategy extends PassportStrategy(Strategy, "cognito") {
   constructor(private readonly userService: UserService, private readonly configService: ConfigService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
@@ -16,10 +16,10 @@ export class Auth0Strategy extends PassportStrategy(Strategy, "auth0") {
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 5,
-        jwksUri: `${configService.get<string>("AUTH0_ISSUER_URL", "")}.well-known/jwks.json`,
+        jwksUri: `${configService.get<string>("COGNITO_ISSUER_URL", "")}/.well-known/jwks.json`,
       }),
-      audience: configService.get<string>("AUTH0_AUDIENCE", ""),
-      issuer: configService.get<string>("AUTH0_ISSUER_URL", ""),
+      audience: configService.get<string>("COGNITO_CLIENT_ID", ""),
+      issuer: configService.get<string>("COGNITO_ISSUER_URL", ""),
       algorithms: ["RS256"],
     });
   }

@@ -17,7 +17,7 @@ import { UserModule } from "./user/user.module";
     },
     {
       provide: APP_GUARD,
-      useClass: Auth0Guard, // or AppleGuard or GoogleGuard
+      useClass: Auth0Guard, // or AppleGuard or GoogleGuard or CognitoGuard
     },
     {
       provide: APP_GUARD,
