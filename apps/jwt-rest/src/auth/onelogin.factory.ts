@@ -10,11 +10,9 @@ export const OneloginStrategyFactory = {
   useFactory: async (userService: UserService, configService: ConfigService): Promise<OneloginStrategy> => {
     // secret sauce! build the dynamic client before injecting it into the strategy
     // for use in the constructor super call.
+    const subDomain = configService.get<string>("ONELOGIN_SUBDOMAIN", "https://example.com/");
     const TrustIssuer = await Issuer.discover(
-      `https://${configService.get<string>(
-        "ONELOGIN_SUBDOMAIN",
-        "https://example.com/",
-      )}.onelogin.com/oidc/.well-known/openid-configuration`,
+      `https://${subDomain}.onelogin.com/oidc/.well-known/openid-configuration`,
     );
     const client = new TrustIssuer.Client({
       client_id: configService.get<string>("ONELOGIN_CLIENT_ID", ""),
