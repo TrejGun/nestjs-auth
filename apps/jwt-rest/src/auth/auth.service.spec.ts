@@ -10,7 +10,6 @@ import { UserModule } from "../user/user.module";
 import { AuthEntity } from "./auth.entity";
 import { BiometricStrategy, FacebookStrategy, GoogleStrategy, JwtStrategy } from "./strategies";
 import { accessTokenExpiresIn } from "./auth.constants";
-import { OneloginStrategyFactory } from "./onelogin.factory";
 
 describe("AuthService", () => {
   let service: AuthService;
@@ -46,14 +45,7 @@ describe("AuthService", () => {
           }),
         }),
       ],
-      providers: [
-        AuthService,
-        JwtStrategy,
-        BiometricStrategy,
-        FacebookStrategy,
-        GoogleStrategy,
-        OneloginStrategyFactory,
-      ],
+      providers: [AuthService, JwtStrategy, BiometricStrategy, FacebookStrategy, GoogleStrategy],
     }).compile();
 
     service = module.get<AuthService>(AuthService);

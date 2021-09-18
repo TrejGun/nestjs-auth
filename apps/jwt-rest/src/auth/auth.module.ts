@@ -8,10 +8,9 @@ import { AuthService } from "./auth.service";
 import { AuthEntity } from "./auth.entity";
 import { UserModule } from "../user/user.module";
 import { AuthJwtController } from "./auth.jwt.controller";
-import { JwtStrategy, FirebaseStrategy, BiometricStrategy, FacebookStrategy, GoogleStrategy } from "./strategies";
 import { AuthSocialController } from "./auth.social.controller";
+import { JwtStrategy, FirebaseStrategy, BiometricStrategy, FacebookStrategy, GoogleStrategy } from "./strategies";
 import { accessTokenExpiresIn } from "./auth.constants";
-import { OneloginStrategyFactory } from "./onelogin.factory";
 
 @Module({
   imports: [
@@ -31,15 +30,7 @@ import { OneloginStrategyFactory } from "./onelogin.factory";
     }),
   ],
   controllers: [AuthJwtController, AuthSocialController],
-  providers: [
-    AuthService,
-    JwtStrategy,
-    FirebaseStrategy,
-    BiometricStrategy,
-    FacebookStrategy,
-    GoogleStrategy,
-    OneloginStrategyFactory,
-  ],
+  providers: [AuthService, JwtStrategy, FirebaseStrategy, BiometricStrategy, FacebookStrategy, GoogleStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}

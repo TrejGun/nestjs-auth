@@ -1,7 +1,7 @@
 import { Controller, Get, HttpCode, Post, UseGuards } from "@nestjs/common";
 
 import { IJwt } from "../common/jwt";
-import { BiometricGuard, FacebookGuard, FirebaseGuard, GoogleGuard, OneloginGuard } from "../common/guards";
+import { BiometricGuard, FacebookGuard, FirebaseGuard, GoogleGuard } from "../common/guards";
 import { UserEntity } from "../user/user.entity";
 import { AuthService } from "./auth.service";
 import { Public, User } from "../common/decorators";
@@ -56,29 +56,6 @@ export class AuthSocialController {
   @Get("/facebook/callback")
   @UseGuards(FacebookGuard)
   public async facebookLoginCallback(@User() userEntity: UserEntity): Promise<string> {
-    const auth = await this.authService.loginUser(userEntity);
-    return `
-      <html lang="en">
-      	<script>
-					function handleAuth() {
-            window.opener.postMessage(${JSON.stringify(auth)});
-            window.close();
-					}
-				</script>
-        <body onload="handleAuth()" />
-      </html>
-    `;
-  }
-
-  @Get("/onelogin")
-  @UseGuards(OneloginGuard)
-  public oneloginLogin(): void {
-    // initiates the OneLogin login flow
-  }
-
-  @Get("/onelogin/callback")
-  @UseGuards(OneloginGuard)
-  public async oneloginLoginCallback(@User() userEntity: UserEntity): Promise<string> {
     const auth = await this.authService.loginUser(userEntity);
     return `
       <html lang="en">

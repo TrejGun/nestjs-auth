@@ -4,13 +4,13 @@ import { PassportModule } from "@nestjs/passport";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 
 import ormconfig from "../ormconfig";
-import { AuthController } from "./auth.controller";
+import { AuthSessionController } from "./auth.session.controller";
 import { UserModule } from "../user/user.module";
-import { BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy } from "./strategies";
+import { BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy } from "./strategies";
 import { SessionSerializer } from "./session.serializer";
 
 describe("AuthService", () => {
-  let servcontrollerce: AuthController;
+  let servcontrollerce: AuthSessionController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -32,11 +32,18 @@ describe("AuthService", () => {
         UserModule,
         PassportModule,
       ],
-      providers: [BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy, SessionSerializer],
-      controllers: [AuthController],
+      providers: [
+        BiometricStrategy,
+        FacebookStrategy,
+        GoogleStrategy,
+        LocalStrategy,
+        OneloginStrategy,
+        SessionSerializer,
+      ],
+      controllers: [AuthSessionController],
     }).compile();
 
-    servcontrollerce = module.get<AuthController>(AuthController);
+    servcontrollerce = module.get<AuthSessionController>(AuthSessionController);
   });
 
   it("should be defined", () => {

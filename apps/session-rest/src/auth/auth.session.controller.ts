@@ -1,27 +1,27 @@
 import { Request, Response } from "express";
 import {
   Body,
+  ClassSerializerInterceptor,
   Controller,
   Get,
+  HttpCode,
   Post,
   Req,
   Res,
-  HttpCode,
   UseGuards,
-  ClassSerializerInterceptor,
   UseInterceptors,
 } from "@nestjs/common";
 import { promisify } from "util";
 
 import { Public, User } from "../common/decorators";
-import { LoginGuard, FacebookGuard, GoogleGuard, BiometricGuard } from "../common/guards";
+import { BiometricGuard, LoginGuard } from "../common/guards";
 import { UserEntity } from "../user/user.entity";
 import { UserService } from "../user/user.service";
 import { UserCreateDto } from "../user/dto";
 
 @Public()
 @Controller("/auth")
-export class AuthController {
+export class AuthSessionController {
   constructor(private readonly userService: UserService) {}
 
   @UseInterceptors(ClassSerializerInterceptor)
@@ -56,49 +56,5 @@ export class AuthController {
   @Post("/biometric")
   public biometric(@User() user: UserEntity): UserEntity {
     return user;
-  }
-
-  @Get("/google")
-  @UseGuards(GoogleGuard)
-  public googleLogin(): void {
-    // initiates the Google OAuth2 login flow
-  }
-
-  @Get("/google/callback")
-  @UseGuards(GoogleGuard)
-  public googleLoginCallback(@User() userEntity: UserEntity): string {
-    return `
-      <html>
-      	<script>
-					function handleLoad() {
-					  alert('${JSON.stringify(userEntity)}');
-						window.close();
-					}
-				</script>
-        <body onload="handleLoad()" />
-      </html>
-    `;
-  }
-
-  @Get("/facebook")
-  @UseGuards(FacebookGuard)
-  public facebookLogin(): void {
-    // initiates the Google OAuth2 login flow
-  }
-
-  @Get("/facebook/callback")
-  @UseGuards(FacebookGuard)
-  public facebookLoginCallback(@User() userEntity: UserEntity): string {
-    return `
-      <html>
-      	<script>
-					function handleLoad() {
-					  alert('${JSON.stringify(userEntity)}');
-						window.close();
-					}
-				</script>
-        <body onload="handleLoad()" />
-      </html>
-    `;
   }
 }
