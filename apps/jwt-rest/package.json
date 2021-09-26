@@ -19,7 +19,6 @@
     "express": "4.17.1",
     "firebase-admin": "9.11.1",
     "node-rsa": "1.1.1",
-    "openid-client": "3.15.10",
     "passport": "0.5.0",
     "passport-facebook": "3.0.0",
     "passport-firebase-jwt": "1.1.0",

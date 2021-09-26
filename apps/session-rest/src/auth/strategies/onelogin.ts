@@ -6,6 +6,7 @@ import passport from "passport";
 import { UserService } from "../../user/user.service";
 import { UserEntity } from "../../user/user.entity";
 
+// https://github.com/nestjs/passport/issues/446
 @Injectable()
 export class OneloginStrategy extends Strategy {
   public name = "onelogin";
