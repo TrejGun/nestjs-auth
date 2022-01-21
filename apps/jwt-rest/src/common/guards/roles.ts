@@ -1,21 +1,33 @@
-import { CanActivate, ExecutionContext, Injectable } from "@nestjs/common";
+import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
+import { Request } from "express";
 
-import { IUser, UserRole } from "../../user/interfaces";
+import { UserRole } from "../../user/interfaces";
+import { UserEntity } from "../../user/user.entity";
 
 @Injectable()
 export class RolesGuard implements CanActivate {
   constructor(private readonly reflector: Reflector) {}
 
   canActivate(context: ExecutionContext): boolean {
-    const roles = this.reflector.get<Array<UserRole>>("roles", context.getHandler());
+    const roles = this.reflector.getAllAndOverride<Array<UserRole>>("roles", [
+      context.getHandler(),
+      context.getClass(),
+    ]);
 
-    if (!roles) {
+    if (!roles || !roles.length) {
       return true;
     }
 
-    const request = context.switchToHttp().getRequest();
+    const request = context.switchToHttp().getRequest<Request>();
+    const userEntity = request.user as UserEntity;
 
-    return (request.user as IUser).roles.some((role: UserRole) => !!roles.find(item => item === role));
+    const hasRole = userEntity.roles.some((role: UserRole) => !!roles.find(item => item === role));
+
+    if (hasRole) {
+      return true;
+    }
+
+    throw new UnauthorizedException("userHasWrongRole");
   }
 }

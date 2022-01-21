@@ -12,6 +12,7 @@ export class UserEntity extends BaseEntity implements IUser {
   @Column({ type: "varchar" })
   public email: string;
 
+  @Exclude()
   @Column({ type: "varchar", select: false })
   public password: string;
 

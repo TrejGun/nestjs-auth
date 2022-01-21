@@ -91,18 +91,18 @@ curl \
 
 This will return your profile
 ```json
-{"data":{"profile":{"id":1,"email":"trejgun@gmail.com","roles":["Admin"]}}}
+{"data":{"profile":{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}}}
 ```
 
 ```bash
 curl \
 -X POST http://127.0.0.1:3000/graphql \
--d '{"query":"query{\n  listUsers {\n  \tlist {\n      id\n      email\n      roles\n    }\n    count\n  }\n}"}' \
+-d '{"query":"query{\n  listUsers {\n  \trows {\n      id\n      email\n      roles\n    }\n    count\n  }\n}"}' \
 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNTcyOTU2MDUzLCJleHAiOjE1NzMyNTYwNTN9.-RrT9N1CclFelsWnwAAgsTBGTJLmRRuhcYhjTWu4jA0" \
 -H "Content-Type: application/json"
 ```
 
 This will return a list of users
 ```json
-{"data":{"listUsers":{"list":[{"id":1,"email":"trejgun@gmail.com","roles":["Admin"]}],"count":1}}}
+{"data":{"listUsers":{"rows":[{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}],"count":1}}}
 ```

@@ -1,7 +1,7 @@
 import { Query, Resolver } from "@nestjs/graphql";
-import { User, Roles } from "../common/decorators";
-import { UserRole } from "./interfaces";
 
+import { Roles, User } from "../common/decorators";
+import { UserRole } from "./interfaces";
 import { UserEntity } from "./user.entity";
 import { UserService } from "./user.service";
 import { UserListType, UserType } from "./types";
