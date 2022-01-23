@@ -11,8 +11,8 @@ export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
   @Query(_returns => UserType)
-  public profile(@User() user: UserEntity): UserEntity {
-    return user;
+  public profile(@User() userEntity: UserEntity): UserEntity {
+    return userEntity;
   }
 
   @Roles(UserRole.ADMIN)

@@ -1,10 +1,12 @@
-import { ClassSerializerInterceptor, Controller, Get, UseInterceptors } from "@nestjs/common";
+import { ClassSerializerInterceptor, Controller, Get, UseInterceptors, Delete, HttpCode, Param } from "@nestjs/common";
+import { ApiBearerAuth } from "@nestjs/swagger";
 
-import { UserEntity } from "./user.entity";
 import { Roles, User } from "../common/decorators";
+import { UserEntity } from "./user.entity";
 import { UserRole } from "./interfaces";
 import { UserService } from "./user.service";
 
+@ApiBearerAuth()
 @Controller("/users")
 export class UserController {
   constructor(private readonly userService: UserService) {}
@@ -19,5 +21,12 @@ export class UserController {
   @UseInterceptors(ClassSerializerInterceptor)
   public findAll(): Promise<{ rows: Array<UserEntity>; count: number }> {
     return this.userService.findAndCount().then(([rows, count]) => ({ rows, count }));
+  }
+
+  @Delete("/:id")
+  @HttpCode(204)
+  @Roles(UserRole.ADMIN)
+  public async delete(@Param("id") id: number): Promise<void> {
+    await this.userService.delete({ id });
   }
 }

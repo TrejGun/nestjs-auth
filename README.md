@@ -65,10 +65,11 @@ Otherwise, go to each individual app and check readme.md
 - Google JWT
 - Facebook
 - Firebase
-- Biometric
 - OneLogin
 - Local JWT
 - Local cookies
+- Biometric
+- Metamask
 
 ## Contribution
 

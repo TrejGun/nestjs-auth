@@ -14,3 +14,6 @@ npm-debug.log
 package-lock.json
 yarn.lock
 report.*.json
+
+# CONFIG
+service-account-file.json

@@ -26,15 +26,12 @@
     measurementId: "G-MEASUREMENT_ID",
   });
 
-  // https://firebase.google.com/docs/auth/web/firebaseui
-
   const ui = new firebaseui.auth.AuthUI(firebase.auth());
   ui.start("#firebaseui-auth-container", {
     callbacks: {
       signInSuccessWithAuthResult: (authResult, redirectUrl) => {
-        firebase.auth().currentUser.getIdToken(true).then(idToken => {
-          document.getElementById("uid").innerHTML = idToken;
-          console.log(idToken);
+        firebase.auth().currentUser.getIdToken(true).then(accessToken => {
+          localStorage.setItem("jwt", JSON.stringify({ accessToken }));
         }).catch(console.error);
         return true;
       },
@@ -42,6 +39,7 @@
         document.getElementById("loader").style.display = "none";
       },
     },
+    signInSuccessUrl: "http://localhost:3000/socket.html",
     signInFlow: "popup",
     signInOptions: [
       firebase.auth.EmailAuthProvider.PROVIDER_ID,

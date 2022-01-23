@@ -10,8 +10,8 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get("/profile")
-  public getProfile(@User() user: UserEntity): UserEntity {
-    return user;
+  public getProfile(@User() userEntity: UserEntity): UserEntity {
+    return userEntity;
   }
 
   @Get("/")

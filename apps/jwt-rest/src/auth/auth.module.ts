@@ -9,7 +9,7 @@ import { AuthEntity } from "./auth.entity";
 import { UserModule } from "../user/user.module";
 import { AuthJwtController } from "./auth.jwt.controller";
 import { AuthSocialController } from "./auth.social.controller";
-import { JwtStrategy, FirebaseStrategy, BiometricStrategy, FacebookStrategy, GoogleStrategy } from "./strategies";
+import { JwtStrategy, BiometricStrategy, FacebookStrategy, GoogleStrategy } from "./strategies";
 import { accessTokenExpiresIn } from "./auth.constants";
 
 @Module({
@@ -30,7 +30,7 @@ import { accessTokenExpiresIn } from "./auth.constants";
     }),
   ],
   controllers: [AuthJwtController, AuthSocialController],
-  providers: [AuthService, JwtStrategy, FirebaseStrategy, BiometricStrategy, FacebookStrategy, GoogleStrategy],
+  providers: [AuthService, JwtStrategy, BiometricStrategy, FacebookStrategy, GoogleStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}
