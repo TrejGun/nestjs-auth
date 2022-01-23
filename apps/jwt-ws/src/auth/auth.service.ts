@@ -20,8 +20,8 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  public async login(data: ILoginDto): Promise<IJwt> {
-    const userEntity = await this.userService.getByCredentials(data.email, data.password);
+  public async login(dto: ILoginDto): Promise<IJwt> {
+    const userEntity = await this.userService.getByCredentials(dto.email, dto.password);
 
     if (!userEntity) {
       throw new UnauthorizedException();

@@ -13,27 +13,27 @@ export class AuthJwtController {
 
   @Public()
   @Post("login")
-  public login(@Body() data: LoginDto): Promise<IJwt> {
-    return this.authService.login(data);
+  public login(@Body() dto: LoginDto): Promise<IJwt> {
+    return this.authService.login(dto);
   }
 
   @Public()
   @Post("refresh")
-  async refreshToken(@Body() data: JwtRefreshTokenDto): Promise<IJwt> {
-    return this.authService.refresh(data);
+  async refreshToken(@Body() dto: JwtRefreshTokenDto): Promise<IJwt> {
+    return this.authService.refresh(dto);
   }
 
   @Public()
   @Get("logout")
-  public async logout(@Body() data: JwtLogoutDto): Promise<boolean> {
-    await this.authService.delete(data);
+  public async logout(@Body() dto: JwtLogoutDto): Promise<boolean> {
+    await this.authService.delete(dto);
     return true;
   }
 
   @Public()
   @Get("signup")
-  public async signup(@Body() data: UserCreateDto): Promise<IJwt> {
-    const userEntity = await this.userService.create(data);
+  public async signup(@Body() dto: UserCreateDto): Promise<IJwt> {
+    const userEntity = await this.userService.create(dto);
     return this.authService.loginUser(userEntity);
   }
 }

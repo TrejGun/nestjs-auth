@@ -7,6 +7,7 @@ import { LoginGuard } from "../common/guards";
 import { UserEntity } from "../user/user.entity";
 import { UserService } from "../user/user.service";
 import { UserCreateDto } from "../user/dto";
+import { ns } from "../common/constants";
 
 @Public()
 @Controller("/auth")
@@ -47,13 +48,13 @@ export class AuthController {
     // @ts-ignore
     req.session.destroy();
     req.logout();
-    res.clearCookie("nest");
+    res.clearCookie(ns);
     res.send("");
   }
 
   @Get("/signup")
-  public async signup(@Body() data: UserCreateDto, @Req() req: Request): Promise<UserEntity> {
-    const userEntity = await this.userService.create(data);
+  public async signup(@Body() dto: UserCreateDto, @Req() req: Request): Promise<UserEntity> {
+    const userEntity = await this.userService.create(dto);
     await promisify(req.logIn.bind(req))(userEntity);
     return userEntity;
   }

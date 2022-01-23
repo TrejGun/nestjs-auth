@@ -1,9 +1,9 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsEmail, IsString, MinLength } from "class-validator";
 
-import { IUserCreateFields } from "../interfaces";
+import { IUserCreateDto } from "../interfaces";
 
-export class UserCreateDto implements IUserCreateFields {
+export class UserCreateDto implements IUserCreateDto {
   @ApiProperty()
   @IsEmail()
   public email: string;

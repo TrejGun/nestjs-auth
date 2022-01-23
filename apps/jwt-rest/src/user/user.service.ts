@@ -31,21 +31,19 @@ export class UserService {
     });
   }
 
-  public async create(data: IUserCreateDto): Promise<UserEntity> {
-    let userEntity = await this.findOne({ email: data.email });
+  public async create(dto: IUserCreateDto): Promise<UserEntity> {
+    const userEntity = await this.findOne({ email: dto.email });
 
     if (userEntity) {
       throw new ConflictException();
     }
 
-    userEntity = await this.userEntityRepository
+    return this.userEntityRepository
       .create({
-        ...data,
-        password: this.createPasswordHash(data.password, data.email),
+        ...dto,
+        password: this.createPasswordHash(dto.password, dto.email),
       })
       .save();
-
-    return userEntity;
   }
 
   private createPasswordHash(password: string, salt: string): string {

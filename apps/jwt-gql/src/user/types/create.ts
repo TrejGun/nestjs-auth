@@ -1,10 +1,10 @@
 import { Field, InputType } from "@nestjs/graphql";
 import { IsEmail, MinLength, IsEnum } from "class-validator";
 
-import { IUserCreateFields, UserRole } from "../interfaces";
+import { IUserCreateDto, UserRole } from "../interfaces";
 
 @InputType()
-export class UserCreateInputType implements IUserCreateFields {
+export class UserCreateInputType implements IUserCreateDto {
   @Field()
   @IsEmail()
   public email: string;

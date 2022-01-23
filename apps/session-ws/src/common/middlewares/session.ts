@@ -3,6 +3,8 @@ import session from "express-session";
 import connectRedis from "connect-redis";
 import { createClient } from "redis";
 
+import { ns } from "../constants";
+
 interface ISessionMiddlewareProps {
   url: string;
   secret: string;
@@ -12,7 +14,7 @@ interface ISessionMiddlewareProps {
 }
 
 export const sessionMiddleware = (props: ISessionMiddlewareProps): express.RequestHandler => {
-  const { url, secret, secure = false, name = "sid", maxAge = 30 * 24 * 60 * 60 } = props;
+  const { url, secret, secure = false, name = ns, maxAge = 30 * 24 * 60 * 60 } = props;
   return session({
     cookie: {
       path: "/",
