@@ -39,8 +39,12 @@ export class FirebaseStrategy extends PassportStrategy(Strategy, "firebase") {
         .auth()
         .getUser(data.sub)
         .catch(this.loggerService.error.bind(this.loggerService));
+
+      // here you can get displayName and email
+      void firebaseUser;
+
       userEntity = await this.userService.create({
-        sub: firebaseUser.uid, // data.sub
+        sub: data.sub, // firebaseUser.uid
       });
     }
 
