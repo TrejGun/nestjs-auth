@@ -12,12 +12,9 @@ export class UserEntity extends BaseEntity implements IUser {
   @Column({ type: "varchar" })
   public email: string;
 
+  @Exclude()
   @Column({ type: "varchar", select: false })
   public password: string;
-
-  @Exclude()
-  @Column({ type: "varchar", nullable: true })
-  public biometricPublicKey?: string;
 
   @Column({
     type: "enum",

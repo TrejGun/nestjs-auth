@@ -37,27 +37,27 @@ export class AuthService {
   public async refresh(where: FindConditions<AuthEntity>): Promise<IJwt> {
     const authEntity = await this.authEntityRepository.findOne({ where, relations: ["user"] });
 
-    if (!authEntity || authEntity.refreshTokenExpiresAt > new Date().getTime()) {
+    if (!authEntity || authEntity.refreshTokenExpiresAt < new Date().getTime()) {
       throw new UnauthorizedException();
     }
 
     return this.loginUser(authEntity.user);
   }
 
-  public async loginUser(user: UserEntity): Promise<IJwt> {
+  public async loginUser(userEntity: UserEntity): Promise<IJwt> {
     const refreshToken = v4();
     const date = new Date();
 
     await this.authEntityRepository
       .create({
-        user,
+        user: userEntity,
         refreshToken,
         refreshTokenExpiresAt: date.getTime() + refreshTokenExpiresIn,
       })
       .save();
 
     return {
-      accessToken: this.jwtService.sign({ email: user.email }, { expiresIn: accessTokenExpiresIn / 1000 }),
+      accessToken: this.jwtService.sign({ email: userEntity.email }, { expiresIn: accessTokenExpiresIn / 1000 }),
       refreshToken: refreshToken,
       accessTokenExpiresAt: date.getTime() + accessTokenExpiresIn,
       refreshTokenExpiresAt: date.getTime() + refreshTokenExpiresIn,

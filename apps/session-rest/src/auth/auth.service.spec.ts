@@ -6,7 +6,7 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import ormconfig from "../ormconfig";
 import { AuthSessionController } from "./auth.session.controller";
 import { UserModule } from "../user/user.module";
-import { BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy } from "./strategies";
+import { FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy } from "./strategies";
 import { SessionSerializer } from "./session.serializer";
 
 describe("AuthService", () => {
@@ -32,14 +32,7 @@ describe("AuthService", () => {
         UserModule,
         PassportModule,
       ],
-      providers: [
-        BiometricStrategy,
-        FacebookStrategy,
-        GoogleStrategy,
-        LocalStrategy,
-        OneloginStrategy,
-        SessionSerializer,
-      ],
+      providers: [FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy, SessionSerializer],
       controllers: [AuthSessionController],
     }).compile();
 

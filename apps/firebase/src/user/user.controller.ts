@@ -12,6 +12,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get("/profile")
+  @UseInterceptors(ClassSerializerInterceptor)
   public getGloballyProtectedProfile(@User() userEntity: UserEntity): UserEntity {
     return userEntity;
   }

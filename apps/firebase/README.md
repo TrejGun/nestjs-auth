@@ -50,7 +50,7 @@ curl \
 
 This will give you accessToken
 ```json
-{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRyZWpndW5AZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE1NjU4NTgwMDUsImV4cCI6MTU2NTg1ODA2NX0.jqfDhj-sSHtOiT41eD0vBuj64lgBg87oGIyJ78c5gus"}
+{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNjQzNzgyODUxLCJleHAiOjE2NDM3ODMxNTF9.7s3yqyp1rxP6k9iICwYG-S3c9fMu5eF_Eh4SXUOfSyI","refreshToken":"e199c71d-df0b-4c3e-b667-b29a36b8570b","accessTokenExpiresAt":1643783151584,"refreshTokenExpiresAt":1646374851584}
 ```
 
 which is valid for 5 minutes, after this time you have to refresh it using
@@ -62,7 +62,7 @@ curl \
 ```
 
 ```json
-{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNTcyOTU3NjA0LCJleHAiOjE1NzMyNTc2MDR9.WSXXz20wbsOajwefbDQ7wb2tgdRLRby02AzhzfyDvjw","refreshToken":"72633d7f-2327-4508-940d-86780b3ba7b7","accessTokenExpiresAt":1572957798255,"refreshTokenExpiresAt":1575549498255}
+{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNjQzNzgyODUxLCJleHAiOjE2NDM3ODMxNTF9.7s3yqyp1rxP6k9iICwYG-S3c9fMu5eF_Eh4SXUOfSyI","refreshToken":"72633d7f-2327-4508-940d-86780b3ba7b7","accessTokenExpiresAt":1572957798255,"refreshTokenExpiresAt":1575549498255}
 ```
 
 refreshToken is valid for 30 days, but can be destroyed manually
@@ -80,8 +80,7 @@ Put this accessToken in header of each of your subsequent requests
 ```bash
 curl \
 http://localhost:3000/users/profile \
--H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNTczOTk4ODM1LCJleHAiOjE1NzM5OTkxMzV9.b5GuR4X0BqD5CTj-KjVpXTl2D75CtTEfDxdR_ztBfpU"
-
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNjQzNzgyODUxLCJleHAiOjE2NDM3ODMxNTF9.7s3yqyp1rxP6k9iICwYG-S3c9fMu5eF_Eh4SXUOfSyI"
 ```
 
 This will return your profile
@@ -92,7 +91,7 @@ This will return your profile
 ```bash
 curl \
 http://localhost:3000/users \
--H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTU3Mjc4MjA1MiwiZXhwIjoxNTcyNzgyMTEyfQ.JwBpPo8eK4WAY2hs4orkbQ7j-QShGToMixUiadGJZf4"
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNjQzNzgyODUxLCJleHAiOjE2NDM3ODMxNTF9.7s3yqyp1rxP6k9iICwYG-S3c9fMu5eF_Eh4SXUOfSyI"
 
 ```
 

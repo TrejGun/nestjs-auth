@@ -8,7 +8,7 @@ import ormconfig from "../ormconfig";
 import { AuthService } from "./auth.service";
 import { UserModule } from "../user/user.module";
 import { AuthEntity } from "./auth.entity";
-import { BiometricStrategy, FacebookStrategy, GoogleStrategy, JwtStrategy } from "./strategies";
+import { FacebookStrategy, GoogleStrategy, JwtStrategy } from "./strategies";
 import { accessTokenExpiresIn } from "./auth.constants";
 
 describe("AuthService", () => {
@@ -45,7 +45,7 @@ describe("AuthService", () => {
           }),
         }),
       ],
-      providers: [AuthService, JwtStrategy, BiometricStrategy, FacebookStrategy, GoogleStrategy],
+      providers: [AuthService, JwtStrategy, FacebookStrategy, GoogleStrategy],
     }).compile();
 
     service = module.get<AuthService>(AuthService);

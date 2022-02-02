@@ -1,7 +1,6 @@
-import { Controller, Get, HttpCode, Post, UseGuards } from "@nestjs/common";
+import { Controller, Get, UseGuards } from "@nestjs/common";
 
-import { IJwt } from "../common/jwt";
-import { BiometricGuard, FacebookGuard, GoogleGuard } from "../common/guards";
+import { FacebookGuard, GoogleGuard } from "../common/guards";
 import { UserEntity } from "../user/user.entity";
 import { AuthService } from "./auth.service";
 import { Public, User } from "../common/decorators";
@@ -10,13 +9,6 @@ import { Public, User } from "../common/decorators";
 @Controller("/auth")
 export class AuthSocialController {
   constructor(private readonly authService: AuthService) {}
-
-  @HttpCode(200)
-  @Post("/biometric")
-  @UseGuards(BiometricGuard)
-  public biometric(@User() userEntity: UserEntity): Promise<IJwt> {
-    return this.authService.loginUser(userEntity);
-  }
 
   @Get("/google")
   @UseGuards(GoogleGuard)

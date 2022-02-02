@@ -6,11 +6,11 @@ import { UserModule } from "../user/user.module";
 import { SessionSerializer } from "./session.serializer";
 import { AuthSessionController } from "./auth.session.controller";
 import { AuthSocialController } from "./auth.social.controller";
-import { BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy } from "./strategies";
+import { FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy } from "./strategies";
 
 @Module({
   imports: [UserModule, PassportModule, ConfigModule],
-  providers: [BiometricStrategy, FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy, SessionSerializer],
+  providers: [FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy, SessionSerializer],
   controllers: [AuthSessionController, AuthSocialController],
 })
 export class AuthModule {}
