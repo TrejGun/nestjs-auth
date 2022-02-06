@@ -17,7 +17,7 @@
     "@nestjs/typeorm": "8.0.3",
     "class-transformer": "0.5.1",
     "class-validator": "0.13.2",
-    "dotenv": "14.3.2",
+    "dotenv": "16.0.0",
     "express": "4.17.2",
     "node-rsa": "1.1.1",
     "passport": "0.5.2",
