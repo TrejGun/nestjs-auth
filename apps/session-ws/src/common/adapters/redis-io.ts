@@ -1,10 +1,10 @@
 import { NextFunction, Handler } from "express";
 import { INestApplicationContext } from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
 import { IoAdapter } from "@nestjs/platform-socket.io";
+import { ConfigService } from "@nestjs/config";
 import { ServerOptions } from "socket.io";
 import { createAdapter } from "@socket.io/redis-adapter";
-import { createClient } from "redis";
+import IORedis from "ioredis";
 import passport from "passport";
 
 import { sessionMiddleware } from "../middlewares/session";
@@ -27,7 +27,7 @@ export class RedisIoAdapter extends IoAdapter {
     });
 
     const redisUrl = configService.get<string>("REDIS_WS_URL", "redis://127.0.0.1:6379/");
-    const pubClient = createClient({ url: redisUrl });
+    const pubClient = new IORedis(redisUrl);
     const subClient = pubClient.duplicate();
     const redisAdapter = createAdapter(pubClient, subClient);
     server.adapter(redisAdapter);
