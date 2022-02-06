@@ -18,7 +18,7 @@
     "class-transformer": "0.5.1",
     "class-validator": "0.13.2",
     "connect-redis": "6.1.0",
-    "dotenv": "14.3.2",
+    "dotenv": "16.0.0",
     "express": "4.17.2",
     "express-session": "1.17.2",
     "passport": "0.5.2",
