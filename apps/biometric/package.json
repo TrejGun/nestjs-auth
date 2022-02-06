@@ -63,7 +63,7 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "@gemunion/metamask",
+  "name": "@gemunion/biometric",
   "repository": {
     "type": "git",
     "url": "https://github.com/gemunion/nestjs-auth"
