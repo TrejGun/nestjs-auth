@@ -25,7 +25,7 @@
     "passport-local": "1.0.0",
     "passport-openidconnect": "0.1.1",
     "pg": "8.7.3",
-    "redis": "3.1.2",
+    "redis": "4.0.3",
     "rxjs": "7.5.2",
     "swagger-ui-express": "4.3.0",
     "typeorm": "0.2.41",
