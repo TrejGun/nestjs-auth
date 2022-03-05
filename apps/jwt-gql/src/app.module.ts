@@ -2,13 +2,14 @@ import { Module, ValidationPipe } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { APP_GUARD, APP_PIPE } from "@nestjs/core";
 import { GraphQLModule } from "@nestjs/graphql";
+import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
+import { ConfigModule, ConfigService } from "@nestjs/config";
+import { Request, Response } from "express";
 
 import ormconfig from "./ormconfig";
 import { AuthModule } from "./auth/auth.module";
 import { UserModule } from "./user/user.module";
 import { JwtGuard, RolesGuard } from "./common/guards";
-import { ConfigModule, ConfigService } from "@nestjs/config";
-import { Request, Response } from "express";
 
 @Module({
   providers: [
@@ -40,13 +41,15 @@ import { Request, Response } from "express";
         };
       },
     }),
-    GraphQLModule.forRootAsync({
+    GraphQLModule.forRootAsync<ApolloDriverConfig>({
       imports: [ConfigModule],
       inject: [ConfigService],
+      driver: ApolloDriver,
       useFactory: (configService: ConfigService) => {
+        const nodeEnv = configService.get<string>("NODE_ENV", "development");
         return {
-          debug: configService.get<string>("POSTGRES_URL", "development") !== "production",
-          playground: configService.get<string>("POSTGRES_URL", "development") !== "production",
+          debug: nodeEnv !== "production",
+          playground: nodeEnv !== "production",
           context: ({ req, res }: { req: Request; res: Response }): any => ({ req, res }),
           autoSchemaFile: "./schema.gql",
         };

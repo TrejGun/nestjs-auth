@@ -31,7 +31,7 @@ type Query {
 }
 
 type Mutation {
-  login(password: String!, email: String!): Jwt!
+  login(email: String!, password: String!): Jwt!
   refreshToken(refreshToken: String!): Jwt!
   logout(refreshToken: String!): Boolean!
   signup(input: UserCreateInputType!): Jwt!
