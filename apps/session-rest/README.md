@@ -56,7 +56,7 @@ docker-compose up --build
 You can log in to the application using **trejgun@gmail.com/My5up3r5tr0ngP@55w0rd** by executing this CURL request
 
 ```shell script
-curl -v \
+curl \
 -X POST http://localhost:3000/auth/login \
 -d '{"email": "trejgun@gmail.com", "password": "My5up3r5tr0ngP@55w0rd"}' \
 -H "Content-Type: application/json"

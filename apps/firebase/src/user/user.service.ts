@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException, Inject, forwardRef } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { FindConditions, Repository } from "typeorm";
+import { FindOptionsWhere, Repository } from "typeorm";
 
 import { UserEntity } from "./user.entity";
 import { IUserCreateDto, UserRole } from "./interfaces";
@@ -15,7 +15,7 @@ export class UserService {
     private readonly authService: AuthService,
   ) {}
 
-  public findOne(where: FindConditions<UserEntity>): Promise<UserEntity | undefined> {
+  public findOne(where: FindOptionsWhere<UserEntity>): Promise<UserEntity | null> {
     return this.userEntityRepository.findOne({ where });
   }
 
@@ -32,7 +32,7 @@ export class UserService {
       .save();
   }
 
-  public async delete(where: FindConditions<UserEntity>): Promise<UserEntity> {
+  public async delete(where: FindOptionsWhere<UserEntity>): Promise<UserEntity> {
     const userEntity = await this.findOne(where);
 
     if (!userEntity) {

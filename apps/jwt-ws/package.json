@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "@nestjs/common": "8.4.1",
-    "@nestjs/config": "1.2.1",
+    "@nestjs/config": "2.0.0",
     "@nestjs/core": "8.4.1",
     "@nestjs/jwt": "8.0.0",
     "@nestjs/passport": "8.2.1",
@@ -29,8 +29,8 @@
     "socket.io": "4.4.1",
     "@socket.io/redis-adapter": "7.1.0",
     "swagger-ui-express": "4.3.0",
-    "typeorm": "0.2.45",
-    "typeorm-naming-strategies": "2.0.0",
+    "typeorm": "0.3.0",
+    "typeorm-naming-strategies": "4.0.0",
     "uuid": "8.3.2"
   },
   "description": "socket.io based authorization for nest.js",

@@ -28,8 +28,9 @@ export class OneloginStrategy extends Strategy {
           .then(userEntity => {
             if (!userEntity) {
               cb(new UnauthorizedException());
+            } else {
+              cb(null, userEntity);
             }
-            cb(null, userEntity);
           })
           .catch(() => cb(new UnauthorizedException()));
       },

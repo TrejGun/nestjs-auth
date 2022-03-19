@@ -32,14 +32,15 @@
       signInSuccessWithAuthResult: (authResult, redirectUrl) => {
         firebase.auth().currentUser.getIdToken(true).then(accessToken => {
           localStorage.setItem("jwt", JSON.stringify({ accessToken }));
+          document.location.href = "/socket.html";
         }).catch(console.error);
-        return true;
+        return false;
       },
       uiShown: () => {
         document.getElementById("loader").style.display = "none";
       },
     },
-    signInSuccessUrl: "http://localhost:3000/socket.html",
+    // signInSuccessUrl: "http://localhost:3000/socket.html",
     signInFlow: "popup",
     signInOptions: [
       firebase.auth.EmailAuthProvider.PROVIDER_ID,

@@ -44,7 +44,7 @@ You can log in to the application using **trejgun@gmail.com/My5up3r5tr0ngP@55w0r
 
 ```bash
 curl \
--X POST http://127.0.0.1:3000/graphql \
+-X POST http://localhost:3000/graphql \
 -d '{"query":"mutation{\n  login(email: \"trejgun@gmail.com\", password: \"My5up3r5tr0ngP@55w0rd\") {\n    accessToken\n    refreshToken\n    accessTokenExpiresAt\n    refreshTokenExpiresAt\n  }\n}\n"}' \
 -H "Content-Type: application/json"
 ```
@@ -57,7 +57,7 @@ This will give you accessToken
 which is valid for 5 minutes, after this time you have to refresh it using
 ```sh
 curl \
--X POST http://127.0.0.1:3000/graphql \
+-X POST http://localhost:3000/graphql \
 -d '{"query":"mutation{\n  refreshToken(refreshToken: \"2b1764be-a13f-4630-9696-09f9e0f2bbd7\") {\n    accessToken\n    refreshToken\n    accessTokenExpiresAt\n    refreshTokenExpiresAt\n  }\n}"}' \
 -H "Content-Type: application/json"
 ```
@@ -70,7 +70,7 @@ refreshToken is valid for 30 days, but can be destroyed manually
 
 ```sh
  curl \
- -X POST http://127.0.0.1:3000/graphql \
+ -X POST http://localhost:3000/graphql \
  -d '{"query":"mutation{\n  logout(refreshToken: \"2b1764be-a13f-4630-9696-09f9e0f2bbd7\")\n}"}' \
  -H "Content-Type: application/json"
  ```
@@ -83,7 +83,7 @@ Put this accessToken in header of each of your subsequent requests
 
 ```bash
 curl \
--X POST http://127.0.0.1:3000/graphql \
+-X POST http://localhost:3000/graphql \
 -d '{"query":"query {\n  profile {\n    id\n    email\n    roles\n  }\n}"}' \
 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNjE4OTc0MTIzLCJleHAiOjE2MTg5NzQ0MjN9.MPTGJ3mjJ5HjFsC1XLBCT1oGdLSG3VSPAaArO_E3Ong" \
 -H "Content-Type: application/json"
@@ -96,7 +96,7 @@ This will return your profile
 
 ```bash
 curl \
--X POST http://127.0.0.1:3000/graphql \
+-X POST http://localhost:3000/graphql \
 -d '{"query":"query{\n  listUsers {\n  \trows {\n      id\n      email\n      roles\n    }\n    count\n  }\n}"}' \
 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNTcyOTU2MDUzLCJleHAiOjE1NzMyNTYwNTN9.-RrT9N1CclFelsWnwAAgsTBGTJLmRRuhcYhjTWu4jA0" \
 -H "Content-Type: application/json"

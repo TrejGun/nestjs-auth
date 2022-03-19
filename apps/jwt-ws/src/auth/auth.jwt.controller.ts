@@ -12,12 +12,12 @@ import { UserCreateDto } from "../user/dto";
 export class AuthJwtController {
   constructor(private readonly authService: AuthService, private readonly userService: UserService) {}
 
-  @Post("login")
+  @Post("/login")
   public login(@Body() dto: LoginDto): Promise<IJwt> {
     return this.authService.login(dto);
   }
 
-  @Post("refresh")
+  @Post("/refresh")
   async refreshToken(@Body() dto: JwtRefreshTokenDto): Promise<IJwt> {
     return this.authService.refresh(dto);
   }

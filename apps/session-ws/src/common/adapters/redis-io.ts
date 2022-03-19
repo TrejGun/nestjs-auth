@@ -26,7 +26,7 @@ export class RedisIoAdapter extends IoAdapter {
       // cors options should be passed here if any
     });
 
-    const redisUrl = configService.get<string>("REDIS_WS_URL", "redis://127.0.0.1:6379/");
+    const redisUrl = configService.get<string>("REDIS_WS_URL", "redis://localhost:6379/");
     const pubClient = new IORedis(redisUrl);
     const subClient = pubClient.duplicate();
     const redisAdapter = createAdapter(pubClient, subClient);

@@ -15,7 +15,7 @@ async function bootstrap(): Promise<void> {
 
   const options = new DocumentBuilder()
     .addBearerAuth()
-    .setTitle("metamask")
+    .setTitle("biometric")
     .setDescription("API description")
     .setVersion("1.0")
     .build();

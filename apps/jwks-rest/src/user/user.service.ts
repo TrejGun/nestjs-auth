@@ -1,4 +1,4 @@
-import { FindConditions, Repository } from "typeorm";
+import { FindOptionsWhere, Repository } from "typeorm";
 
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
@@ -12,7 +12,7 @@ export class UserService {
     private readonly userEntityRepository: Repository<UserEntity>,
   ) {}
 
-  public findOne(where: FindConditions<UserEntity>): Promise<UserEntity | undefined> {
+  public findOne(where: FindOptionsWhere<UserEntity>): Promise<UserEntity | null> {
     return this.userEntityRepository.findOne({ where });
   }
 

@@ -1,5 +1,4 @@
-import { createHash } from "crypto";
-import { Repository, FindConditions } from "typeorm";
+import { Repository, FindOptionsWhere } from "typeorm";
 
 import { Injectable, ConflictException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
@@ -14,7 +13,7 @@ export class UserService {
     private readonly userEntityRepository: Repository<UserEntity>,
   ) {}
 
-  public findOne(where: FindConditions<UserEntity>): Promise<UserEntity | undefined> {
+  public findOne(where: FindOptionsWhere<UserEntity>): Promise<UserEntity | null> {
     return this.userEntityRepository.findOne({ where });
   }
 
@@ -35,9 +34,5 @@ export class UserService {
         roles: [UserRole.USER],
       })
       .save();
-  }
-
-  private createPasswordHash(password: string, salt: string): string {
-    return createHash("sha256").update(password).update(salt).digest("hex");
   }
 }

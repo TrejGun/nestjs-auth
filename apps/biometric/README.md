@@ -44,7 +44,7 @@ docker-compose up --build
 You can log in to the application using asymmetric key
 
 ```shell script
-curl -v \
+curl \
 -X POST http://localhost:3000/auth/biometric \
 -d '{"email": "trejgun@gmail.com", "signature": "lHBr/oUxp8LYUojNLbTWQ3z3T5Lb2J2fAbgcfyD0PGzlE8Wm3ZQaMyzA3AHgMlHEqnqUKOaRCXGLi6DJkERL2PKDJh3SIWxZujR0gP28rTX+kUJaKAysLRZVqWESXBsnkszSIVYeQH7Y9y9aocGOgye+8HsIgFRz8d5ttF579YUIqs26vhPKLgYiWKUQ4kqAhUhbNQgsuUaBEm9APYDdtb8872mPWX06k52Ig4IAM3dSKi5HGXutY9Ks88Gp69HV0zBHvjrIqHqxF1gUn0GMqDdZQHw/YwVPJAPNo8fPVEpjrasp2pLO5f5g5a2GG/nvDUJPmbuB0TNrcGS4pLwfAA=="}' \
 -H "Content-Type: application/json"
@@ -58,7 +58,7 @@ This will give you accessToken
 which is valid for 5 minutes, after this time you have to refresh it using
 ```sh
 curl \
--X POST http://127.0.0.1:3000/auth/refresh \
+-X POST http://localhost:3000/auth/refresh \
 -d '{"refreshToken": "2b1764be-a13f-4630-9696-09f9e0f2bbd7"}' \
 -H "Content-Type: application/json"
 ```
@@ -71,7 +71,7 @@ refreshToken is valid for 30 days, but can be destroyed manually
 
 ```sh
  curl \
- -X POST http://127.0.0.1:3000/auth/logout \
+ -X POST http://localhost:3000/auth/logout \
  -d '{"refreshToken: "2b1764be-a13f-4630-9696-09f9e0f2bbd7"}' \
  -H "Content-Type: application/json"
  ```

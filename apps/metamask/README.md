@@ -56,7 +56,7 @@ This will give you accessToken
 which is valid for 5 minutes, after this time you have to refresh it using
 ```sh
 curl \
--X POST http://127.0.0.1:3000/auth/refresh \
+-X POST http://localhost:3000/auth/refresh \
 -d '{"refreshToken": "2b1764be-a13f-4630-9696-09f9e0f2bbd7"}' \
 -H "Content-Type: application/json"
 ```
@@ -69,7 +69,7 @@ refreshToken is valid for 30 days, but can be destroyed manually
 
 ```sh
  curl \
- -X POST http://127.0.0.1:3000/auth/logout \
+ -X POST http://localhost:3000/auth/logout \
  -d '{"refreshToken: "2b1764be-a13f-4630-9696-09f9e0f2bbd7"}' \
  -H "Content-Type: application/json"
  ```

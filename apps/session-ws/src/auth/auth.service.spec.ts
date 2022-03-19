@@ -24,7 +24,7 @@ describe("AuthService", () => {
           useFactory: (configService: ConfigService) => {
             return {
               ...ormconfig,
-              url: configService.get<string>("POSTGRES_URL", "postgres://postgres:password@127.0.0.1/postgres"),
+              url: configService.get<string>("POSTGRES_URL", "postgres://postgres:password@localhost/postgres"),
               keepConnectionAlive: configService.get<string>("NODE_ENV", "development") === "test",
             };
           },

@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { InjectRepository } from "@nestjs/typeorm";
-import { DeleteResult, FindConditions, Repository } from "typeorm";
+import { DeleteResult, FindOptionsWhere, Repository } from "typeorm";
 import { v4 } from "uuid";
 
 import { IJwt } from "../common/jwt";
@@ -19,11 +19,11 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  public async delete(where: FindConditions<AuthEntity>): Promise<DeleteResult> {
+  public async delete(where: FindOptionsWhere<AuthEntity>): Promise<DeleteResult> {
     return this.authEntityRepository.delete(where);
   }
 
-  public async refresh(where: FindConditions<AuthEntity>): Promise<IJwt> {
+  public async refresh(where: FindOptionsWhere<AuthEntity>): Promise<IJwt> {
     const authEntity = await this.authEntityRepository.findOne({ where, relations: ["user"] });
 
     if (!authEntity || authEntity.refreshTokenExpiresAt < new Date().getTime()) {

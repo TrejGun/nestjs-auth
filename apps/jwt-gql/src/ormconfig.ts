@@ -1,15 +1,25 @@
 import { SnakeNamingStrategy } from "typeorm-naming-strategies";
-import { ConnectionOptions } from "typeorm";
-import path from "path";
+import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
+import { DataSource } from "typeorm";
 
 import { ns } from "./common/constants";
+import { AuthEntity } from "./auth/auth.entity";
+import { UserEntity } from "./user/user.entity";
+import { CreateSchema1561991006215 } from "./migrations/1561991006215-create-schema";
+import { CreateUserTable1562222612033 } from "./migrations/1562222612033-create-user-table";
+import { SeedUsers1563804021014 } from "./migrations/1563804021014-seed-users";
+import { CreateAuthTable1572880566396 } from "./migrations/1572880566396-create-auth-table";
 
 // Check typeORM documentation for more information.
-const config: ConnectionOptions = {
+const config: PostgresConnectionOptions = {
   name: "default",
   type: "postgres",
   url: process.env.POSTGRES_URL,
-  entities: [path.join(__dirname, "/**/*.entity{.ts,.js}")],
+  // prettier-ignore
+  entities: [
+    AuthEntity,
+    UserEntity,
+  ],
   // We are using migrations, synchronize should be set to false.
   synchronize: false,
   // Run migrations automatically,
@@ -22,7 +32,12 @@ const config: ConnectionOptions = {
   // Allow both start:prod and start:dev to use migrations
   // __dirname is either dist or src folder, meaning either
   // the compiled js in prod or the ts in dev.
-  migrations: [path.join(__dirname, "/migrations/**/*{.ts,.js}")],
+  migrations: [
+    CreateSchema1561991006215,
+    CreateUserTable1562222612033,
+    SeedUsers1563804021014,
+    CreateAuthTable1572880566396,
+  ],
   cli: {
     // Location of migration should be inside src folder
     // to be compiled into dist/ folder.
@@ -31,3 +46,5 @@ const config: ConnectionOptions = {
 };
 
 export default config;
+
+export const dataSource = new DataSource(config);
