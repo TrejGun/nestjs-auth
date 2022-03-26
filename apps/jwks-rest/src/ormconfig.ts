@@ -30,11 +30,6 @@ const config: PostgresConnectionOptions = {
   // __dirname is either dist or src folder, meaning either
   // the compiled js in prod or the ts in dev.
   migrations: [CreateSchema1561991006215, CreateUserTable1562222612033, SeedUsers1563804021014],
-  cli: {
-    // Location of migration should be inside src folder
-    // to be compiled into dist/ folder.
-    migrationsDir: "src/migrations",
-  },
 };
 
 export default config;

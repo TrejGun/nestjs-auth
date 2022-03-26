@@ -38,11 +38,6 @@ const config: PostgresConnectionOptions = {
     SeedUsers1563804021014,
     CreateAuthTable1572880566396,
   ],
-  cli: {
-    // Location of migration should be inside src folder
-    // to be compiled into dist/ folder.
-    migrationsDir: "src/migrations",
-  },
 };
 
 export default config;
