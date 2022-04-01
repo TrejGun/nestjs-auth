@@ -27,8 +27,8 @@
     "pg": "8.7.3",
     "rxjs": "7.5.5",
     "swagger-ui-express": "4.3.0",
-    "typeorm": "0.3.3",
-    "typeorm-naming-strategies": "4.0.0",
+    "typeorm": "0.3.4",
+    "typeorm-naming-strategies": "4.1.0",
     "uuid": "8.3.2"
   },
   "devDependencies": {
@@ -41,8 +41,8 @@
     "@types/passport": "1.0.7",
     "@types/passport-jwt": "3.0.6",
     "@types/uuid": "8.3.4",
-    "@typescript-eslint/eslint-plugin": "5.16.0",
-    "@typescript-eslint/parser": "5.16.0",
+    "@typescript-eslint/eslint-plugin": "5.17.0",
+    "@typescript-eslint/parser": "5.17.0",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-standard": "16.0.3",
