@@ -18,7 +18,7 @@ export class FacebookStrategy extends PassportStrategy(Strategy, "facebook") {
     });
   }
 
-  authenticate(req: Request, options?: Record<string, any>): void {
+  authenticate(req: Request, options: Record<string, any> = {}): void {
     super.authenticate(
       req,
       Object.assign(options, {
