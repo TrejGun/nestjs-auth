@@ -40,7 +40,7 @@
     "@types/connect-redis": "0.0.18",
     "@types/express": "4.17.13",
     "@types/express-session": "1.17.4",
-    "@types/jest": "27.5.2",
+    "@types/jest": "28.1.0",
     "@types/node": "16.11.38",
     "@types/passport": "1.0.8",
     "@types/passport-local": "1.0.34",
