@@ -8,6 +8,7 @@ import { AuthSessionController } from "./auth.session.controller";
 import { UserModule } from "../user/user.module";
 import { FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy } from "./strategies";
 import { SessionSerializer } from "./session.serializer";
+import { AuthService } from "./auth.service";
 
 describe("AuthService", () => {
   let servcontrollerce: AuthSessionController;
@@ -32,7 +33,7 @@ describe("AuthService", () => {
         UserModule,
         PassportModule,
       ],
-      providers: [FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy, SessionSerializer],
+      providers: [FacebookStrategy, GoogleStrategy, LocalStrategy, OneloginStrategy, SessionSerializer, AuthService],
       controllers: [AuthSessionController],
     }).compile();
 
