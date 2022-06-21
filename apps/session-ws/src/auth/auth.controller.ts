@@ -1,18 +1,28 @@
 import { Request, Response } from "express";
-import { Body, Controller, Get, Post, Req, Res, HttpCode, UseGuards } from "@nestjs/common";
+import {
+  Body,
+  ClassSerializerInterceptor,
+  Controller,
+  Get,
+  HttpCode,
+  Post,
+  Req,
+  Res,
+  UseGuards,
+  UseInterceptors,
+} from "@nestjs/common";
 import { promisify } from "util";
 
 import { Public, User } from "../common/decorators";
 import { LoginGuard } from "../common/guards";
 import { UserEntity } from "../user/user.entity";
-import { UserService } from "../user/user.service";
 import { UserCreateDto } from "../user/dto";
-import { ns } from "../common/constants";
+import { AuthService } from "./auth.service";
 
 @Public()
 @Controller("/auth")
 export class AuthController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly authService: AuthService) {}
 
   @Get("/login")
   public main(@User() userEntity: UserEntity): string {
@@ -45,16 +55,13 @@ export class AuthController {
   @HttpCode(204)
   @Get("/logout")
   public logout(@Req() req: Request, @Res() res: Response): void {
-    // @ts-ignore
-    req.session.destroy();
-    req.logout();
-    res.clearCookie(ns);
-    res.send("");
+    this.authService.logout(req, res);
   }
 
+  @UseInterceptors(ClassSerializerInterceptor)
   @Get("/signup")
   public async signup(@Body() dto: UserCreateDto, @Req() req: Request): Promise<UserEntity> {
-    const userEntity = await this.userService.create(dto);
+    const userEntity = await this.authService.signup(dto);
     await promisify(req.logIn.bind(req))(userEntity);
     return userEntity;
   }

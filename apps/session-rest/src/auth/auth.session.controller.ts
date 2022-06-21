@@ -53,8 +53,8 @@ export class AuthSessionController {
 
   @UseInterceptors(ClassSerializerInterceptor)
   @Get("/signup")
-  public async signup(@Body() data: UserCreateDto, @Req() req: Request): Promise<UserEntity> {
-    const userEntity = await this.authService.signup(data);
+  public async signup(@Body() dto: UserCreateDto, @Req() req: Request): Promise<UserEntity> {
+    const userEntity = await this.authService.signup(dto);
     await promisify(req.logIn.bind(req))(userEntity);
     return userEntity;
   }
