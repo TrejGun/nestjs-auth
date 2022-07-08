@@ -11,7 +11,7 @@
     "@nestjs/jwt": "9.0.0",
     "@nestjs/passport": "8.2.2",
     "@nestjs/platform-express": "8.4.7",
-    "@nestjs/serve-static": "2.2.2",
+    "@nestjs/serve-static": "3.0.0",
     "@nestjs/swagger": "5.2.1",
     "@nestjs/typeorm": "8.1.4",
     "@nestjs/websockets": "8.4.7",
