@@ -5,12 +5,12 @@
     "url": "https://gemunion.io/"
   },
   "dependencies": {
-    "@nestjs/common": "9.0.11",
+    "@nestjs/common": "9.1.2",
     "@nestjs/config": "2.2.0",
-    "@nestjs/core": "9.0.11",
+    "@nestjs/core": "9.1.2",
     "@nestjs/jwt": "9.0.0",
     "@nestjs/passport": "9.0.0",
-    "@nestjs/platform-express": "9.0.11",
+    "@nestjs/platform-express": "9.1.2",
     "@nestjs/serve-static": "3.0.0",
     "@nestjs/swagger": "6.1.2",
     "@nestjs/typeorm": "9.0.1",
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@gemunion/cross-env": "0.0.4",
     "@gemunion/eslint-config": "2.0.5",
-    "@nestjs/testing": "9.0.11",
+    "@nestjs/testing": "9.1.2",
     "@types/express": "4.17.14",
     "@types/jest": "28.1.8",
     "@types/node": "16.11.60",
