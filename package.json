@@ -5,7 +5,7 @@
     "url": "https://gemunion.io/"
   },
   "dependencies": {
-    "lerna": "5.5.4"
+    "lerna": "5.6.1"
   },
   "devDependencies": {
     "husky": "4.3.8",
