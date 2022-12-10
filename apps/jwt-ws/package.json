@@ -27,7 +27,7 @@
     "ioredis": "5.2.4",
     "rxjs": "7.6.0",
     "socket.io": "4.5.4",
-    "@socket.io/redis-adapter": "7.2.0",
+    "@socket.io/redis-adapter": "8.0.0",
     "swagger-ui-express": "4.6.0",
     "typeorm": "0.3.11",
     "typeorm-naming-strategies": "4.1.0",
