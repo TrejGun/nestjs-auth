@@ -27,7 +27,7 @@
     "swagger-ui-express": "4.6.0",
     "typeorm": "0.3.11",
     "typeorm-naming-strategies": "4.1.0",
-    "uuid": "8.3.2"
+    "uuid": "9.0.0"
   },
   "devDependencies": {
     "@gemunion/cross-env": "0.0.4",
@@ -40,7 +40,7 @@
     "@types/passport-facebook": "2.1.11",
     "@types/passport-google-oauth": "1.0.42",
     "@types/passport-jwt": "3.0.7",
-    "@types/uuid": "8.3.4",
+    "@types/uuid": "9.0.0",
     "@typescript-eslint/eslint-plugin": "5.46.0",
     "@typescript-eslint/parser": "5.46.0",
     "eslint": "8.23.0",
