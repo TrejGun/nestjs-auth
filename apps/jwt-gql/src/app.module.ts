@@ -48,7 +48,7 @@ import { JwtGuard, RolesGuard } from "./common/guards";
       useFactory: (configService: ConfigService) => {
         const nodeEnv = configService.get<string>("NODE_ENV", "development");
         return {
-          debug: nodeEnv !== "production",
+          includeStacktraceInErrorResponses: nodeEnv !== "production",
           playground: nodeEnv !== "production",
           context: ({ req, res }: { req: Request; res: Response }): any => ({ req, res }),
           autoSchemaFile: "./schema.gql",
