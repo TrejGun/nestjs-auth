@@ -1,7 +1,7 @@
 import express from "express";
 import session from "express-session";
-import connectRedis from "connect-redis";
-import IORedis from "ioredis";
+import RedisStore from "connect-redis";
+import { Redis } from "ioredis";
 
 import { ns } from "../constants";
 
@@ -27,7 +27,7 @@ export const sessionMiddleware = (props: ISessionMiddlewareProps): express.Reque
     name,
     resave: false,
     secret,
-    store: new (connectRedis(session))({ client: new IORedis(url) }),
+    store: new RedisStore({ client: new Redis(url) }),
     saveUninitialized: true,
     proxy: true,
   });
