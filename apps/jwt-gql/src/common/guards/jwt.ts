@@ -1,4 +1,3 @@
-import { Request } from "express";
 import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { AuthGuard } from "@nestjs/passport";
@@ -27,8 +26,10 @@ export class JwtGuard extends AuthGuard("jwt") implements CanActivate {
     });
   }
 
-  getRequest(context: ExecutionContext): Request {
+  // https://docs.nestjs.com/recipes/passport#graphql
+  getRequest(context: ExecutionContext) {
     const ctx = GqlExecutionContext.create(context);
-    return ctx.getContext().req as Request;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return ctx.getContext().req;
   }
 }
