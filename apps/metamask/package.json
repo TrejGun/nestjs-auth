@@ -5,7 +5,7 @@
     "url": "https://gemunion.io/"
   },
   "dependencies": {
-    "@metamask/eth-sig-util": "5.1.0",
+    "@metamask/eth-sig-util": "6.0.0",
     "@nestjs/common": "10.1.2",
     "@nestjs/config": "3.0.0",
     "@nestjs/core": "10.1.2",
