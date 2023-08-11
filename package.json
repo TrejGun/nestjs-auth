@@ -5,8 +5,8 @@
     "url": "https://gemunion.io/"
   },
   "dependencies": {
-    "@lerna/legacy-package-management": "7.1.4",
-    "lerna": "7.1.4"
+    "@lerna/legacy-package-management": "7.1.5",
+    "lerna": "7.1.5"
   },
   "devDependencies": {
     "husky": "4.3.8",
