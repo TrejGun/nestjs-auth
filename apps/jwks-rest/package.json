@@ -30,13 +30,13 @@
     "@gemunion/eslint-config": "4.0.5",
     "@nestjs/testing": "10.2.10",
     "@types/express": "4.17.21",
-    "@types/jest": "29.5.8",
-    "@types/node": "18.18.9",
-    "@types/passport": "1.0.15",
+    "@types/jest": "29.5.10",
+    "@types/node": "18.18.13",
+    "@types/passport": "1.0.16",
     "@types/passport-jwt": "3.0.13",
-    "@typescript-eslint/eslint-plugin": "6.11.0",
-    "@typescript-eslint/parser": "6.11.0",
-    "eslint": "8.53.0",
+    "@typescript-eslint/eslint-plugin": "6.12.0",
+    "@typescript-eslint/parser": "6.12.0",
+    "eslint": "8.54.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-config-standard": "17.1.0",
     "eslint-import-resolver-typescript": "3.6.1",
@@ -50,7 +50,7 @@
     "ts-jest": "29.1.1",
     "ts-node": "10.9.1",
     "tsc-watch": "6.0.4",
-    "typescript": "5.2.2"
+    "typescript": "5.3.2"
   },
   "engines": {
     "node": ">=18"
