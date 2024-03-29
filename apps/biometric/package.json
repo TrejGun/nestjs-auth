@@ -18,7 +18,7 @@
     "class-transformer": "0.5.1",
     "class-validator": "0.14.1",
     "dotenv": "16.4.5",
-    "express": "4.19.1",
+    "express": "4.19.2",
     "node-rsa": "1.1.1",
     "passport": "0.7.0",
     "passport-jwt": "4.0.1",
@@ -57,7 +57,7 @@
     "prettier": "3.2.5",
     "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
-    "tsc-watch": "6.0.4",
+    "tsc-watch": "6.2.0",
     "typescript": "5.4.3"
   },
   "engines": {
