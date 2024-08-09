@@ -5,7 +5,7 @@
     "url": "https://gemunion.io/"
   },
   "dependencies": {
-    "@apollo/server": "4.10.5",
+    "@apollo/server": "4.11.0",
     "@nestjs/apollo": "12.2.0",
     "@nestjs/common": "10.3.10",
     "@nestjs/config": "3.2.3",
@@ -38,8 +38,8 @@
     "@types/passport": "1.0.16",
     "@types/passport-jwt": "4.0.1",
     "@types/uuid": "9.0.8",
-    "@typescript-eslint/eslint-plugin": "8.0.0",
-    "@typescript-eslint/parser": "8.0.0",
+    "@typescript-eslint/eslint-plugin": "8.0.1",
+    "@typescript-eslint/parser": "8.0.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-standard": "17.1.0",
