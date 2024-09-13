@@ -18,7 +18,7 @@
     "class-transformer": "0.5.1",
     "class-validator": "0.14.1",
     "dotenv": "16.4.5",
-    "express": "4.19.2",
+    "express": "4.21.0",
     "node-rsa": "1.1.1",
     "passport": "0.7.0",
     "passport-jwt": "4.0.1",
@@ -34,7 +34,7 @@
     "@gemunion/eslint-config": "4.0.6",
     "@nestjs/testing": "10.4.1",
     "@types/express": "4.17.21",
-    "@types/jest": "29.5.12",
+    "@types/jest": "29.5.13",
     "@types/node": "20.16.5",
     "@types/passport": "1.0.16",
     "@types/passport-facebook": "3.0.3",
@@ -42,8 +42,8 @@
     "@types/passport-jwt": "4.0.1",
     "@types/passport-local": "1.0.38",
     "@types/uuid": "9.0.8",
-    "@typescript-eslint/eslint-plugin": "8.4.0",
-    "@typescript-eslint/parser": "8.4.0",
+    "@typescript-eslint/eslint-plugin": "8.5.0",
+    "@typescript-eslint/parser": "8.5.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-standard": "17.1.0",
@@ -58,7 +58,7 @@
     "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
     "tsc-watch": "6.2.0",
-    "typescript": "5.5.4"
+    "typescript": "5.6.2"
   },
   "engines": {
     "node": ">=18"
