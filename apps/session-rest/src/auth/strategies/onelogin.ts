@@ -14,12 +14,12 @@ export class OneloginStrategy extends Strategy {
   constructor(private readonly userService: UserService) {
     super(
       {
-        issuer: `${process.env.OIDC_BASE_URI as string}`,
+        issuer: `${process.env.OIDC_BASE_URI!}`,
         clientID: process.env.OIDC_CLIENT_ID,
         clientSecret: process.env.OIDC_CLIENT_SECRET,
-        authorizationURL: `${process.env.OIDC_BASE_URI as string}/auth`,
-        userInfoURL: `${process.env.OIDC_BASE_URI as string}/me`,
-        tokenURL: `${process.env.OIDC_BASE_URI as string}/token`,
+        authorizationURL: `${process.env.OIDC_BASE_URI!}/auth`,
+        userInfoURL: `${process.env.OIDC_BASE_URI!}/me`,
+        tokenURL: `${process.env.OIDC_BASE_URI!}/token`,
         callbackURL: process.env.OIDC_REDIRECT_URI,
       },
       (issuer: string, sub: string, profile: any, cb: (err: Error | null, user?: UserEntity) => void) => {

@@ -50,6 +50,7 @@ npm run bootstrap
 ```
 
 then go to any app and execute
+
 ```bash
 npm start
 ```
@@ -59,6 +60,7 @@ this will start application on default settings.
 Otherwise, go to each individual app and check readme.md
 
 ## Strategies
+
 - Apple JWKS
 - Auth0 JWKS
 - Google JWKS

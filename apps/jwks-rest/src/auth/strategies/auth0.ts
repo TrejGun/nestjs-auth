@@ -9,7 +9,10 @@ import { UserEntity } from "../../user/user.entity";
 
 @Injectable()
 export class Auth0Strategy extends PassportStrategy(Strategy, "auth0") {
-  constructor(private readonly userService: UserService, private readonly configService: ConfigService) {
+  constructor(
+    private readonly userService: UserService,
+    private readonly configService: ConfigService,
+  ) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKeyProvider: passportJwtSecret({

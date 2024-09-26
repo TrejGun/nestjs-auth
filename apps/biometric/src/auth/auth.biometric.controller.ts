@@ -13,7 +13,10 @@ import { UserService } from "../user/user.service";
 @Public()
 @Controller("/auth")
 export class AuthBiometricController {
-  constructor(private readonly authService: AuthService, private readonly userService: UserService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly userService: UserService,
+  ) {}
 
   @ApiBody({
     schema: {

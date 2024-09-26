@@ -16,7 +16,7 @@ export class RolesGuard implements CanActivate {
       context.getClass(),
     ]);
 
-    if (!roles || !roles.length) {
+    if (!roles?.length) {
       return true;
     }
     const socket = context.switchToWs().getClient<Socket>();

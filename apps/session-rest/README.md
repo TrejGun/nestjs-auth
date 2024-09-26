@@ -8,14 +8,13 @@ To store session's data on the server side it additionally uses Redis.
 
 This example shows how to setup Nest.js authorization various 3rd party providers
 
- - local
- - google
- - facebood
- - onelogin
+- local
+- google
+- facebood
+- onelogin
 
 you have to have them configured in advance
 only local provider works out of the box
-
 
 ## Manual installation
 
@@ -28,16 +27,19 @@ npm i
 ```
 
 Then check config in
+
 ```bash
 nano .env
 ```
 
 and start in watch mode
+
 ```bash
 npm run start
 ```
 
 or in production mode
+
 ```bash
 npm run build
 npm run prod
@@ -72,11 +74,13 @@ http://localhost:3000/users/profile \
 ```
 
 This will return your profile
+
 ```json
-{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}
+{ "id": 1, "email": "trejgun@gmail.com", "roles": ["ADMIN"] }
 ```
 
 This will return a list of users
+
 ```json
-{"list":[{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}],"count":1}
+{ "list": [{ "id": 1, "email": "trejgun@gmail.com", "roles": ["ADMIN"] }], "count": 1 }
 ```

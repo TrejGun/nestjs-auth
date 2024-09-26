@@ -1,22 +1,22 @@
 <html lang="en">
-<script>
-  function handleclick(el) {
-    window.open(el.href, "_blank", "height=600,width=800,top=0,left=0");
-    return false;
-  }
-
-  const onMessage = event => {
-    if (event.origin === "http://localhost:3000") {
-      console.log(event.data);
+  <script>
+    function handleclick(el) {
+      window.open(el.href, "_blank", "height=600,width=800,top=0,left=0");
+      return false;
     }
-  };
-  window.addEventListener("message", onMessage, false);
-</script>
-<body>
-<ul>
-  <li><a href="/auth/google" onClick="return handleclick(this)">google</a></li>
-  <li><a href="/auth/facebook" onClick="return handleclick(this)">facebook</a></li>
-  <li><a href="/auth/onelogin" onClick="return handleclick(this)">onelogin</a></li>
-</ul>
-</body>
+
+    const onMessage = event => {
+      if (event.origin === "http://localhost:3000") {
+        console.log(event.data);
+      }
+    };
+    window.addEventListener("message", onMessage, false);
+  </script>
+  <body>
+    <ul>
+      <li><a href="/auth/google" onClick="return handleclick(this)">google</a></li>
+      <li><a href="/auth/facebook" onClick="return handleclick(this)">facebook</a></li>
+      <li><a href="/auth/onelogin" onClick="return handleclick(this)">onelogin</a></li>
+    </ul>
+  </body>
 </html>

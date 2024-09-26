@@ -10,7 +10,10 @@ import { UserCreateDto } from "../user/dto";
 @Public()
 @Controller("/auth")
 export class AuthJwtController {
-  constructor(private readonly authService: AuthService, private readonly userService: UserService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly userService: UserService,
+  ) {}
 
   @Post("/login")
   public login(@Body() dto: LoginDto): Promise<IJwt> {

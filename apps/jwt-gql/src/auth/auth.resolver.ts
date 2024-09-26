@@ -9,7 +9,10 @@ import { Public } from "../common/decorators";
 
 @Resolver(() => Jwt)
 export class AuthResolver {
-  constructor(private readonly authService: AuthService, private readonly userService: UserService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly userService: UserService,
+  ) {}
 
   @Public()
   @Mutation(_returns => Jwt)

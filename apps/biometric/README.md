@@ -4,7 +4,6 @@ This type of authorization uses data from your phone key storage then switches t
 
 It is designed to be used with [react-native-biometrics](https://github.com/SelfLender/react-native-biometrics)
 
-
 ## Manual installation
 
 I assume you have nodejs, yarn/npm, postgres and redis
@@ -16,16 +15,19 @@ npm i
 ```
 
 Then check config in
+
 ```bash
 nano .env
 ```
 
 and start in watch mode
+
 ```bash
 npm run start
 ```
 
 or in production mode
+
 ```bash
 npm run build
 npm run prod
@@ -51,11 +53,18 @@ curl \
 ```
 
 This will give you accessToken
+
 ```json
-{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNjQzNzgyODUxLCJleHAiOjE2NDM3ODMxNTF9.7s3yqyp1rxP6k9iICwYG-S3c9fMu5eF_Eh4SXUOfSyI","refreshToken":"e199c71d-df0b-4c3e-b667-b29a36b8570b","accessTokenExpiresAt":1643783151584,"refreshTokenExpiresAt":1646374851584}
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNjQzNzgyODUxLCJleHAiOjE2NDM3ODMxNTF9.7s3yqyp1rxP6k9iICwYG-S3c9fMu5eF_Eh4SXUOfSyI",
+  "refreshToken": "e199c71d-df0b-4c3e-b667-b29a36b8570b",
+  "accessTokenExpiresAt": 1643783151584,
+  "refreshTokenExpiresAt": 1646374851584
+}
 ```
 
 which is valid for 5 minutes, after this time you have to refresh it using
+
 ```sh
 curl \
 -X POST http://localhost:3000/auth/refresh \
@@ -64,7 +73,12 @@ curl \
 ```
 
 ```json
-{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNjQzNzgyODUxLCJleHAiOjE2NDM3ODMxNTF9.7s3yqyp1rxP6k9iICwYG-S3c9fMu5eF_Eh4SXUOfSyI","refreshToken":"72633d7f-2327-4508-940d-86780b3ba7b7","accessTokenExpiresAt":1572957798255,"refreshTokenExpiresAt":1575549498255}
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyZWpndW5AZ21haWwuY29tIiwiaWF0IjoxNjQzNzgyODUxLCJleHAiOjE2NDM3ODMxNTF9.7s3yqyp1rxP6k9iICwYG-S3c9fMu5eF_Eh4SXUOfSyI",
+  "refreshToken": "72633d7f-2327-4508-940d-86780b3ba7b7",
+  "accessTokenExpiresAt": 1572957798255,
+  "refreshTokenExpiresAt": 1575549498255
+}
 ```
 
 refreshToken is valid for 30 days, but can be destroyed manually
@@ -74,7 +88,7 @@ refreshToken is valid for 30 days, but can be destroyed manually
  -X POST http://localhost:3000/auth/logout \
  -d '{"refreshToken: "2b1764be-a13f-4630-9696-09f9e0f2bbd7"}' \
  -H "Content-Type: application/json"
- ```
+```
 
 Put this accessToken in header of each of your subsequent requests
 
@@ -86,8 +100,9 @@ http://localhost:3000/users/profile \
 ```
 
 This will return your profile
+
 ```json
-{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}
+{ "id": 1, "email": "trejgun@gmail.com", "roles": ["ADMIN"] }
 ```
 
 ```bash
@@ -98,6 +113,7 @@ http://localhost:3000/users \
 ```
 
 This will return a list of users
+
 ```json
-{"list":[{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}],"count":1}
+{ "list": [{ "id": 1, "email": "trejgun@gmail.com", "roles": ["ADMIN"] }], "count": 1 }
 ```

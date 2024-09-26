@@ -1,16 +1,9 @@
 {
-  "extends": [
-    "github>gemunion/renovate-config"
-  ],
-  "baseBranches": [
-    "master"
-  ],
+  "extends": ["github>ethberry/renovate-config"],
+  "baseBranches": ["master"],
   "packageRules": [
     {
-      "updateTypes": [
-        "minor",
-        "patch"
-      ],
+      "updateTypes": ["minor", "patch"],
       "automerge": true
     }
   ]

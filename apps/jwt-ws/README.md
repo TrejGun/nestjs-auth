@@ -15,16 +15,19 @@ npm i
 ```
 
 Then check config in
+
 ```bash
 nano .env
 ```
 
 and start in watch mode
+
 ```bash
 npm run start
 ```
 
 or in production mode
+
 ```bash
 npm run build
 npm run prod
@@ -53,11 +56,13 @@ Also you can login with provider of your choice on
 http://localhost:3000/auth/login
 
 This will return your profile
+
 ```json
-{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}
+{ "id": 1, "email": "trejgun@gmail.com", "roles": ["ADMIN"] }
 ```
 
 This will return a list of users
+
 ```json
-{"list":[{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}],"count":1}
+{ "list": [{ "id": 1, "email": "trejgun@gmail.com", "roles": ["ADMIN"] }], "count": 1 }
 ```

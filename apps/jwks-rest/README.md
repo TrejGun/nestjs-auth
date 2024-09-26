@@ -9,21 +9,25 @@ This type of authorization feats the best if you are going to have only one Auth
 I assume you have nodejs, yarn/npm and postgres
 
 First you have to download dependencies
+
 ```bash
 npm i
 ```
 
 Then check config in
+
 ```bash
 nano .env
 ```
 
 and start in watch mode
+
 ```bash
 npm run start
 ```
 
 or in production mode
+
 ```bash
 npm run build
 npm run prod
@@ -54,8 +58,9 @@ http://localhost:3000/users/profile \
 ```
 
 This will return your profile
+
 ```json
-{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}
+{ "id": 1, "email": "trejgun@gmail.com", "roles": ["ADMIN"] }
 ```
 
 ```bash
@@ -65,6 +70,7 @@ http://localhost:3000/users \
 ```
 
 This will return a list of users
+
 ```json
-{"list":[{"id":1,"email":"trejgun@gmail.com","roles":["ADMIN"]}],"count":1}
+{ "list": [{ "id": 1, "email": "trejgun@gmail.com", "roles": ["ADMIN"] }], "count": 1 }
 ```

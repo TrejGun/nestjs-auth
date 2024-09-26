@@ -1,8 +1,8 @@
 {
   "author": {
-    "email": "TrejGun+gemunion@gmail.com",
+    "email": "trejgun+ethberry@gmail.com",
     "name": "TrejGun",
-    "url": "https://gemunion.io/"
+    "url": "https://ethberry.io/"
   },
   "dependencies": {
     "@nestjs/common": "10.4.3",
@@ -35,8 +35,7 @@
   },
   "description": "socket.io based authorization for nest.js",
   "devDependencies": {
-    "@gemunion/cross-env": "0.0.4",
-    "@gemunion/eslint-config": "4.0.6",
+    "@ethberry/cross-env": "0.0.5",
     "@nestjs/testing": "10.4.3",
     "@types/express": "4.17.21",
     "@types/jest": "29.5.13",
@@ -45,17 +44,6 @@
     "@types/passport-jwt": "4.0.1",
     "@types/passport-local": "1.0.38",
     "@types/uuid": "9.0.8",
-    "@typescript-eslint/eslint-plugin": "8.6.0",
-    "@typescript-eslint/parser": "8.6.0",
-    "eslint": "8.57.1",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-config-standard": "17.1.0",
-    "eslint-import-resolver-typescript": "3.6.3",
-    "eslint-plugin-import": "2.30.0",
-    "eslint-plugin-jest": "27.9.0",
-    "eslint-plugin-n": "16.6.2",
-    "eslint-plugin-prettier": "5.2.1",
-    "eslint-plugin-promise": "6.6.0",
     "jest": "29.7.0",
     "prettier": "3.3.3",
     "ts-jest": "29.2.5",
@@ -68,25 +56,19 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "@gemunion/jwt-ws",
+  "name": "@ethberry/jwt-ws",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gemunion/nestjs-auth"
+    "url": "https://github.com/ethberry/nestjs-auth"
   },
   "scripts": {
     "build": "tsc",
-    "entity:create": "npm run typeorm -- entity:create -n",
-    "format": "prettier --write \"src/**/*.ts\"",
+    "prettier": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --fix",
-    "migration:create": "npm run typeorm migration:create -- -n",
-    "migration:generate": "npm run typeorm migration:generate -- -n",
-    "migration:revert": "npm run typeorm migration:revert",
-    "migration:run": "npm run typeorm migration:run",
     "prebuild": "rm -rf dist/",
     "prod": "cross-env NODE_ENV=${NODE_ENV:=production} node .",
     "start": "cross-env NODE_ENV=${NODE_ENV:=development} tsc-watch --onSuccess \"node .\" --onFailure \"echo Compilation Failed\"",
-    "test": "cross-env NODE_ENV=${NODE_ENV:=test} jest --config jest.config.json --detectOpenHandles",
-    "typeorm": "cross-env NODE_ENV=${NODE_ENV:=development} ts-node ./node_modules/.bin/typeorm --config src/ormconfig.ts"
+    "test": "cross-env NODE_ENV=${NODE_ENV:=test} jest --config jest.config.json --detectOpenHandles"
   },
   "title": "JWT + Socket.io based authorization for Nest.js",
   "version": "0.0.1"
