@@ -1,5 +1,5 @@
 {
-  "extends": ["github>ethberry/renovate-config"],
+  "extends": ["github>trejgun/renovate-config"],
   "baseBranches": ["master"],
   "packageRules": [
     {

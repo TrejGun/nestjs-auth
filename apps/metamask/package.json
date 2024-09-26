@@ -1,6 +1,6 @@
 {
   "author": {
-    "email": "trejgun+ethberry@gmail.com",
+    "email": "trejgun+opensource@gmail.com",
     "name": "TrejGun",
     "url": "https://ethberry.io/"
   },
@@ -52,10 +52,10 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "@ethberry/metamask",
+  "name": "@trejgun/metamask",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ethberry/nestjs-auth"
+    "url": "https://github.com/trejgun/nestjs-auth"
   },
   "scripts": {
     "build": "tsc",
