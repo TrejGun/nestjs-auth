@@ -10,12 +10,12 @@
   },
   "devDependencies": {
     "@ethberry/eslint-config": "5.0.3",
-    "husky": "4.3.8",
+    "husky": "9.1.6",
     "lint-staged": "15.2.10",
     "prettier": "3.3.3"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "license": "MIT",
   "name": "@trejgun/nestjs-auth",
@@ -29,6 +29,7 @@
     "build": "lerna run build --stream",
     "clean": "sh scripts/clean.sh",
     "lint": "lerna run lint --concurrency 1",
+    "prepare": "husky",
     "prettier": "prettier . --write",
     "test": "sh scripts/test.sh"
   },
