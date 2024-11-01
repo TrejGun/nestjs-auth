@@ -5,8 +5,8 @@
     "url": "https://ethberry.io/"
   },
   "dependencies": {
-    "@lerna/legacy-package-management": "8.1.8",
-    "lerna": "8.1.8"
+    "@lerna/legacy-package-management": "8.1.9",
+    "lerna": "8.1.9"
   },
   "devDependencies": {
     "@ethberry/eslint-config": "5.0.4",
