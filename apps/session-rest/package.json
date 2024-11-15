@@ -47,7 +47,7 @@
     "prettier": "3.3.3",
     "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
-    "tsc-watch": "6.2.0",
+    "tsc-watch": "6.2.1",
     "typescript": "5.6.3"
   },
   "engines": {
