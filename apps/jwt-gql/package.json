@@ -19,7 +19,7 @@
     "class-validator": "0.14.1",
     "dotenv": "16.4.7",
     "express": "4.21.2",
-    "graphql": "16.9.0",
+    "graphql": "16.10.0",
     "passport": "0.7.0",
     "passport-jwt": "4.0.1",
     "pg": "8.13.1",
