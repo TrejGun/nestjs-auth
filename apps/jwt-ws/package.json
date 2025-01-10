@@ -31,7 +31,7 @@
     "swagger-ui-express": "5.0.1",
     "typeorm": "0.3.20",
     "typeorm-naming-strategies": "4.1.0",
-    "uuid": "11.0.3"
+    "uuid": "11.0.5"
   },
   "description": "socket.io based authorization for nest.js",
   "devDependencies": {
@@ -49,7 +49,7 @@
     "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
     "tsc-watch": "6.2.1",
-    "typescript": "5.7.2"
+    "typescript": "5.7.3"
   },
   "engines": {
     "node": ">=18"
