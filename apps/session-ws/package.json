@@ -12,7 +12,7 @@
     "@nestjs/platform-express": "10.4.15",
     "@nestjs/platform-socket.io": "10.4.15",
     "@nestjs/serve-static": "4.0.2",
-    "@nestjs/swagger": "8.1.0",
+    "@nestjs/swagger": "8.1.1",
     "@nestjs/typeorm": "10.0.2",
     "@nestjs/websockets": "10.4.15",
     "@socket.io/redis-adapter": "8.3.0",
