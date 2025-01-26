@@ -19,7 +19,6 @@ export class AppleStrategy extends PassportStrategy(Strategy, "apple") {
       }),
       issuer: "https://appleid.apple.com",
       algorithms: ["RS256"],
-      scope: ["name", "email"],
     });
   }
 

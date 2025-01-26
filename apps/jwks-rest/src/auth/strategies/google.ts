@@ -19,7 +19,6 @@ export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
       }),
       issuer: "https://accounts.google.com",
       algorithms: ["RS256"],
-      scope: ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"],
     });
   }
 
