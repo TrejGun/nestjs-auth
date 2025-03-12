@@ -19,7 +19,7 @@
     "class-validator": "0.14.1",
     "dotenv": "16.4.7",
     "express": "4.21.2",
-    "firebase-admin": "12.7.0",
+    "firebase-admin": "13.2.0",
     "passport": "0.7.0",
     "passport-firebase-jwt": "1.2.1",
     "passport-jwt": "4.0.1",
