@@ -11,9 +11,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20.x]
     services:
       postgres:
         # Docker Hub image
@@ -33,6 +30,10 @@ jobs:
           --health-retries 5
 
     steps:
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
       - name: checkout
         uses: actions/checkout@v4
         with:
