@@ -22,7 +22,7 @@
     "passport": "0.7.0",
     "passport-custom": "1.1.1",
     "passport-jwt": "4.0.1",
-    "pg": "8.13.3",
+    "pg": "8.14.1",
     "rxjs": "7.8.2",
     "swagger-ui-express": "5.0.1",
     "typeorm": "0.3.20",
