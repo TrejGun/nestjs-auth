@@ -24,9 +24,10 @@
     "passport-firebase-jwt": "1.2.1",
     "passport-jwt": "4.0.1",
     "pg": "8.14.1",
+    "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2",
     "socket.io": "4.8.1",
-    "typeorm": "0.3.20",
+    "typeorm": "0.3.21",
     "typeorm-naming-strategies": "4.1.0",
     "uuid": "11.1.0"
   },
@@ -58,9 +59,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "prettier": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --fix",
     "prebuild": "rm -rf dist/",
+    "prettier": "prettier --write \"src/**/*.ts\"",
     "prod": "cross-env NODE_ENV=${NODE_ENV:=production} node .",
     "start": "cross-env NODE_ENV=${NODE_ENV:=development} tsc-watch --onSuccess \"node .\" --onFailure \"echo Compilation Failed\"",
     "test": "cross-env NODE_ENV=${NODE_ENV:=test} jest --config jest.config.json --detectOpenHandles"
