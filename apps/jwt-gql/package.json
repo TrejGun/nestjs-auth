@@ -32,7 +32,7 @@
   "devDependencies": {
     "@ethberry/cross-env": "0.0.5",
     "@nestjs/testing": "11.0.12",
-    "@types/express": "5.0.0",
+    "@types/express": "5.0.1",
     "@types/jest": "29.5.14",
     "@types/node": "^22.13.10",
     "@types/passport": "1.0.17",
