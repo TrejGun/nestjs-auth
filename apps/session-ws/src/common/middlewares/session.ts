@@ -1,6 +1,6 @@
 import express from "express";
 import session from "express-session";
-import RedisStore from "connect-redis";
+import { RedisStore } from "connect-redis";
 import { Redis } from "ioredis";
 
 import { ns } from "../constants";
