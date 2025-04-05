@@ -29,7 +29,7 @@
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2",
     "swagger-ui-express": "5.0.1",
-    "typeorm": "0.3.21",
+    "typeorm": "0.3.22",
     "typeorm-naming-strategies": "4.1.0"
   },
   "description": "session based authorization for nest.js",
@@ -46,10 +46,10 @@
     "@types/passport-local": "1.0.38",
     "jest": "29.7.0",
     "prettier": "3.5.3",
-    "ts-jest": "29.3.0",
+    "ts-jest": "29.3.1",
     "ts-node": "10.9.2",
     "tsc-watch": "6.2.1",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "engines": {
     "node": ">=18"
