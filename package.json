@@ -5,13 +5,13 @@
     "url": "https://ethberry.io/"
   },
   "dependencies": {
-    "@lerna/legacy-package-management": "8.2.1",
-    "lerna": "8.2.1"
+    "@lerna/legacy-package-management": "8.2.2",
+    "lerna": "8.2.2"
   },
   "devDependencies": {
     "@ethberry/eslint-config": "5.0.5",
     "husky": "9.1.7",
-    "lint-staged": "15.5.0",
+    "lint-staged": "15.5.1",
     "prettier": "3.5.3"
   },
   "engines": {
