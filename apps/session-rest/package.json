@@ -15,7 +15,7 @@
     "@nestjs/typeorm": "11.0.0",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.2",
-    "connect-redis": "8.0.3",
+    "connect-redis": "8.1.0",
     "dotenv": "16.5.0",
     "express": "4.21.2",
     "express-session": "1.18.1",
@@ -35,7 +35,7 @@
   "description": "session based authorization for nest.js",
   "devDependencies": {
     "@nestjs/testing": "11.1.1",
-    "@types/express": "5.0.1",
+    "@types/express": "5.0.2",
     "@types/express-session": "1.18.1",
     "@types/jest": "29.5.14",
     "@types/node": "^22.13.10",
@@ -48,7 +48,7 @@
     "prettier": "3.5.3",
     "ts-jest": "29.3.4",
     "ts-node": "10.9.2",
-    "tsc-watch": "6.2.1",
+    "tsc-watch": "6.3.1",
     "typescript": "5.8.3"
   },
   "engines": {
