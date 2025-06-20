@@ -20,10 +20,10 @@
     "jwks-rsa": "3.2.0",
     "passport": "0.7.0",
     "passport-jwt": "4.0.1",
-    "pg": "8.16.0",
+    "pg": "8.16.2",
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2",
-    "typeorm": "0.3.24",
+    "typeorm": "0.3.25",
     "typeorm-naming-strategies": "4.1.0"
   },
   "devDependencies": {
