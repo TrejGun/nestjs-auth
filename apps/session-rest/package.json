@@ -25,11 +25,11 @@
     "passport-google-oauth": "2.0.0",
     "passport-local": "1.0.0",
     "passport-openidconnect": "0.1.2",
-    "pg": "8.16.0",
+    "pg": "8.16.2",
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2",
     "swagger-ui-express": "5.0.1",
-    "typeorm": "0.3.24",
+    "typeorm": "0.3.25",
     "typeorm-naming-strategies": "4.1.0"
   },
   "description": "session based authorization for nest.js",
