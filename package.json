@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "@lerna/legacy-package-management": "8.2.4",
-    "lerna": "8.2.3"
+    "lerna": "8.2.4"
   },
   "devDependencies": {
     "@ethberry/eslint-config": "5.0.9",
