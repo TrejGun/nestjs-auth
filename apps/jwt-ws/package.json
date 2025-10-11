@@ -21,7 +21,7 @@
     "class-validator": "0.14.2",
     "dotenv": "16.6.1",
     "express": "4.21.2",
-    "ioredis": "5.8.0",
+    "ioredis": "5.8.1",
     "passport": "0.7.0",
     "passport-jwt": "4.0.1",
     "pg": "8.16.3",
@@ -46,7 +46,7 @@
     "@types/uuid": "10.0.0",
     "jest": "29.7.0",
     "prettier": "3.6.2",
-    "ts-jest": "29.4.4",
+    "ts-jest": "29.4.5",
     "ts-node": "10.9.2",
     "tsc-watch": "6.3.1",
     "typescript": "5.9.3"
