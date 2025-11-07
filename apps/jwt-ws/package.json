@@ -21,7 +21,7 @@
     "class-validator": "0.14.2",
     "dotenv": "16.6.1",
     "express": "4.21.2",
-    "ioredis": "5.8.1",
+    "ioredis": "5.8.2",
     "passport": "0.7.0",
     "passport-jwt": "4.0.1",
     "pg": "8.16.3",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@ethberry/cross-env": "0.0.5",
     "@nestjs/testing": "11.1.8",
-    "@types/express": "5.0.3",
+    "@types/express": "5.0.5",
     "@types/jest": "29.5.14",
     "@types/node": "^22.13.10",
     "@types/passport": "1.0.17",
