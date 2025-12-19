@@ -6,11 +6,11 @@
   },
   "dependencies": {
     "@apollo/server": "4.12.2",
-    "@nestjs/apollo": "13.2.1",
+    "@nestjs/apollo": "13.2.3",
     "@nestjs/common": "11.1.9",
     "@nestjs/config": "4.0.2",
     "@nestjs/core": "11.1.9",
-    "@nestjs/graphql": "13.2.0",
+    "@nestjs/graphql": "13.2.3",
     "@nestjs/jwt": "11.0.2",
     "@nestjs/passport": "11.0.5",
     "@nestjs/platform-express": "11.1.9",
