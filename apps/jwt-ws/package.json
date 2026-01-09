@@ -21,7 +21,7 @@
     "class-validator": "0.14.3",
     "dotenv": "16.6.1",
     "express": "4.22.1",
-    "ioredis": "5.8.2",
+    "ioredis": "5.9.1",
     "passport": "0.7.0",
     "passport-jwt": "4.0.1",
     "pg": "8.16.3",
