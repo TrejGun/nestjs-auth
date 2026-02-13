@@ -22,7 +22,7 @@
     "dotenv": "16.6.1",
     "express": "4.22.1",
     "express-session": "1.19.0",
-    "ioredis": "5.9.2",
+    "ioredis": "5.9.3",
     "passport": "0.7.0",
     "passport-local": "1.0.0",
     "pg": "8.18.0",
