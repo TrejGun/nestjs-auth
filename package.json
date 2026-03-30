@@ -5,7 +5,6 @@
     "url": "https://ethberry.io/"
   },
   "dependencies": {
-    "@lerna/legacy-package-management": "8.2.4",
     "lerna": "9.0.7"
   },
   "devDependencies": {
