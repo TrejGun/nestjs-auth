@@ -16,7 +16,7 @@
     "@nestjs/typeorm": "11.0.0",
     "class-transformer": "0.5.1",
     "class-validator": "0.15.1",
-    "dotenv": "16.6.1",
+    "dotenv": "17.3.1",
     "express": "4.22.1",
     "passport": "0.7.0",
     "passport-facebook": "3.0.0",
