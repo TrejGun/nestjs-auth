@@ -40,7 +40,7 @@
     "@types/express": "5.0.6",
     "@types/express-session": "1.18.2",
     "@types/jest": "30.0.0",
-    "@types/node": "^22.13.10",
+    "@types/node": "^24.0.0",
     "@types/passport": "1.0.17",
     "@types/passport-local": "1.0.38",
     "jest": "30.3.0",
