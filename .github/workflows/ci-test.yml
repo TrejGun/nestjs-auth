@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: "22.x"
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref }}
 
