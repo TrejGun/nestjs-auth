@@ -46,7 +46,6 @@ Then if you are going to use features provided by monorepo you can install all d
 
 ```bash
 npm i
-npm run bootstrap
 ```
 
 then go to any app and execute

@@ -8,6 +8,6 @@ set -e # this will cause the shell to exit immediately if any command exits with
 export NODE_ENV=$NODE_ENV
 export POSTGRES_URL=$POSTGRES_URL
 
-lerna bootstrap --hoist --ignore-scripts
+lerna npm i
 lerna run build --stream
 lerna run test --concurrency 1
