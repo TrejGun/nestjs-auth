@@ -30,8 +30,7 @@
     "socket.io": "4.8.3",
     "swagger-ui-express": "5.0.1",
     "typeorm": "0.3.28",
-    "typeorm-naming-strategies": "4.1.0",
-    "uuid": "11.1.0"
+    "typeorm-naming-strategies": "4.1.0"
   },
   "description": "socket.io based authorization for nest.js",
   "devDependencies": {
@@ -43,7 +42,6 @@
     "@types/passport": "1.0.17",
     "@types/passport-jwt": "4.0.1",
     "@types/passport-local": "1.0.38",
-    "@types/uuid": "10.0.0",
     "jest": "30.3.0",
     "prettier": "3.8.3",
     "ts-jest": "29.4.9",

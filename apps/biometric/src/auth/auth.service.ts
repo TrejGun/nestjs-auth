@@ -1,8 +1,9 @@
+import { randomUUID } from "crypto";
+
 import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { InjectRepository } from "@nestjs/typeorm";
 import { DeleteResult, FindOptionsWhere, Repository } from "typeorm";
-import { v4 } from "uuid";
 
 import { IJwt } from "../common/jwt";
 import { UserService } from "../user/user.service";
@@ -34,7 +35,7 @@ export class AuthService {
   }
 
   public async loginUser(userEntity: UserEntity): Promise<IJwt> {
-    const refreshToken = v4();
+    const refreshToken = randomUUID();
     const date = new Date();
 
     await this.authEntityRepository
