@@ -11,7 +11,7 @@
     "@ethberry/eslint-config": "5.0.11",
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
-    "prettier": "3.8.2"
+    "prettier": "3.8.3"
   },
   "engines": {
     "node": ">=22"
