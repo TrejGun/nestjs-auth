@@ -19,7 +19,7 @@
     "class-validator": "0.15.1",
     "dotenv": "17.4.2",
     "express": "5.2.1",
-    "firebase-admin": "13.8.0",
+    "firebase-admin": "13.9.0",
     "passport": "0.7.0",
     "passport-firebase-jwt": "1.2.1",
     "passport-jwt": "4.0.1",
@@ -27,7 +27,7 @@
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2",
     "socket.io": "4.8.3",
-    "typeorm": "0.3.28",
+    "typeorm": "0.3.29",
     "typeorm-naming-strategies": "4.1.0"
   },
   "devDependencies": {
@@ -38,7 +38,7 @@
     "@types/node": "^24.0.0",
     "@types/passport": "1.0.17",
     "@types/passport-jwt": "4.0.1",
-    "jest": "30.3.0",
+    "jest": "30.4.1",
     "prettier": "3.8.3",
     "ts-jest": "29.4.9",
     "ts-node": "10.9.2",
