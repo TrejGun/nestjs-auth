@@ -43,7 +43,7 @@
     "@types/node": "^24.0.0",
     "@types/passport": "1.0.17",
     "@types/passport-local": "1.0.38",
-    "jest": "30.4.1",
+    "jest": "30.4.2",
     "prettier": "3.8.3",
     "ts-jest": "29.4.9",
     "ts-node": "10.9.2",
