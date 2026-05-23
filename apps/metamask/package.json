@@ -22,11 +22,11 @@
     "passport": "0.7.0",
     "passport-custom": "1.1.1",
     "passport-jwt": "4.0.1",
-    "pg": "8.20.0",
+    "pg": "8.21.0",
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2",
     "swagger-ui-express": "5.0.1",
-    "typeorm": "0.3.29",
+    "typeorm": "0.3.30",
     "typeorm-naming-strategies": "4.1.0"
   },
   "devDependencies": {
@@ -41,7 +41,7 @@
     "@types/passport-jwt": "4.0.1",
     "jest": "30.4.2",
     "prettier": "3.8.3",
-    "ts-jest": "29.4.9",
+    "ts-jest": "29.4.11",
     "ts-node": "10.9.2",
     "tsc-watch": "7.2.0",
     "typescript": "5.9.3"
