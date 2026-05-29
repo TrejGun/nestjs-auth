@@ -5,11 +5,11 @@
     "url": "https://ethberry.io/"
   },
   "dependencies": {
-    "@nestjs/common": "11.1.23",
+    "@nestjs/common": "11.1.24",
     "@nestjs/config": "4.0.4",
-    "@nestjs/core": "11.1.23",
+    "@nestjs/core": "11.1.24",
     "@nestjs/passport": "11.0.5",
-    "@nestjs/platform-express": "11.1.23",
+    "@nestjs/platform-express": "11.1.24",
     "@nestjs/serve-static": "5.0.5",
     "@nestjs/swagger": "11.4.4",
     "@nestjs/typeorm": "11.0.1",
@@ -34,7 +34,7 @@
   },
   "description": "session based authorization for nest.js",
   "devDependencies": {
-    "@nestjs/testing": "11.1.23",
+    "@nestjs/testing": "11.1.24",
     "@types/express": "5.0.6",
     "@types/express-session": "1.19.0",
     "@types/jest": "30.0.0",
