@@ -5,12 +5,12 @@
     "url": "https://ethberry.io/"
   },
   "dependencies": {
-    "@nestjs/common": "11.1.24",
+    "@nestjs/common": "11.1.26",
     "@nestjs/config": "4.0.4",
-    "@nestjs/core": "11.1.24",
+    "@nestjs/core": "11.1.26",
     "@nestjs/jwt": "11.0.2",
     "@nestjs/passport": "11.0.5",
-    "@nestjs/platform-express": "11.1.24",
+    "@nestjs/platform-express": "11.1.26",
     "@nestjs/serve-static": "5.0.5",
     "@nestjs/swagger": "11.4.4",
     "@nestjs/typeorm": "11.0.1",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@ethberry/cross-env": "0.0.5",
-    "@nestjs/testing": "11.1.24",
+    "@nestjs/testing": "11.1.26",
     "@types/express": "5.0.6",
     "@types/jest": "30.0.0",
     "@types/node": "^24.0.0",
