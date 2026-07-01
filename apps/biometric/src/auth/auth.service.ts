@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   public async refresh(where: FindOptionsWhere<AuthEntity>): Promise<IJwt> {
-    const authEntity = await this.authEntityRepository.findOne({ where, relations: ["user"] });
+    const authEntity = await this.authEntityRepository.findOne({ where, relations: { user: true } });
 
     if (!authEntity || authEntity.refreshTokenExpiresAt < new Date().getTime()) {
       throw new UnauthorizedException();

@@ -1,6 +1,5 @@
 import { SnakeNamingStrategy } from "typeorm-naming-strategies";
-import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
-import { DataSource } from "typeorm";
+import { DataSource, type DataSourceOptions } from "typeorm";
 
 import { ns } from "./common/constants";
 import { AuthEntity } from "./auth/auth.entity";
@@ -11,8 +10,7 @@ import { SeedUsers1563804021014 } from "./migrations/1563804021014-seed-users";
 import { CreateAuthTable1572880566396 } from "./migrations/1572880566396-create-auth-table";
 
 // Check typeORM documentation for more information.
-const config: PostgresConnectionOptions = {
-  name: "default",
+const config: Extract<DataSourceOptions, { type: "postgres" }> = {
   type: "postgres",
   url: process.env.POSTGRES_URL,
   // prettier-ignore

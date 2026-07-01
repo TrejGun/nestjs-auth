@@ -1,6 +1,5 @@
 import { SnakeNamingStrategy } from "typeorm-naming-strategies";
-import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
-import { DataSource } from "typeorm";
+import { DataSource, type DataSourceOptions } from "typeorm";
 
 import { ns } from "./common/constants";
 import { UserEntity } from "./user/user.entity";
@@ -9,8 +8,7 @@ import { CreateUserTable1562222612033 } from "./migrations/1562222612033-create-
 import { SeedUsers1563804021014 } from "./migrations/1563804021014-seed-users";
 
 // Check typeORM documentation for more information.
-const config: PostgresConnectionOptions = {
-  name: "default",
+const config: Extract<DataSourceOptions, { type: "postgres" }> = {
   type: "postgres",
   url: process.env.POSTGRES_URL,
   // prettier-ignore
