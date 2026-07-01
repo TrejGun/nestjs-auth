@@ -10,11 +10,11 @@
   "devDependencies": {
     "@ethberry/eslint-config": "5.0.13",
     "husky": "9.1.7",
-    "lint-staged": "16.4.0",
-    "prettier": "3.8.5"
+    "lint-staged": "17.0.8",
+    "prettier": "3.9.4"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "license": "MIT",
   "name": "@trejgun/nestjs-auth",

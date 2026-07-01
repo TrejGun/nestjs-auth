@@ -4,7 +4,7 @@ import { WsException } from "@nestjs/websockets";
 import { ExtractJwt, JwtFromRequestFunction } from "passport-jwt";
 import { Strategy } from "passport-firebase-jwt";
 import { Request } from "express";
-import { app } from "firebase-admin";
+import { Auth } from "firebase-admin/auth";
 
 import { UserService } from "../../user/user.service";
 import { UserEntity } from "../../user/user.entity";
@@ -22,7 +22,7 @@ export class FirebaseWsStrategy extends PassportStrategy(Strategy, "firebase-ws"
 
   constructor(
     @Inject(APP_PROVIDER)
-    private readonly admin: app.App,
+    private readonly admin: Auth,
     @Inject(forwardRef(() => UserService))
     private readonly userService: UserService,
   ) {
@@ -32,13 +32,10 @@ export class FirebaseWsStrategy extends PassportStrategy(Strategy, "firebase-ws"
   }
 
   public async validate(payload: string): Promise<UserEntity> {
-    const data = await this.admin
-      .auth()
-      .verifyIdToken(payload, true)
-      .catch(error => {
-        this.logger.error(error);
-        throw new WsException("unauthorized");
-      });
+    const data = await this.admin.verifyIdToken(payload, true).catch((error: unknown) => {
+      this.logger.error(error);
+      throw new WsException("unauthorized");
+    });
 
     const userEntity = await this.userService.findOne({ sub: data.sub });
 

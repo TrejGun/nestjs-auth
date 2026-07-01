@@ -1,8 +1,9 @@
-import { Module, OnModuleInit, forwardRef } from "@nestjs/common";
+import { Module, forwardRef } from "@nestjs/common";
 import { PassportModule } from "@nestjs/passport";
 import { JwtModule } from "@nestjs/jwt";
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import admin from "firebase-admin";
+import { getApp, initializeApp } from "firebase-admin";
+import { Auth, getAuth } from "firebase-admin/auth";
 
 import { AuthService } from "./auth.service";
 import { UserModule } from "../user/user.module";
@@ -31,13 +32,12 @@ import { accessTokenExpiresIn, APP_PROVIDER } from "./auth.constants";
     FirebaseWsStrategy,
     {
       provide: APP_PROVIDER,
-      useValue: admin,
+      useFactory: (): Auth => {
+        initializeApp();
+        return getAuth(getApp());
+      },
     },
   ],
   exports: [AuthService],
 })
-export class AuthModule implements OnModuleInit {
-  public onModuleInit(): void {
-    admin.initializeApp();
-  }
-}
+export class AuthModule {}

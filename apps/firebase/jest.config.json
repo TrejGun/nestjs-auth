@@ -5,6 +5,7 @@
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
   },
+  "transformIgnorePatterns": ["/node_modules/(?!jose|firebase-admin|jwks-rsa)/"],
   "coverageDirectory": "../coverage",
   "testEnvironment": "node"
 }

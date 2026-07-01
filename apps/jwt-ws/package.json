@@ -13,7 +13,7 @@
     "@nestjs/platform-express": "11.1.27",
     "@nestjs/platform-socket.io": "11.1.27",
     "@nestjs/serve-static": "5.0.5",
-    "@nestjs/swagger": "11.4.4",
+    "@nestjs/swagger": "11.4.5",
     "@nestjs/typeorm": "11.0.3",
     "@nestjs/websockets": "11.1.27",
     "@socket.io/redis-adapter": "8.3.0",
@@ -43,14 +43,14 @@
     "@types/passport-jwt": "4.0.1",
     "@types/passport-local": "1.0.38",
     "jest": "30.4.2",
-    "prettier": "3.8.5",
+    "prettier": "3.9.4",
     "ts-jest": "29.4.11",
     "ts-node": "10.9.2",
-    "tsc-watch": "7.2.0",
+    "tsc-watch": "7.2.1",
     "typescript": "5.9.3"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=24"
   },
   "license": "MIT",
   "main": "./dist/index.js",

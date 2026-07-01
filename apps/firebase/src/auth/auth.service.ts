@@ -1,5 +1,5 @@
 import { Inject, Injectable } from "@nestjs/common";
-import { app } from "firebase-admin";
+import { Auth } from "firebase-admin/auth";
 
 import { UserEntity } from "../user/user.entity";
 import { APP_PROVIDER } from "./auth.constants";
@@ -8,10 +8,10 @@ import { APP_PROVIDER } from "./auth.constants";
 export class AuthService {
   constructor(
     @Inject(APP_PROVIDER)
-    private readonly admin: app.App,
+    private readonly admin: Auth,
   ) {}
 
   public delete(userEntity: UserEntity): Promise<void> {
-    return this.admin.auth().deleteUser(userEntity.sub);
+    return this.admin.deleteUser(userEntity.sub);
   }
 }

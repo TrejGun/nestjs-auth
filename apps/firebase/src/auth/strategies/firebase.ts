@@ -2,7 +2,7 @@ import { forwardRef, Inject, Injectable, Logger, UnauthorizedException } from "@
 import { PassportStrategy } from "@nestjs/passport";
 import { ExtractJwt } from "passport-jwt";
 import { Strategy } from "passport-firebase-jwt";
-import { app } from "firebase-admin";
+import { Auth } from "firebase-admin/auth";
 
 import { UserService } from "../../user/user.service";
 import { UserEntity } from "../../user/user.entity";
@@ -14,7 +14,7 @@ export class FirebaseStrategy extends PassportStrategy(Strategy, "firebase") {
 
   constructor(
     @Inject(APP_PROVIDER)
-    private readonly admin: app.App,
+    private readonly admin: Auth,
     @Inject(forwardRef(() => UserService))
     private readonly userService: UserService,
   ) {
@@ -24,21 +24,15 @@ export class FirebaseStrategy extends PassportStrategy(Strategy, "firebase") {
   }
 
   public async validate(payload: string): Promise<UserEntity> {
-    const data = await this.admin
-      .auth()
-      .verifyIdToken(payload, true)
-      .catch(error => {
-        this.loggerService.error(error);
-        throw new UnauthorizedException("unauthorized");
-      });
+    const data = await this.admin.verifyIdToken(payload, true).catch((error: unknown) => {
+      this.loggerService.error(error);
+      throw new UnauthorizedException("unauthorized");
+    });
 
     let userEntity = await this.userService.findOne({ sub: data.sub });
 
     if (!userEntity) {
-      const firebaseUser = await this.admin
-        .auth()
-        .getUser(data.sub)
-        .catch(this.loggerService.error.bind(this.loggerService));
+      const firebaseUser = await this.admin.getUser(data.sub).catch(this.loggerService.error.bind(this.loggerService));
 
       // here you can get displayName and email
       void firebaseUser;
