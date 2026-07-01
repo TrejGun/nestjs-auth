@@ -14,7 +14,7 @@
     "prettier": "3.9.4"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "license": "MIT",
   "name": "@trejgun/nestjs-auth",
