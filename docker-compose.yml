@@ -1,10 +1,11 @@
-version: "3"
+volumes:
+  postgres_data:
+    driver: local
 
 services:
   postgres:
     container_name: postgres
-    image: postgres
-    user: root
+    image: postgres:18
     ports:
       - "5432:5432"
     environment:
@@ -12,5 +13,4 @@ services:
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
       POSTGRES_DB: "${POSTGRES_DB}"
     volumes:
-      - ${BASE_PATH}/postgres:/var/lib/postgresql/data
-      - ${BASE_PATH}/pgbckp:/pgbckp
+      - postgres_data:/var/lib/postgresql
