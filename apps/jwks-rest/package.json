@@ -23,7 +23,7 @@
     "pg": "8.22.0",
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2",
-    "typeorm": "1.0.0",
+    "typeorm": "1.1.0",
     "typeorm-naming-strategies": "4.1.0"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "@types/passport": "1.0.17",
     "@types/passport-jwt": "4.0.1",
     "jest": "30.4.2",
-    "prettier": "3.9.4",
+    "prettier": "3.9.5",
     "ts-jest": "29.4.11",
     "ts-node": "10.9.2",
     "tsc-watch": "7.2.1",
