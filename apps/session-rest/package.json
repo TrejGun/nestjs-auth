@@ -17,7 +17,7 @@
     "class-validator": "0.15.1",
     "connect-redis": "9.0.0",
     "dotenv": "17.4.2",
-    "express": "5.2.1",
+    "express": "5.3.0",
     "express-session": "1.19.0",
     "ioredis": "5.11.1",
     "passport": "0.7.0",
@@ -29,7 +29,7 @@
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2",
     "swagger-ui-express": "5.0.1",
-    "typeorm": "1.1.1",
+    "typeorm": "1.1.2",
     "typeorm-naming-strategies": "4.1.0"
   },
   "description": "session based authorization for nest.js",
@@ -45,8 +45,8 @@
     "@types/passport-google-oauth": "1.0.45",
     "@types/passport-local": "1.0.38",
     "jest": "30.5.2",
-    "prettier": "3.9.9",
-    "ts-jest": "29.4.14",
+    "prettier": "3.9.10",
+    "ts-jest": "29.4.15",
     "ts-node": "10.9.2",
     "tsc-watch": "7.2.1",
     "typescript": "5.9.3"
